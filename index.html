@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- SEO + copy comercial -->
+  <title>Dónde comer en Chicureo: 15 restaurantes recomendados (con precios) | ChicureoLocal</title>
+  <meta name="description" content="Elige rápido dónde comer en Chicureo. 15 restaurantes recomendados con tipo de cocina, precio promedio por persona, ubicación y link directo." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Favicons (mejorados) -->
+  <!-- 1) Favicon SVG (nítido en cualquier tamaño) -->
+  <link rel="icon" type="image/svg+xml"
+    href='data:image/svg+xml;utf8,
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="%23ff6a3d"/>
+          <stop offset="1" stop-color="%23ffb703"/>
+        </linearGradient>
+      </defs>
+      <rect x="6" y="6" width="52" height="52" rx="14" fill="url(%23g)"/>
+      <path d="M32 18c-7 0-12 5-12 12 0 10 12 22 12 22s12-12 12-22c0-7-5-12-12-12zm0 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" fill="%23fff" opacity="0.95"/>
+      <path d="M23 28h4v16c0 2-1 3-2 3s-2-1-2-3V28zm14 0h4v16c0 2-1 3-2 3s-2-1-2-3V28z" fill="%230f172a" opacity="0.75"/>
+      <path d="M25 22h2v4h-2v-4zm14 0h2v4h-2v-4z" fill="%230f172a" opacity="0.75"/>
+    </svg>' />
+
+  <!-- 2) Fallback PNG (opcional): si luego creas un png, solo reemplaza la ruta -->
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" /> -->
+
+  <!-- 3) Apple touch icon (opcional): si luego creas uno, reemplaza la ruta -->
+  <!-- <link rel="apple-touch-icon" href="images/apple-touch-icon.png" /> -->
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dónde comer en Chicureo: 15 restaurantes recomendados | ChicureoLocal" />
+  <meta property="og:description" content="15 restaurantes recomendados en Chicureo con precios promedio, ubicación y link directo." />
+  <meta property="og:type" content="website" />
+  <!-- Si tienes una imagen OG, descomenta y ajusta -->
+  <!-- <meta property="og:image" content="https://TU-DOMINIO/images/og-chicureolocal.jpg" /> -->
+
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --surface:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:rgba(15, 23, 42, 0.10);
+      --shadow2:0 2px 12px rgba(15, 23, 42, 0.06);
+      --chip:rgba(15, 23, 42, 0.06);
+      --max: 1040px;
+      --radius: 16px;
+      --radius2: 14px;
+      --cta:#0f172a;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    /* Fondo “food” limpio (no invasivo):
+       1) Usa un patrón de gradientes suave por defecto.
+       2) Si quieres una imagen real, coloca una foto en: images/bg-food.jpg
+          y se activará automáticamente (queda muy sutil por opacidad).
+    */
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color: var(--text);
+      line-height: 1.55;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(255, 183, 3, 0.18), transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(255, 106, 61, 0.14), transparent 55%),
+        radial-gradient(900px 600px at 50% 110%, rgba(15, 23, 42, 0.08), transparent 55%),
+        var(--bg);
+    }
+
+    /* Imagen de fondo opcional (si existe el archivo) */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:url("images/bg-food.jpg");
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      opacity:0.06;           /* muy sutil */
+      filter: blur(2px) saturate(0.95);
+      pointer-events:none;
+      z-index:-1;
+    }
+
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:34px 18px 70px;}
+
+    .skip-link{
+      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      left:18px; top:12px; width:auto; height:auto;
+      padding:10px 12px; background:var(--surface);
+      border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow2);
+      z-index:9999;
+    }
+
+    header{
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow2);
+      padding:22px 22px 18px;
+      margin-bottom:18px;
+      backdrop-filter: blur(6px);
+    }
+
+    .topbar{
+      display:flex; align-items:flex-start; justify-content:space-between;
+      gap:12px; flex-wrap:wrap;
+    }
+
+    .brand{
+      font-weight:850; letter-spacing:.2px; font-size:13px;
+      color:var(--muted); text-transform:uppercase;
+    }
+
+    .meta-mini{
+      font-size:13px; color:var(--muted);
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px; border-radius:999px;
+      border:1px solid var(--line); background:rgba(15, 23, 42, 0.03);
+    }
+    .dot{width:8px; height:8px; border-radius:999px; background:rgba(15,23,42,.25); display:inline-block;}
+
+    h1{
+      margin:10px 0 10px;
+      font-size:34px; line-height:1.15; letter-spacing:-0.35px;
+    }
+
+    .lead{max-width:92ch; color:var(--muted); margin:0;}
+    .note{color:var(--muted); margin:12px 0 0; font-size:13px;}
+
+    h2{
+      font-size:18px; margin:18px 0 12px; color:var(--text); letter-spacing:-0.2px;
+    }
+
+    .disclaimer{
+      margin-top:12px;
+      padding:12px 12px;
+      border-radius:var(--radius2);
+      border:1px dashed rgba(15,23,42,.18);
+      background:rgba(15,23,42,.03);
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+      margin-top:12px;
+    }
+    @media (min-width: 900px){
+      .grid{grid-template-columns: 1fr 1fr;}
+    }
+
+    .card{
+      background:rgba(255,255,255,0.94);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow2);
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+      backdrop-filter: blur(6px);
+    }
+
+    .card-media{
+      position:relative;
+      width:100%;
+      aspect-ratio:16/9;
+      background:rgba(15,23,42,.04);
+      overflow:hidden;
+    }
+    .card-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transform: translateZ(0);
+    }
+
+    .card-body{
+      padding:16px 16px 14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .title{
+      margin:0;
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:-0.25px;
+    }
+
+    .type{
+      margin:-6px 0 0;
+      font-size:14px;
+      color:var(--muted);
+      font-weight:650;
+    }
+
+    .desc{margin:0; color:var(--text); opacity:.95;}
+
+    .meta{display:grid; gap:6px; font-size:14px; color:var(--text);}
+    .meta-row{display:flex; align-items:center; gap:8px; color:var(--muted);}
+
+    .avg{color:var(--muted); font-size:13px;}
+    .avg strong{color:var(--text); font-weight:800;}
+
+    .link-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-top:2px;
+    }
+    .link-row a{
+      color:var(--muted);
+      text-decoration:none;
+      border-bottom:1px solid rgba(100,116,139,.35);
+      word-break:break-word;
+    }
+    .link-row a:hover{color:var(--text);}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(15,23,42,0.04);
+      text-decoration:none;
+      font-size:13px;
+      color:var(--text);
+      white-space:nowrap;
+    }
+    .btn:hover{background:rgba(15,23,42,0.07);}
+
+    /* Tags unificados */
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:2px;}
+    .chip{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:var(--chip);
+      border:1px solid var(--line);
+      font-size:13px;
+      color:var(--text);
+      opacity:.92;
+    }
+
+    footer{
+      margin-top:18px;
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow2);
+      padding:18px 22px;
+      color:var(--muted);
+      font-size:14px;
+      backdrop-filter: blur(6px);
+    }
+    footer p{margin:10px 0 0;}
+    footer p:first-of-type{margin-top:8px;}
+
+    .price-disclaimer{
+      margin-top:14px;
+      padding-top:14px;
+      border-top:1px solid rgba(15,23,42,0.08);
+      font-size:13px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <div class="wrap">
+    <header>
+      <div class="topbar">
+        <div class="brand">ChicureoLocal</div>
+        <div class="meta-mini">
+          <span class="pill"><span class="dot"></span>Guía práctica</span>
+          <span class="pill">Precios promedio</span>
+          <span class="pill">Link directo</span>
+        </div>
+      </div>
+
+      <h1>Dónde comer en Chicureo: 15 restaurantes recomendados</h1>
+
+      <p class="lead">
+        Si quieres elegir rápido un buen lugar para almorzar, cenar o juntarte con amigos en Chicureo, esta guía es para ti.
+        Reunimos 15 restaurantes recomendados con información concreta: tipo de cocina, precio promedio por persona, ubicación y link directo.
+      </p>
+
+    <div class="disclaimer">
+        Nuestra selección es en base a visitas realizadas a cada uno de estos locales, manteniendo una visión objetiva.
+      </div> 
+
+      <p class="note">
+        Consejo: guarda esta página y vuelve cada vez que necesites decidir en minutos.
+      </p>
+    </header>
+
+    <main id="contenido">
+      <h2>Top 15 en Chicureo (selección recomendada)</h2>
+
+      <section class="grid">
+
+        <!-- 01 -->
+        <article class="card" id="wallys-chicureo">
+          <div class="card-media">
+            <img src="images/wallys.jpg" alt="Wally’s Chicureo – Hamburguesería gourmet en Chicureo" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="title">Wally’s Chicureo</h3>
+              <div class="type">Hamburguesería gourmet</div>
+            </div>
+
+            <p class="desc">
+              Hamburguesería premium con recetas contundentes y papas estilo street food, en un ambiente moderno y relajado. Ideal para salidas informales en familia o con amigos, o para resolver un almuerzo rápido sin sacrificar calidad.
+            </p>
+
+            <div class="meta">
+              <div class="meta-row">📍 <span>Chamisero, Chicureo</span></div>
+              <div class="meta-row avg">💰 <span>Precio promedio: <strong>$10.000 – $16.000</strong> p/p</span></div>
+
+              <div class="link-row">
+                <div class="meta-row" style="margin:0;">🌐
+                  <a href="https://www.wallys.cl/" target="_blank" rel="noopener noreferrer">wallys.cl</a>
+                </div>
+                <a class="btn" href="https://www.wallys.cl/" target="_blank" rel="noopener noreferrer">Ver link</a>
+              </div>
+
+              <div class="tags">
+                <span class="chip">Familiar</span>
+                <span class="chip">Delivery</span>
+                <span class="chip">Terraza</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 -->
+        <article class="card" id="positano-caffe-cucina">
+          <div class="card-media">
+            <img src="images/positiano.jpg" alt="Positano Caffè &amp; Cucina – Cocina italiana en Chicureo" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="title">Positano Caffè &amp; Cucina</h3>
+              <div class="type">Cocina italiana</div>
+            </div>
+
+            <p class="desc">
+              Trattoria italiana auténtica, destacada por pastas artesanales y sabores tradicionales. Ideal para almuerzos en familia y cenas tranquilas en pareja, con ambiente acogedor y muy buena consistencia.
+            </p>
+
+            <div class="meta">
+              <div class="meta-row">📍 <span>Piedra Roja, Chicureo</span></div>
+              <div class="meta-row avg">💰 <span>Precio promedio: <strong>$15.000 – $25.000</strong> p/p</span></div>
+
+              <div class="link-row">
+                <div class="meta-row" style="margin:0;">🌐
+                  <a href="https://www.instagram.com/positano_caffe_cucina/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+                <a class="btn" href="https://www.instagram.com/positano_caffe_cucina/" target="_blank" rel="noopener noreferrer">Ver link</a>
+              </div>
+
+              <div class="tags">
+                <span class="chip">Familiar</span>
+                <span class="chip">Reservas</span>
+                <span class="chip">Terraza</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03 -->
+        <article class="card" id="donde-gilberto">
+          <div class="card-media">
+            <img src="images/dondegilberto.jpg" alt="Donde Gilberto – Marisquería en Chicureo" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="title">Donde Gilberto</h3>
+              <div class="type">Marisquería</div>
+            </div>
+
+            <p class="desc">
+              Mariscos frescos y preparaciones clásicas del mar en un entorno cálido y reconocido en la zona. Excelente para almuerzos largos, celebraciones y cenas con un toque especial (en ocasiones con música en vivo).
+            </p>
+
+            <div class="meta">
+              <div class="meta-row">📍 <span>Piedra Roja, Chicureo</span></div>
+              <div class="meta-row avg">💰 <span>Precio promedio: <strong>$20.000 – $32.000</strong> p/p</span></div>
+
+              <div class="link-row">
+                <div class="meta-row" style="margin:0;">🌐
+                  <a href="https://gilberto.cl/" target="_blank" rel="noopener noreferrer">gilberto.cl</a>
+                </div>
+                <a class="btn" href="https://gilberto.cl/" target="_blank" rel="noopener noreferrer">Ver link</a>
+              </div>
+
+              <div class="tags">
+                <span class="chip">Familiar</span>
+                <span class="chip">Reservas</span>
+                <span class="chip">Terraza</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 -->
+        <article class="card" id="el-fogon-del-lenador">
+          <div class="card-media">
+            <img src="images/fogonleñador.jpg" alt="El Fogón del Leñador – Parrilla chilena en Chicureo" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="title">El Fogón del Leñador</h3>
+              <div class="type">Parrilla chilena</div>
+            </div>
+
+            <p class="desc">
+              Parrillada premium con estética rústica y espíritu “chileno”, ideal para grupos y familias. Muy recomendado para fines de semana y cenas entretenidas, con cortes al punto y porciones generosas.
+            </p>
+
+            <div class="meta">
+              <div class="meta-row">📍 <span>Caletera San Martín, Chicureo</span></div>
+              <div class="meta-row avg">💰 <span>Precio promedio: <strong>$22.000 – $35.000</strong> p/p</span></div>
+
+              <div class="link-row">
+                <div class="meta-row" style="margin:0;">🌐
+                  <a href="https://fogon.cl/" target="_blank" rel="noopener noreferrer">fogon.cl</a>
+                </div>
+                <a class="btn" href="https://fogon.cl/" target="_blank" rel="noopener noreferrer">Ver link</a>
+              </div>
+
+              <div class="tags">
+                <span class="chip">Familiar</span>
+                <span class="chip">Reservas</span>
+                <span class="chip">Estacionamiento</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 05 -->
+        <article class="card" id="barra-olivo">
+          <div class="card-media">
+            <img src="images/barra-olivo.jpg" alt="Barra Olivo – Cocina peruana en Chicureo" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="title">Barra Olivo</h3>
+              <div class="type">Cocina peruana</div>
+            </div>
+
+            <p class="desc">
+              Cocina peruana auténtica con foco en ceviches, tiraditos y platos criollos bien ejecutados. Excelente alternativa para disfrutar sabores intensos, ideal para familia o grupos de amigos.
+            </p>
+
+            <div class="meta">
+              <div class="meta-row">📍 <span>Piedra Roja, Chicureo</span></div>
+              <div class="meta-row avg">💰 <span>Precio promedio: <strong>$16.000 – $26.000</strong> p/p</span></div>
+
+              <div class="link-row">
+                <div class="meta-row" style="margin:0;">🌐
+                  <a href="https://www.instagram.com/barraolivochicureo/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+                <a class="btn" href="https://www.instagram.com/barraolivochicureo/" target="_blank" rel="noopener noreferrer">Ver link</a>
+              </div>
+
+              <!-- Tags unificados: evitamos “Peruano” (cocina ya lo dice) y mantenemos atributos consistentes -->
+              <div class="tags">
+                <span class="chip">Reservas</span>
+                <span class="chip">Terraza</span>
+                <span class="chip">Para compartir</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 06 -->
+        <article class="card" id="al-pesto-restaurante">
+          <div class="card-media">
+            <img src="images/alpesto.jpg" alt="Al Pesto Restaurante – Cocina italiana en Chicureo" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="title">Al Pesto Restaurante</h3>
+              <div class="type">Cocina italiana</div>
+            </div>
+
+            <p class="desc">
+              Italiano clásico y confiable con pastas caseras, pizzas y platos tradicionales. Perfecto para almuerzos tranquilos o cenas familiares, con carta transversal y ambiente cómodo.
+            </p>
+
+            <div class="meta">
+              <div class="meta-row">📍 <span>Boulevard Los Ingleses, Chicureo</span></div>
+              <div class="meta-row avg">💰 <span>Precio promedio: <strong>$15.000 – $25.000</strong> p/p</span></div>
+
+              <div class="link-row">
+                <div class="meta-row" style="margin:0;">🌐
+                  <a href="http://www.alpesto.cl/" target="_blank" rel="noopener noreferrer">alpesto.cl</a>
+                </div>
+                <a class="btn" href="http://www.alpesto.cl/" target="_blank" rel="noopener noreferrer">Ver link</a>
+              </div>
+
+              <div class="tags">
+                <span class="chip">Familiar</span>
+                <span class="chip">Reservas</span>
+                <span class="chip">Terraza</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 07 -->
+        <article class="card" id="taranta">
+          <div class="card-media">
+            <img src="images/taranta.jpg" alt="Taranta – Trattoria italiana en Chicureo" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="title">Taranta</h3>
+              <div class="type">Trattoria italiana</div>
+            </div>
+
+            <p class="desc">
+              Trattoria con personalidad: pizzas a la piedra, pastas frescas y una carta ideal para compartir. Muy buena opción para cenas grupales y planes familiares, especialmente en terraza.
+            </p>
+
+            <div class="meta">
+              <div class="meta-row">📍 <span>Chamisero, Chicureo</span></div>
+              <div class="meta-row avg">💰 <span>Precio promedio: <strong>$15.000 – $26.000</strong> p/p</span></div>
+
+              <div class="link-row">
+                <div class="meta-row" style="margin:0;">🌐
+                  <a href="https://www.instagram.com/tarantachicureo/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+                <a class="btn" href="https://www.instagram.com/tarantachicureo/" target="_blank" rel="noopener noreferrer">Ver link</a>
+              </div>
+
+              <div class="tags">
+                <span class="chip">Familiar</span>
+                <span class="chip">Terraza</span>
+                <span class="chip">Reservas</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 08 -->
+        <article class="card" id="el-establo">
+          <div class="card-media">
+            <img src="images/el-establo.jpg" alt="El Establo – Cocina internacional en Chicureo" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="title">El Establo</h3>
+              <div class="type">Cocina internacional</div>
+            </div>
+
+            <p class="desc">
+              Restaurante grande y familiar con carta amplia (carnes, pizzas, sushi y más), perfecto para grupos y celebraciones. Muy buena alternativa si necesitas variedad para distintos gustos (y niños).
+            </p>
+
+            <div class="meta">
+              <div class="meta-row">📍 <span>Boulevard Los Ingleses, Chicureo</span></div>
+              <div class="meta-row avg">💰 <span>Precio promedio: <strong>$14.000 – $24.000</strong> p/p</span></div>
+
+              <div class="link-row">
+                <div class="meta-row" style="margin:0;">🌐
+                  <a href="https://elestablo.cl/" target="_blank" rel="noopener noreferrer">elestablo.cl</a>
+                </div>
+                <a class="btn" href="https://elestablo.cl/" target="_blank" rel="noopener noreferrer">Ver link</a>
+              </div>
+
+              <div class="tags">
+                <span class="chip">Familiar</span>
+                <span class="chip">Juegos infantiles</span>
+                <span class="chip">Estacionamiento</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 09 -->
+        <article class="card" id="pizza-bistrot">
+          <div class="card-media">
+            <img src="images/pizza-bistrot.jpg" alt="Pizza Bistrot – Pizzería artesanal en Chicureo" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="title">Pizza Bistrot</h3>
+              <div class="type">Pizzería artesanal</div>
+            </div>
+
+            <p class="desc">
+              Pizzería gourmet con recetas creativas e ingredientes distintos a la pizza tradicional. Muy buena para picoteo con amigos o una comida relajada, con opción para compartir en terraza.
+            </p>
+
+            <div class="meta">
+              <div class="meta-row">📍 <span>Piedra Roja, Chicureo</span></div>
+              <div class="meta-row avg">💰 <span>Precio promedio: <strong>$13.000 – $22.000</strong> p/p</span></div>
+
+              <div class="link-row">
+                <div class="meta-row" style="margin:0;">🌐
+                  <a href="https://www.instagram.com/pizzabistrot.chicureo/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+                <a class="btn" href="https://www.instagram.com/pizzabistrot.chicureo/" target="_blank" rel="noopener noreferrer">Ver link</a>
+              </div>
+
+              <div class="tags">
+                <span class="chip">Terraza</span>
+                <span class="chip">Para compartir</span>
+                <span class="chip">Delivery</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10 -->
+        <article class="card" id="patagonia-chicureo">
+          <div class="card-media">
+            <img src="images/patagonia.jpg" alt="Patagonia Chicureo – Restobar cervecero en Chicureo" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="title">Patagonia Chicureo</h3>
+              <div class="type">Restobar cervecero</div>
+            </div>
+
+            <p class="desc">
+              Restobar con identidad cervecera, terraza y ambiente distendido. Ideal para tardes/noches con amigos, after office o salida casual con buena onda y carta para picar.
+            </p>
+
+            <div class="meta">
+              <div class="meta-row">📍 <span>Piedra Roja, Chicureo</span></div>
+              <div class="meta-row avg">💰 <span>Precio promedio: <strong>$14.000 – $26.000</strong> p/p</span></div>
+
+              <div class="link-row">
+                <div class="meta-row" style="margin:0;">🌐
+                  <a href="https://www.instagram.com/patagoniagrillbar/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+                <a class="btn" href="https://www.instagram.com/patagoniagrillbar/" target="_blank" rel="noopener noreferrer">Ver link</a>
+              </div>
+
+              <div class="tags">
+                <span class="chip">Pet friendly</span>
+                <span class="chip">Terraza</span>
+                <span class="chip">Cervezas</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11 -->
+        <article class="card" id="el-deck">
+          <div class="card-media">
+            <img src="images/el-deck.jpg" alt="El Deck – Restobar peruano en Chicureo" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="title">El Deck</h3>
+              <div class="type">Restobar peruano</div>
+            </div>
+
+            <p class="desc">
+              Restobar con terraza y ambiente veraniego, perfecto para tardes largas y encuentros al aire libre. Destaca por la experiencia (terraza/vista + coctelería) y platos ricos para compartir.
+            </p>
+
+            <div class="meta">
+              <div class="meta-row">📍 <span>Piedra Roja, Chicureo</span></div>
+              <div class="meta-row avg">💰 <span>Precio promedio: <strong>$15.000 – $28.000</strong> p/p</span></div>
+
+              <div class="link-row">
+                <div class="meta-row" style="margin:0;">🌐
+                  <a href="https://www.instagram.com/eldeckchile/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+                <a class="btn" href="https://www.instagram.com/eldeckchile/" target="_blank" rel="noopener noreferrer">Ver link</a>
+              </div>
+
+              <div class="tags">
+                <span class="chip">Terraza</span>
+                <span class="chip">Vista laguna</span>
+                <span class="chip">Coctelería</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12 -->
+        <article class="card" id="ola-brava">
+          <div class="card-media">
+            <img src="images/pulpo-sobre-causa.jpg" alt="Ola Brava – Cocina peruana fusión en Chicureo" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="title">Ola Brava</h3>
+              <div class="type">Cocina peruana fusión</div>
+            </div>
+
+            <p class="desc">
+              Peruano fusión con cocina de autor, mariscos y una propuesta más gourmet. Muy recomendado para cenas especiales, celebraciones y planes con coctelería destacada.
+            </p>
+
+            <div class="meta">
+              <div class="meta-row">📍 <span>Chicureo, Colina</span></div>
+              <div class="meta-row avg">💰 <span>Precio promedio: <strong>$20.000 – $35.000</strong> p/p</span></div>
+
+              <div class="link-row">
+                <div class="meta-row" style="margin:0;">🌐
+                  <a href="https://www.facebook.com/ola.brava/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                </div>
+                <a class="btn" href="https://www.facebook.com/ola.brava/" target="_blank" rel="noopener noreferrer">Ver link</a>
+              </div>
+
+              <div class="tags">
+                <span class="chip">Reservas</span>
+                <span class="chip">Coctelería</span>
+                <span class="chip">Cena especial</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 13 -->
+        <article class="card" id="aleman-experto">
+          <div class="card-media">
+            <img src="images/aleman-experto-chicureo.jpg" alt="Alemán Experto – Sandwichería alemana en Chicureo" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="title">Alemán Experto</h3>
+              <div class="type">Sandwichería alemana</div>
+            </div>
+
+            <p class="desc">
+              Sandwichería estilo alemán (lomitos, crudos y opciones contundentes), ideal para almuerzos rápidos o pedidos a domicilio. Muy buena relación precio-calidad y porciones generosas.
+            </p>
+
+            <div class="meta">
+              <div class="meta-row">📍 <span>Piedra Roja, Chicureo</span></div>
+              <div class="meta-row avg">💰 <span>Precio promedio: <strong>$10.000 – $18.000</strong> p/p</span></div>
+
+              <div class="link-row">
+                <div class="meta-row" style="margin:0;">🌐
+                  <a href="https://www.instagram.com/alemanexperto/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+                <a class="btn" href="https://www.instagram.com/alemanexperto/" target="_blank" rel="noopener noreferrer">Ver link</a>
+              </div>
+
+              <div class="tags">
+                <span class="chip">Sándwiches</span>
+                <span class="chip">Delivery</span>
+                <span class="chip">Estacionamiento</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 14 -->
+        <article class="card" id="tokei-sushi-nikkei">
+          <div class="card-media">
+            <img src="images/tokei-sushi-nikkei.jpg" alt="Tokei Sushi Nikkei – Sushi nikkei en Chicureo" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="title">Tokei Sushi Nikkei</h3>
+              <div class="type">Sushi nikkei</div>
+            </div>
+
+            <p class="desc">
+              Sushi fusión peruano-japonesa con rolls de autor e ingredientes frescos. Ideal para cena tranquila o delivery de mejor estándar, especialmente si buscas sabores nikkei más intensos.
+            </p>
+
+            <div class="meta">
+              <div class="meta-row">📍 <span>Piedra Roja, Chicureo</span></div>
+              <div class="meta-row avg">💰 <span>Precio promedio: <strong>$18.000 – $30.000</strong> p/p</span></div>
+
+              <div class="link-row">
+                <div class="meta-row" style="margin:0;">🌐
+                  <a href="http://www.tokei.cl/" target="_blank" rel="noopener noreferrer">tokei.cl</a>
+                </div>
+                <a class="btn" href="http://www.tokei.cl/" target="_blank" rel="noopener noreferrer">Ver link</a>
+              </div>
+
+              <div class="tags">
+                <span class="chip">Delivery</span>
+                <span class="chip">Reservas</span>
+                <span class="chip">Sushi premium</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 15 -->
+        <article class="card" id="el-territorio-sangucheria">
+          <div class="card-media">
+            <img src="images/el-territorio-se-especializa.jpg" alt="El Territorio Sanguchería – Sanguchería local en Chicureo" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="title">El Territorio Sanguchería</h3>
+              <div class="type">Sanguchería local</div>
+            </div>
+
+            <p class="desc">
+              Sandwichería chilena con opciones contundentes y menú amplio. Ideal para almuerzos rápidos, familias y delivery en días de antojo, con buena variedad y porciones convenientes.
+            </p>
+
+            <div class="meta">
+              <div class="meta-row">📍 <span>Chicureo (Av. Chicureo Km 2)</span></div>
+              <div class="meta-row avg">💰 <span>Precio promedio: <strong>$10.000 – $18.000</strong> p/p</span></div>
+
+              <div class="link-row">
+                <div class="meta-row" style="margin:0;">🌐
+                  <a href="http://www.elterritorio.cl/" target="_blank" rel="noopener noreferrer">elterritorio.cl</a>
+                </div>
+                <a class="btn" href="http://www.elterritorio.cl/" target="_blank" rel="noopener noreferrer">Ver link</a>
+              </div>
+
+              <div class="tags">
+                <span class="chip">Familiar</span>
+                <span class="chip">Delivery</span>
+                <span class="chip">Estacionamiento</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <footer>
+        <h2>Tu guía rápida para comer bien en Chicureo</h2>
+        <p>
+          Esta selección está pensada para ayudarte a elegir con confianza: tipo de cocina, precio promedio por persona y señales prácticas
+          (terraza, reservas, delivery, estacionamiento, etc.).
+        </p>
+        <p>
+          Iremos actualizando la guía con nuevos lugares y cambios relevantes para mantenerla vigente.
+        </p>
+
+        <!-- 1) Disclaimer final de precios (solicitado) -->
+        <div class="price-disclaimer">
+          <strong>Disclaimer de precios:</strong> Los valores publicados son <strong>referenciales</strong> (precio promedio por persona) y pueden variar según fecha, carta, promociones y consumo.
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!--
+    2) FavIcon: ya incluido como SVG embebido (no necesitas subir archivo).
+       Si quieres uno “marca” definitivo, puedes crear:
+       - images/favicon-32.png
+       - images/apple-touch-icon.png
+       y descomentar los links del <head>.
+
+    3) Fondo con imagen comida:
+       - Sube una foto limpia a: images/bg-food.jpg
+       - Se aplicará con opacidad 0.06 + blur (muy sutil).
+       - Si no subes nada, queda el fondo con gradientes suaves.
+
+    4) Tags unificados:
+       - Se mantuvieron como atributos/experiencias consistentes.
+       - Si quieres, puedo normalizarlos a un set fijo (p.ej. 12 tags máximos) para futuro filtro.
+
+    5) Imágenes:
+       - Mantén 16:9 (1200x675 ideal).
+       - Nombres sugeridos ya están en src, ajusta si usas otros.
+  -->
+</body>
+</html>
