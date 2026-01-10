@@ -11,7 +11,6 @@
   <meta name="robots" content="index,follow" />
 
   <!-- Favicons (mejorados) -->
-  <!-- 1) Favicon SVG (nítido en cualquier tamaño) -->
   <link rel="icon" type="image/svg+xml"
     href='data:image/svg+xml;utf8,
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
@@ -27,12 +26,6 @@
       <path d="M25 22h2v4h-2v-4zm14 0h2v4h-2v-4z" fill="%230f172a" opacity="0.75"/>
     </svg>' />
 
-  <!-- 2) Fallback PNG (opcional): si luego creas un png, solo reemplaza la ruta -->
-  <!-- <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" /> -->
-
-  <!-- 3) Apple touch icon (opcional): si luego creas uno, reemplaza la ruta -->
-  <!-- <link rel="apple-touch-icon" href="images/apple-touch-icon.png" /> -->
-
   <!-- Open Graph -->
   <meta property="og:title" content="Dónde comer en Chicureo: 15 restaurantes recomendados | ChicureoLocal" />
   <meta property="og:description" content="15 restaurantes recomendados en Chicureo con precios promedio, ubicación y link directo." />
@@ -42,9 +35,6 @@
   <meta name="twitter:title" content="Dónde comer en Chicureo: 15 restaurantes recomendados (con precios)" />
   <meta name="twitter:description" content="15 restaurantes recomendados en Chicureo con precios promedio, ubicación y link directo." />
   <meta name="twitter:url" content="https://chicureolocal.cl/" />
-
-  <!-- Si tienes una imagen OG, descomenta y ajusta -->
-  <!-- <meta property="og:image" content="https://TU-DOMINIO/images/og-chicureolocal.jpg" /> -->
 
   <style>
     :root{
@@ -64,11 +54,6 @@
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
 
-    /* Fondo “food” limpio (no invasivo):
-       1) Usa un patrón de gradientes suave por defecto.
-       2) Si quieres una imagen real, coloca una foto en: images/bg-food.jpg
-          y se activará automáticamente (queda muy sutil por opacidad).
-    */
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
@@ -81,16 +66,17 @@
         var(--bg);
     }
 
-    /* Imagen de fondo opcional (si existe el archivo) */
+    /* Imagen de fondo opcional (si existe el archivo)
+       IMPORTANTE: ruta absoluta para que no se rompa en /restaurantes */
     body::before{
       content:"";
       position:fixed;
       inset:0;
-      background-image:url("images/bg-food.jpg");
+      background-image:url("/images/bg-food.jpg");
       background-size:cover;
       background-position:center;
       background-repeat:no-repeat;
-      opacity:0.06;           /* muy sutil */
+      opacity:0.06;
       filter: blur(2px) saturate(0.95);
       pointer-events:none;
       z-index:-1;
@@ -258,7 +244,6 @@
     }
     .btn:hover{background:rgba(15,23,42,0.07);}
 
-    /* Tags unificados */
     .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:2px;}
     .chip{
       display:inline-block;
@@ -292,6 +277,21 @@
       font-size:13px;
       color:var(--muted);
     }
+
+    /* Link “Volver al inicio” (consistente con /talleres) */
+    .back-home{
+      margin-top:16px;
+      font-size:14px;
+    }
+    .back-home a{
+      color:#0f172a;
+      text-decoration:none;
+      border-bottom:1px solid rgba(15,23,42,.3);
+      padding-bottom:2px;
+    }
+    .back-home a:hover{
+      border-bottom-color:#0f172a;
+    }
   </style>
 </head>
 
@@ -316,9 +316,9 @@
         Reunimos 15 restaurantes recomendados con información concreta: tipo de cocina, precio promedio por persona, ubicación y link directo.
       </p>
 
-    <div class="disclaimer">
+      <div class="disclaimer">
         Nuestra selección es en base a visitas realizadas a cada uno de estos locales, manteniendo una visión objetiva.
-      </div> 
+      </div>
 
       <p class="note">
         Consejo: guarda esta página y vuelve cada vez que necesites decidir en minutos.
@@ -496,7 +496,6 @@
                 <a class="btn" href="https://www.instagram.com/barraolivochicureo/" target="_blank" rel="noopener noreferrer">Ver link</a>
               </div>
 
-              <!-- Tags unificados: evitamos “Peruano” (cocina ya lo dice) y mantenemos atributos consistentes -->
               <div class="tags">
                 <span class="chip">Reservas</span>
                 <span class="chip">Terraza</span>
@@ -868,33 +867,15 @@
           Iremos actualizando la guía con nuevos lugares y cambios relevantes para mantenerla vigente.
         </p>
 
-        <!-- 1) Disclaimer final de precios (solicitado) -->
+        <div class="back-home">
+          ← <a href="/" aria-label="Volver al inicio de ChicureoLocal">Volver al inicio</a>
+        </div>
+
         <div class="price-disclaimer">
           <strong>Disclaimer de precios:</strong> Los valores publicados son <strong>referenciales</strong> (precio promedio por persona) y pueden variar según fecha, carta, promociones y consumo.
         </div>
       </footer>
     </main>
   </div>
-
-  <!--
-    2) FavIcon: ya incluido como SVG embebido (no necesitas subir archivo).
-       Si quieres uno “marca” definitivo, puedes crear:
-       - images/favicon-32.png
-       - images/apple-touch-icon.png
-       y descomentar los links del <head>.
-
-    3) Fondo con imagen comida:
-       - Sube una foto limpia a: images/bg-food.jpg
-       - Se aplicará con opacidad 0.06 + blur (muy sutil).
-       - Si no subes nada, queda el fondo con gradientes suaves.
-
-    4) Tags unificados:
-       - Se mantuvieron como atributos/experiencias consistentes.
-       - Si quieres, puedo normalizarlos a un set fijo (p.ej. 12 tags máximos) para futuro filtro.
-
-    5) Imágenes:
-       - Mantén 16:9 (1200x675 ideal).
-       - Nombres sugeridos ya están en src, ajusta si usas otros.
-  -->
 </body>
 </html>
