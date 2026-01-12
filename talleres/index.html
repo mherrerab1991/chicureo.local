@@ -9,19 +9,34 @@
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://chicureolocal.cl/talleres/" />
 
+  <!-- Favicon (mismo estándar del sitio) -->
+  <link rel="icon" type="image/svg+xml"
+    href='data:image/svg+xml;utf8,
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="%23ff6a3d"/>
+          <stop offset="1" stop-color="%23ffb703"/>
+        </linearGradient>
+      </defs>
+      <rect x="6" y="6" width="52" height="52" rx="14" fill="url(%23g)"/>
+      <path d="M32 18c-7 0-12 5-12 12 0 10 12 22 12 22s12-12 12-22c0-7-5-12-12-12z" fill="%23fff"/>
+    </svg>' />
+
   <style>
     :root{
       --bg:#f6f7fb;
       --surface:#ffffff;
       --text:#0f172a;
       --muted:#64748b;
-      --line:rgba(15,23,42,.1);
+      --line:rgba(15,23,42,.10);
       --shadow:0 6px 22px rgba(15,23,42,.08);
       --radius:16px;
       --max:1040px;
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
 
     body{
       margin:0;
@@ -31,23 +46,55 @@
         radial-gradient(1000px 600px at 10% -10%, rgba(59,130,246,.12), transparent 55%),
         radial-gradient(900px 500px at 90% 0%, rgba(100,116,139,.10), transparent 55%),
         var(--bg);
+      line-height:1.65;
     }
 
     a{color:inherit;text-decoration:none}
 
+    /* ESTRUCTURA ESTÁNDAR (igual a Privacidad/Contacto/Home) */
     .wrap{
       max-width:var(--max);
       margin:0 auto;
-      padding:36px 18px 70px;
+      padding:22px 18px 70px;
     }
 
+    /* NAV ESTÁNDAR (igual a Privacidad/Contacto/Home) */
+    .nav{
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 2px 12px rgba(15,23,42,0.06);
+      padding:12px 14px;
+      margin:12px 0 14px;
+      backdrop-filter: blur(6px);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .nav strong{color:var(--text)}
+    .nav a{
+      color:inherit;
+      border-bottom:1px solid rgba(100,116,139,.35);
+      padding-bottom:2px;
+    }
+    .nav a:hover{color:var(--text)}
+    .nav a[aria-current="page"]{
+      color:var(--text);
+      font-weight:800;
+      border-bottom-color:rgba(15,23,42,.35);
+    }
+
+    /* Card “hero” (tu header original convertido a card, para consistencia) */
     header{
       background:rgba(255,255,255,.95);
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:28px 26px;
-      margin-bottom:22px;
+      margin:12px 0 22px;
     }
 
     h1{
@@ -92,12 +139,11 @@
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      overflow:hidden; /* para respetar borde redondeado con imagen */
+      overflow:hidden;
       display:flex;
       flex-direction:column;
     }
 
-    /* Media (igual lógica a restaurantes) */
     .card-media{
       width:100%;
       aspect-ratio:16/9;
@@ -150,7 +196,6 @@
       margin-top:6px;
       font-size:14px;
     }
-
     .contact a{
       border-bottom:1px solid rgba(100,116,139,.4);
     }
@@ -207,7 +252,20 @@
 </head>
 
 <body>
-  <main class="wrap">
+  <div class="wrap">
+
+    <!-- NAV ESTÁNDAR -->
+    <nav class="nav" aria-label="Navegación principal">
+      <div><strong>ChicureoLocal</strong></div>
+      <div>
+        <a href="/">Inicio</a> ·
+        <a href="/restaurantes/">Restaurantes</a> ·
+        <a href="/talleres/" aria-current="page">Talleres</a> ·
+        <a href="/privacidad/">Privacidad</a> ·
+        <a href="/terminos/">Términos</a> ·
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </nav>
 
     <header>
       <h1>Talleres mecánicos recomendados en Chicureo</h1>
@@ -225,8 +283,6 @@
 
     <section class="grid">
 
-      <!-- Placeholder embebido (no se rompe si falta imagen) -->
-      <!-- Puedes reemplazar src="data:..." por /images/tu-foto.jpg cuando la subas -->
       <!-- Taller Chicureo -->
       <article class="card" id="taller-chicureo">
         <div class="card-media">
@@ -312,7 +368,7 @@
         </div>
       </article>
 
- <!-- Servicio Automotriz Chappuzeau e Hijos -->
+      <!-- Servicio Automotriz Chappuzeau e Hijos -->
       <article class="card" id="chappuzeau">
         <div class="card-media">
           <img src="/images/Servicio Automotriz Chappuzeau e Hijos.PNG" alt="Servicio Automotriz Chappuzeau e Hijos – Imagen pendiente" loading="lazy" />
@@ -340,7 +396,7 @@
           </div>
         </div>
       </article>
-      
+
       <!-- Massaro Mecánica Integral -->
       <article class="card" id="massaro">
         <div class="card-media">
@@ -428,35 +484,6 @@
           </div>
         </div>
       </article>
-
-      <!-- Taller Mechanics Performance (Garage Valdivia) 
-      <article class="card" id="mechanics-performance">
-        <div class="card-media">
-          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='1200' height='675' fill='url(%23g)'/><text x='60' y='120' font-family='Arial' font-size='46' fill='%230f172a'>Imagen pendiente</text><text x='60' y='190' font-family='Arial' font-size='26' fill='%2364748b'>Sube una foto a /images y reemplaza el src</text></svg>" alt="Taller Mechanics Performance – Imagen pendiente" loading="lazy" />
-        </div>
-        <div class="card-body">
-          <h3 class="title">Taller Mechanics Performance (Garage Valdivia)</h3>
-          <div class="type">Mecánica integral · Desabolladura y pintura (carrocería)</div>
-          <p class="desc">
-            Taller en Colina centro conocido por la confianza que inspira. Servicios integrales desde mecánica y mantenciones
-            hasta desabolladura, pintura, soldadura y alineación. Enfoque en rendimiento y estética.
-          </p>
-          <div class="meta">
-            📍 Colina centro (Av. Gral. San Martín 377, frente Plaza Colina)<br>
-            💰 Diagnóstico: <strong>$15.000–$35.000</strong> · Mantención: <strong>$60.000–$150.000</strong>
-          </div>
-          <div class="contact">
-            📞 <a href="https://wa.me/56971466994" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            🌐 <a href="https://www.facebook.com/search/top?q=taller%20mechanics%20performance" target="_blank" rel="noopener noreferrer">Facebook</a>
-          </div>
-          <div class="tags">
-            <span class="chip">Carrocería</span>
-            <span class="chip">Pintura</span>
-            <span class="chip">Soldadura</span>
-            <span class="chip">Alineación</span>
-          </div>
-        </div>
-      </article> -->
 
       <!-- Taller Mecánico René Pérez -->
       <article class="card" id="rene-perez">
@@ -618,6 +645,6 @@
       </div>
     </footer>
 
-  </main>
+  </div>
 </body>
 </html>
