@@ -2,8 +2,10 @@
 <html lang="es-CL">
 <head>
   <meta charset="utf-8" />
-  <link rel="canonical" href="https://chicureolocal.cl/" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- Canonical CORRECTO para /restaurantes/ -->
+  <link rel="canonical" href="https://chicureolocal.cl/restaurantes/" />
 
   <!-- SEO + copy comercial -->
   <title>Dónde comer en Chicureo: 15 restaurantes recomendados (con precios) | ChicureoLocal</title>
@@ -30,11 +32,17 @@
   <meta property="og:title" content="Dónde comer en Chicureo: 15 restaurantes recomendados | ChicureoLocal" />
   <meta property="og:description" content="15 restaurantes recomendados en Chicureo con precios promedio, ubicación y link directo." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://chicureolocal.cl/" />
+  <meta property="og:url" content="https://chicureolocal.cl/restaurantes/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dónde comer en Chicureo: 15 restaurantes recomendados (con precios)" />
   <meta name="twitter:description" content="15 restaurantes recomendados en Chicureo con precios promedio, ubicación y link directo." />
-  <meta name="twitter:url" content="https://chicureolocal.cl/" />
+  <meta name="twitter:url" content="https://chicureolocal.cl/restaurantes/" />
+
+  <!--
+    AdSense (pegar aquí cuando Google lo entregue)
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=CA-PUB-XXXX"
+      crossorigin="anonymous"></script>
+  -->
 
   <style>
     :root{
@@ -66,8 +74,7 @@
         var(--bg);
     }
 
-    /* Imagen de fondo opcional (si existe el archivo)
-       IMPORTANTE: ruta absoluta para que no se rompa en /restaurantes */
+    /* Imagen de fondo opcional (si existe el archivo) */
     body::before{
       content:"";
       position:fixed;
@@ -83,7 +90,7 @@
     }
 
     a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:34px 18px 70px;}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
 
     .skip-link{
       position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
@@ -93,6 +100,36 @@
       padding:10px 12px; background:var(--surface);
       border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow2);
       z-index:9999;
+    }
+
+    /* Mini header navegación común (consistente con lo que venías haciendo) */
+    .nav{
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow2);
+      padding:12px 14px;
+      margin:12px 0 14px;
+      backdrop-filter: blur(6px);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .nav strong{color:var(--text)}
+    .nav a{
+      color:inherit;
+      text-decoration:none;
+      border-bottom:1px solid rgba(100,116,139,.35);
+      padding-bottom:2px;
+    }
+    .nav a:hover{color:var(--text)}
+    .nav a[aria-current="page"]{
+      color:var(--text);
+      font-weight:800;
+      border-bottom-color:rgba(15,23,42,.35);
     }
 
     header{
@@ -256,6 +293,19 @@
       opacity:.92;
     }
 
+    /* Bloques para anuncios (placeholders, reemplazar por AdSense cuando tengas el código) */
+    .ad{
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow2);
+      padding:14px 16px;
+      color:var(--muted);
+      font-size:13px;
+      margin:14px 0;
+      backdrop-filter: blur(6px);
+    }
+
     footer{
       margin-top:18px;
       background:rgba(255,255,255,0.92);
@@ -292,6 +342,22 @@
     .back-home a:hover{
       border-bottom-color:#0f172a;
     }
+
+    /* Enlaces legales (para AdSense) */
+    .legal-links{
+      margin-top:12px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      font-size:13px;
+    }
+    .legal-links a{
+      color:var(--muted);
+      text-decoration:none;
+      border-bottom:1px solid rgba(100,116,139,.35);
+      padding-bottom:2px;
+    }
+    .legal-links a:hover{color:var(--text);}
   </style>
 </head>
 
@@ -299,6 +365,20 @@
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <div class="wrap">
+
+    <!-- Mini header navegación común -->
+    <nav class="nav" aria-label="Navegación principal">
+      <div><strong>ChicureoLocal</strong></div>
+      <div>
+        <a href="/">Inicio</a> ·
+        <a href="/restaurantes/" aria-current="page">Restaurantes</a> ·
+        <a href="/talleres/">Talleres</a> ·
+        <a href="/privacidad/">Privacidad</a> ·
+        <a href="/terminos/">Términos</a> ·
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </nav>
+
     <header>
       <div class="topbar">
         <div class="brand">ChicureoLocal</div>
@@ -324,6 +404,11 @@
         Consejo: guarda esta página y vuelve cada vez que necesites decidir en minutos.
       </p>
     </header>
+
+    <!-- Placeholder: anuncio superior -->
+    <div class="ad" aria-label="Espacio publicitario">
+      Espacio publicitario (AdSense) – aquí irá un bloque display responsive
+    </div>
 
     <main id="contenido">
       <h2>Top 15 en Chicureo (selección recomendada)</h2>
@@ -857,6 +942,11 @@
 
       </section>
 
+      <!-- Placeholder: anuncio inferior -->
+      <div class="ad" aria-label="Espacio publicitario">
+        Espacio publicitario (AdSense) – aquí puedes poner un bloque in-article o display
+      </div>
+
       <footer>
         <h2>Tu guía rápida para comer bien en Chicureo</h2>
         <p>
@@ -869,6 +959,12 @@
 
         <div class="back-home">
           ← <a href="/" aria-label="Volver al inicio de ChicureoLocal">Volver al inicio</a>
+        </div>
+
+        <div class="legal-links" aria-label="Enlaces legales">
+          <a href="/privacidad/">Política de privacidad</a>
+          <a href="/terminos/">Términos</a>
+          <a href="/contacto/">Contacto</a>
         </div>
 
         <div class="price-disclaimer">
