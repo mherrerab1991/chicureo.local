@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Contacto | ChicureoLocal</title>
+  <meta name="description" content="Contacto ChicureoLocal: envía sugerencias, correcciones y consultas sobre restaurantes y talleres en Chicureo." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://chicureolocal.cl/contacto/" />
+
+  <link rel="icon" type="image/svg+xml"
+    href='data:image/svg+xml;utf8,
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="%23ff6a3d"/>
+          <stop offset="1" stop-color="%23ffb703"/>
+        </linearGradient>
+      </defs>
+      <rect x="6" y="6" width="52" height="52" rx="14" fill="url(%23g)"/>
+      <path d="M32 18c-7 0-12 5-12 12 0 10 12 22 12 22s12-12 12-22c0-7-5-12-12-12z" fill="%23fff"/>
+    </svg>' />
+
+  <style>
+    :root{--bg:#f6f7fb;--surface:#fff;--text:#0f172a;--muted:#64748b;--line:rgba(15,23,42,.1);--shadow:0 8px 28px rgba(15,23,42,.08);--radius:18px;--max:980px;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(1000px 600px at 10% -10%, rgba(255,183,3,.18), transparent 55%),radial-gradient(900px 500px at 90% 0%, rgba(255,106,61,.14), transparent 55%),var(--bg);}
+    a{color:inherit;text-decoration:none}
+    .wrap{min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:24px;}
+    .card{width:100%;max-width:var(--max);background:rgba(255,255,255,.95);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 22px 18px;}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 12px;border:1px solid var(--line);border-radius:14px;background:#fff;margin-bottom:18px;}
+    .brand{font-size:13px;font-weight:850;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;}
+    .nav-links{display:flex;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--muted);}
+    .nav-links a{border-bottom:1px solid rgba(100,116,139,.35);padding-bottom:2px;}
+    .nav-links a:hover{color:var(--text);border-bottom-color:rgba(15,23,42,.35);}
+
+    h1{margin:10px 0 10px;font-size:30px;letter-spacing:-.3px;line-height:1.15;}
+    .lead{margin:0;color:var(--muted);max-width:85ch;font-size:15px;}
+
+    .content{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 16px;}
+    .box{margin-top:12px;border:1px dashed rgba(15,23,42,.18);background:rgba(15,23,42,.03);border-radius:12px;padding:12px;color:var(--muted);font-size:13px;line-height:1.6;}
+    .contact-row{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 14px;border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(15,23,42,.04);
+      font-size:14px;font-weight:650;
+    }
+    .btn:hover{background:rgba(15,23,42,.07);}
+    .mail{
+      border-bottom:1px solid rgba(100,116,139,.35);
+      padding-bottom:2px;
+    }
+
+    footer{margin-top:18px;padding-top:14px;border-top:1px solid rgba(15,23,42,.08);text-align:center;color:var(--muted);font-size:13px;}
+    .footer-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:10px;}
+    .footer-links a{border-bottom:1px solid rgba(100,116,139,.35);padding-bottom:2px;}
+    .footer-links a:hover{color:var(--text);border-bottom-color:rgba(15,23,42,.35);}
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <section class="card">
+
+      <div class="nav" role="navigation" aria-label="Navegación principal">
+        <div class="brand">ChicureoLocal</div>
+        <div class="nav-links">
+          <a href="/">Inicio</a>
+          <a href="/restaurantes/">Restaurantes</a>
+          <a href="/talleres/">Talleres</a>
+          <a href="/contacto/" aria-current="page">Contacto</a>
+        </div>
+      </div>
+
+      <header>
+        <h1>Contacto</h1>
+        <p class="lead">
+          ¿Ves un dato desactualizado, quieres sugerir un local o proponer una nueva categoría?
+          Escríbenos y lo revisamos.
+        </p>
+      </header>
+
+      <section class="content">
+        <div class="box">
+          <strong>Sugerencias útiles:</strong> incluye nombre del local, ubicación, link oficial (Instagram o web) y
+          qué dato quieres corregir (precio, dirección, teléfono, etc.).
+        </div>
+
+        <!-- IMPORTANTE:
+          En sitios estáticos sin backend no podemos recibir formularios sin servicio externo.
+          Por ahora dejamos mailto. Si luego quieres, te dejo integración con Formspree / Netlify Forms.
+        -->
+        <div class="contact-row" aria-label="Opciones de contacto">
+          <a class="btn" href="mailto:contacto@chicureolocal.cl?subject=Contacto%20ChicureoLocal&body=Hola%2C%20quiero%20sugerir%2Fcorregir%20lo%20siguiente%3A%0A%0A-%20Categor%C3%ADa%3A%20(Restaurante%20%2F%20Taller)%0A-%20Nombre%20del%20local%3A%0A-%20Link%20oficial%20(Instagram%2FWeb)%3A%0A-%20Detalle%20a%20corregir%20o%20sugerencia%3A%0A%0AGracias." rel="noopener noreferrer">
+            ✉️ Escribir por email
+          </a>
+
+          <span class="muted">o escribe a:</span>
+          <a class="mail" href="mailto:contacto@chicureolocal.cl">contacto@chicureolocal.cl</a>
+        </div>
+
+        <div class="box" style="margin-top:14px;">
+          <strong>Nota:</strong> ChicureoLocal es una guía informativa; no gestionamos reservas ni reparaciones.
+          Para cotizaciones o disponibilidad, contacta directamente a cada local.
+        </div>
+      </section>
+
+      <footer>
+        <div>ChicureoLocal · Guía independiente de servicios locales</div>
+        <div class="footer-links">
+          <a href="/acerca/">Acerca</a>
+          <a href="/privacidad/">Privacidad</a>
+          <a href="/terminos/">Términos</a>
+        </div>
+      </footer>
+
+    </section>
+  </main>
+</body>
+</html>
