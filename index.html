@@ -7,8 +7,18 @@
   <title>ChicureoLocal | Guías locales para elegir mejor en Chicureo</title>
   <meta name="description" content="Guías locales de restaurantes y talleres automotrices en Chicureo. Información clara, precios referenciales y links directos para decidir rápido." />
   <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://chicureolocal.cl/" />
 
-  <!-- Favicon (el mismo que ya usas) -->
+  <!-- Open Graph / Twitter (mínimo recomendable para compartir) -->
+  <meta property="og:title" content="ChicureoLocal | Guías locales para elegir mejor en Chicureo" />
+  <meta property="og:description" content="Restaurantes y talleres recomendados en Chicureo: info clara, precios referenciales y links directos." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chicureolocal.cl/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ChicureoLocal | Guías locales para elegir mejor en Chicureo" />
+  <meta name="twitter:description" content="Restaurantes y talleres recomendados en Chicureo: info clara, precios referenciales y links directos." />
+
+  <!-- Favicon (SVG embebido) -->
   <link rel="icon" type="image/svg+xml"
     href='data:image/svg+xml;utf8,
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
@@ -35,6 +45,8 @@
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -62,24 +74,53 @@
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:38px 34px 34px;
+      padding:22px 22px 18px;
     }
 
-    header{
-      text-align:center;
-      margin-bottom:34px;
+    /* Mini header navegación (consistencia con secciones) */
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+      margin-bottom:18px;
     }
-
     .brand{
       font-size:13px;
-      font-weight:800;
+      font-weight:850;
       letter-spacing:.12em;
       color:var(--muted);
       text-transform:uppercase;
     }
+    .nav-links{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .nav-links a{
+      border-bottom:1px solid rgba(100,116,139,.35);
+      padding-bottom:2px;
+    }
+    .nav-links a:hover{
+      color:var(--text);
+      border-bottom-color:rgba(15,23,42,.35);
+    }
+
+    header{
+      text-align:center;
+      margin:14px 0 22px;
+      padding:6px 6px 0;
+    }
 
     h1{
-      margin:12px 0 14px;
+      margin:10px 0 12px;
       font-size:36px;
       line-height:1.15;
       letter-spacing:-.4px;
@@ -92,11 +133,28 @@
       font-size:16px;
     }
 
+    .trust{
+      margin:16px auto 0;
+      max-width:78ch;
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background:rgba(15,23,42,.03);
+      border-radius:999px;
+      padding:7px 10px;
+    }
+
     .grid{
       display:grid;
       grid-template-columns:1fr;
       gap:18px;
-      margin-top:28px;
+      margin-top:18px;
     }
 
     @media(min-width:720px){
@@ -112,6 +170,7 @@
       justify-content:space-between;
       background:#fff;
       transition:transform .15s ease, box-shadow .15s ease;
+      min-height: 190px;
     }
 
     .cat:hover{
@@ -137,15 +196,42 @@
       border-radius:999px;
       border:1px solid var(--line);
       font-size:14px;
-      font-weight:600;
+      font-weight:650;
       background:rgba(15,23,42,.04);
     }
 
     footer{
-      margin-top:34px;
+      margin-top:18px;
+      padding-top:14px;
+      border-top:1px solid rgba(15,23,42,.08);
       text-align:center;
-      font-size:14px;
       color:var(--muted);
+      font-size:13px;
+    }
+
+    .footer-links{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .footer-links a{
+      border-bottom:1px solid rgba(100,116,139,.35);
+      padding-bottom:2px;
+    }
+    .footer-links a:hover{
+      color:var(--text);
+      border-bottom-color:rgba(15,23,42,.35);
+    }
+
+    .disclaimer{
+      margin-top:12px;
+      font-size:12.5px;
+      color:var(--muted);
+      max-width:92ch;
+      margin-left:auto;
+      margin-right:auto;
     }
   </style>
 </head>
@@ -153,17 +239,33 @@
 <body>
   <main class="wrap">
     <section class="card">
-      <header>
+
+      <!-- NAV simple -->
+      <div class="nav" role="navigation" aria-label="Navegación principal">
         <div class="brand">ChicureoLocal</div>
+        <div class="nav-links">
+          <a href="/" aria-current="page">Inicio</a>
+          <a href="/restaurantes/">Restaurantes</a>
+          <a href="/talleres/">Talleres</a>
+        </div>
+      </div>
+
+      <header>
         <h1>Guías locales para elegir mejor en Chicureo</h1>
         <p class="lead">
           Encuentra restaurantes y talleres automotrices recomendados en Chicureo.
           Información clara, precios referenciales y links directos para decidir rápido.
         </p>
+
+        <div class="trust" aria-label="Señales de confianza">
+          <span class="pill">Guía independiente</span>
+          <span class="pill">Contacto directo</span>
+          <span class="pill">Actualización periódica</span>
+        </div>
       </header>
 
-      <section class="grid">
-        <a class="cat" href="/restaurantes">
+      <section class="grid" aria-label="Categorías">
+        <a class="cat" href="/restaurantes/">
           <div>
             <h2>🍽 Restaurantes</h2>
             <p>
@@ -174,11 +276,11 @@
           <span class="btn">Ver restaurantes</span>
         </a>
 
-        <a class="cat" href="/talleres">
+        <a class="cat" href="/talleres/">
           <div>
             <h2>🚗 Talleres automotrices</h2>
             <p>
-              Talleres mecánicos y servicios automotrices en Chicureo.
+              Talleres mecánicos y servicios automotrices en Chicureo y Colina.
               Información práctica para elegir con confianza.
             </p>
           </div>
@@ -187,8 +289,22 @@
       </section>
 
       <footer>
-        Guía independiente y local creada para ayudar a elegir mejor en Chicureo.
+        <div>Guía independiente y local creada para ayudar a elegir mejor en Chicureo.</div>
+
+        <!-- Links legales (pendientes de crear) -->
+        <div class="footer-links" aria-label="Enlaces legales e informativos">
+          <a href="/acerca/">Acerca</a>
+          <a href="/contacto/">Contacto</a>
+          <a href="/privacidad/">Privacidad</a>
+          <a href="/terminos/">Términos</a>
+        </div>
+
+        <div class="disclaimer">
+          <strong>Disclaimer:</strong> Los precios publicados son referenciales y pueden variar según fecha, carta, promociones,
+          diagnóstico, repuestos y/o tipo de vehículo.
+        </div>
       </footer>
+
     </section>
   </main>
 </body>
