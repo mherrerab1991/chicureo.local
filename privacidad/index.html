@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Política de Privacidad | ChicureoLocal</title>
-  <meta name="description" content="Política de Privacidad de ChicureoLocal: uso de cookies, publicidad, analítica y tratamiento de datos." />
+  <title>Política de privacidad | ChicureoLocal</title>
+  <meta name="description" content="Política de privacidad de ChicureoLocal: qué datos recopilamos, cómo se usan, cookies y publicidad (Google AdSense)." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://chicureolocal.cl/privacidad/" />
 
@@ -24,12 +24,16 @@
 
   <style>
     :root{
-      --bg:#f6f7fb; --surface:#ffffff; --text:#0f172a; --muted:#64748b;
-      --line:rgba(15,23,42,.1); --shadow:0 8px 28px rgba(15,23,42,.08);
-      --radius:18px; --max:980px;
+      --bg:#f6f7fb;
+      --surface:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:rgba(15,23,42,.10);
+      --shadow:0 6px 22px rgba(15,23,42,.08);
+      --radius:16px;
+      --max:980px;
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -38,160 +42,161 @@
         radial-gradient(1000px 600px at 10% -10%, rgba(255,183,3,.18), transparent 55%),
         radial-gradient(900px 500px at 90% 0%, rgba(255,106,61,.14), transparent 55%),
         var(--bg);
+      line-height:1.65;
     }
-    a{color:inherit;text-decoration:none}
-    .wrap{min-height:100vh; display:flex; align-items:flex-start; justify-content:center; padding:24px;}
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
     .card{
-      width:100%; max-width:var(--max);
       background:rgba(255,255,255,.95);
-      border:1px solid var(--line); border-radius:var(--radius);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:22px 22px 18px;
     }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px; flex-wrap:wrap;
-      padding:10px 12px;
-      border:1px solid var(--line);
-      border-radius:14px; background:#fff;
-      margin-bottom:18px;
-    }
-    .brand{font-size:13px; font-weight:850; letter-spacing:.12em; color:var(--muted); text-transform:uppercase;}
-    .nav-links{display:flex; gap:12px; flex-wrap:wrap; font-size:14px; color:var(--muted);}
-    .nav-links a{border-bottom:1px solid rgba(100,116,139,.35); padding-bottom:2px;}
-    .nav-links a:hover{color:var(--text); border-bottom-color:rgba(15,23,42,.35);}
-
-    header{margin:10px 0 14px;}
-    h1{margin:0 0 10px; font-size:30px; letter-spacing:-.3px; line-height:1.15;}
-    .lead{margin:0; color:var(--muted); max-width:85ch; font-size:15px;}
-
-    .content{margin-top:18px; background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 16px;}
+    h1{margin:0 0 10px; font-size:30px; letter-spacing:-.35px; line-height:1.15;}
     h2{margin:18px 0 8px; font-size:18px; letter-spacing:-.2px;}
-    p, li{color:var(--text); opacity:.95; line-height:1.65;}
-    ul{margin:8px 0 0 18px; color:var(--text); opacity:.95;}
-    .muted{color:var(--muted)}
+    p{margin:10px 0; color:var(--text);}
+    .muted{color:var(--muted); font-size:14px;}
+    ul{margin:8px 0 10px 20px; color:var(--text);}
+    li{margin:6px 0;}
+    .nav{
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 2px 12px rgba(15,23,42,0.06);
+      padding:12px 14px;
+      margin:12px 0 14px;
+      backdrop-filter: blur(6px);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .nav strong{color:var(--text)}
+    .nav a{
+      color:inherit;
+      text-decoration:none;
+      border-bottom:1px solid rgba(100,116,139,.35);
+      padding-bottom:2px;
+    }
+    .nav a:hover{color:var(--text)}
+    .nav a[aria-current="page"]{
+      color:var(--text);
+      font-weight:800;
+      border-bottom-color:rgba(15,23,42,.35);
+    }
     .box{
       margin-top:12px;
       border:1px dashed rgba(15,23,42,.18);
       background:rgba(15,23,42,.03);
-      border-radius:12px;
+      border-radius:14px;
       padding:12px 12px;
       color:var(--muted);
       font-size:13px;
-      line-height:1.6;
     }
-
     footer{
-      margin-top:18px;
-      padding-top:14px;
-      border-top:1px solid rgba(15,23,42,.08);
-      text-align:center;
+      margin-top:14px;
       color:var(--muted);
       font-size:13px;
+      border-top:1px solid rgba(15,23,42,.08);
+      padding-top:12px;
     }
-    .footer-links{display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:10px;}
-    .footer-links a{border-bottom:1px solid rgba(100,116,139,.35); padding-bottom:2px;}
-    .footer-links a:hover{color:var(--text); border-bottom-color:rgba(15,23,42,.35);}
+    .back-home{
+      margin-top:14px;
+      font-size:14px;
+    }
+    .back-home a{
+      color:#0f172a;
+      text-decoration:none;
+      border-bottom:1px solid rgba(15,23,42,.3);
+      padding-bottom:2px;
+    }
   </style>
 </head>
 
 <body>
-  <main class="wrap">
-    <section class="card">
+  <div class="wrap">
 
-      <div class="nav" role="navigation" aria-label="Navegación principal">
-        <div class="brand">ChicureoLocal</div>
-        <div class="nav-links">
-          <a href="/">Inicio</a>
-          <a href="/restaurantes/">Restaurantes</a>
-          <a href="/talleres/">Talleres</a>
-          <a href="/privacidad/" aria-current="page">Privacidad</a>
-        </div>
+    <nav class="nav" aria-label="Navegación principal">
+      <div><strong>ChicureoLocal</strong></div>
+      <div>
+        <a href="/">Inicio</a> ·
+        <a href="/restaurantes/">Restaurantes</a> ·
+        <a href="/talleres/">Talleres</a> ·
+        <a href="/privacidad/" aria-current="page">Privacidad</a> ·
+        <a href="/terminos/">Términos</a> ·
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </nav>
+
+    <main class="card">
+      <h1>Política de privacidad</h1>
+      <p class="muted">Última actualización: 12 de enero de 2026</p>
+
+      <p>
+        ChicureoLocal es una guía independiente de servicios locales. Esta política explica qué información recopilamos,
+        cómo la usamos y qué opciones tienes respecto de cookies y publicidad.
+      </p>
+
+      <h2>1) Qué datos recopilamos</h2>
+      <ul>
+        <li><strong>Datos de navegación</strong> (p. ej., páginas visitadas, tipo de dispositivo, país/ciudad aproximada, navegador). Esto puede provenir de herramientas de analítica.</li>
+        <li><strong>Cookies</strong> y tecnologías similares para funcionamiento, medición y, si corresponde, publicidad.</li>
+        <li><strong>Datos que nos envías</strong> si nos contactas (nombre, correo, mensaje), únicamente para responderte.</li>
+      </ul>
+
+      <h2>2) Para qué usamos los datos</h2>
+      <ul>
+        <li>Mejorar el contenido y la experiencia del sitio (qué guías se visitan más, rendimiento, etc.).</li>
+        <li>Responder solicitudes de contacto.</li>
+        <li>Mostrar publicidad y medir su desempeño, si tienes anuncios activos.</li>
+      </ul>
+
+      <h2>3) Publicidad (Google AdSense)</h2>
+      <p>
+        Podemos mostrar anuncios mediante Google (por ejemplo, Google AdSense). Google puede usar cookies para personalizar anuncios
+        o para ofrecer publicidad contextual, y para medir resultados.
+      </p>
+
+      <div class="box">
+        Si implementas AdSense con personalización, considera agregar un banner/gestor de consentimiento de cookies y habilitar el
+        modo de consentimiento (Consent Mode) cuando corresponda.
       </div>
 
-      <header>
-        <h1>Política de Privacidad</h1>
-        <p class="lead">
-          Esta Política explica cómo ChicureoLocal recopila y utiliza información cuando visitas el sitio, incluyendo cookies,
-          analítica y publicidad. Última actualización: <strong>enero 2026</strong>.
-        </p>
-      </header>
+      <h2>4) Cookies</h2>
+      <p>
+        Puedes bloquear o eliminar cookies desde la configuración de tu navegador. Ten en cuenta que algunas funciones podrían verse afectadas.
+      </p>
 
-      <section class="content" aria-label="Contenido política de privacidad">
+      <h2>5) Compartición con terceros</h2>
+      <p>
+        Podemos utilizar proveedores para analítica o publicidad (por ejemplo, Google). Estos proveedores pueden tratar datos de navegación
+        según sus propias políticas.
+      </p>
 
-        <h2>1. Quiénes somos</h2>
-        <p>
-          ChicureoLocal es una guía independiente de servicios locales (por ejemplo, restaurantes y talleres automotrices) orientada a
-          ayudar a vecinos y visitantes a elegir con información práctica y enlaces directos.
-        </p>
+      <h2>6) Retención</h2>
+      <p>
+        Conservamos datos de contacto solo el tiempo necesario para responder y/o mantener registro básico de la solicitud.
+        Los datos agregados de analítica se conservan según la configuración de la herramienta utilizada.
+      </p>
 
-        <h2>2. Información que podemos recopilar</h2>
-        <ul>
-          <li><strong>Datos de navegación</strong>: páginas visitadas, duración de la visita, dispositivo/navegador, y estadísticas de uso.</li>
-          <li><strong>Cookies y tecnologías similares</strong>: para recordar preferencias y medir desempeño del sitio.</li>
-          <li><strong>Información enviada por el usuario</strong>: si nos contactas (por ejemplo, tu correo y mensaje).</li>
-        </ul>
+      <h2>7) Tus derechos y contacto</h2>
+      <p>
+        Si tienes preguntas o quieres solicitar actualización/eliminación de información que nos hayas enviado por contacto,
+        escríbenos desde la página de contacto.
+      </p>
 
-        <h2>3. Publicidad (Google AdSense) y cookies</h2>
-        <p>
-          ChicureoLocal puede mostrar anuncios servidos por terceros (por ejemplo, Google) para financiar el sitio.
-          Estos proveedores pueden usar cookies y/o identificadores para mostrar anuncios relevantes y medir su rendimiento.
-        </p>
-        <div class="box">
-          <strong>Importante:</strong> Si activas AdSense, Google y otros socios pueden recopilar datos de uso del sitio para
-          personalización, medición y prevención de fraude. Dependiendo de tu configuración y de la ubicación del usuario,
-          puede requerirse un mecanismo de consentimiento de cookies.
-        </div>
-
-        <h2>4. Analítica</h2>
-        <p>
-          Podemos usar herramientas de analítica para entender qué contenido es más útil (por ejemplo, páginas más visitadas),
-          con el objetivo de mejorar la experiencia del sitio.
-        </p>
-
-        <h2>5. Cómo usamos la información</h2>
-        <ul>
-          <li>Mejorar el contenido y la experiencia del sitio.</li>
-          <li>Medir rendimiento y detectar problemas técnicos.</li>
-          <li>Mostrar publicidad y medir su efectividad.</li>
-          <li>Responder consultas enviadas por el formulario o correo de contacto.</li>
-        </ul>
-
-        <h2>6. Compartición de datos</h2>
-        <p>
-          No vendemos tu información personal. Podemos compartir datos de manera limitada con proveedores que nos ayudan a operar el sitio
-          (por ejemplo, analítica o publicidad), quienes los procesan según sus propias políticas y obligaciones.
-        </p>
-
-        <h2>7. Tus opciones</h2>
-        <ul>
-          <li>Puedes configurar tu navegador para bloquear o eliminar cookies.</li>
-          <li>En caso de existir un banner de consentimiento, podrás aceptar/rechazar ciertas categorías de cookies (según corresponda).</li>
-        </ul>
-
-        <h2>8. Enlaces a terceros</h2>
-        <p>
-          El sitio contiene enlaces a webs externas (por ejemplo, Instagram o sitios de restaurantes/talleres). No controlamos sus prácticas
-          y recomendamos revisar sus políticas de privacidad.
-        </p>
-
-        <h2>9. Contacto</h2>
-        <p class="muted">
-          Si tienes dudas sobre esta Política, contáctanos en la página de <a href="/contacto/" style="border-bottom:1px solid rgba(100,116,139,.35)">Contacto</a>.
-        </p>
-
-      </section>
+      <div class="back-home">
+        ← <a href="/" aria-label="Volver al inicio de ChicureoLocal">Volver al inicio</a>
+      </div>
 
       <footer>
-        <div>ChicureoLocal · Guía independiente de servicios locales</div>
-        <div class="footer-links" aria-label="Enlaces del sitio">
-          <a href="/acerca/">Acerca</a>
-          <a href="/contacto/">Contacto</a>
-          <a href="/terminos/">Términos</a>
-        </div>
+        Esta política puede actualizarse para reflejar cambios en el sitio, herramientas o requisitos publicitarios.
       </footer>
+    </main>
 
-    </section>
-  </main>
+  </div>
 </body>
 </html>
