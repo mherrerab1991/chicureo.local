@@ -9,16 +9,14 @@
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://chicureolocal.cl/" />
 
-  <!-- Open Graph / Twitter (mínimo recomendable para compartir) -->
+  <!-- Open Graph / Twitter -->
   <meta property="og:title" content="ChicureoLocal | Guías locales para elegir mejor en Chicureo" />
   <meta property="og:description" content="Restaurantes y talleres recomendados en Chicureo: info clara, precios referenciales y links directos." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://chicureolocal.cl/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ChicureoLocal | Guías locales para elegir mejor en Chicureo" />
-  <meta name="twitter:description" content="Restaurantes y talleres recomendados en Chicureo: info clara, precios referenciales y links directos." />
 
-  <!-- Favicon (SVG embebido) -->
+  <!-- Favicon SVG -->
   <link rel="icon" type="image/svg+xml"
     href='data:image/svg+xml;utf8,
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
@@ -77,39 +75,31 @@
       padding:22px 22px 18px;
     }
 
-    /* Mini header navegación (consistencia con secciones) */
+    /* NAV ESTANDAR (Privacidad / Contacto) */
     .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      padding:10px 12px;
+      background:rgba(255,255,255,0.92);
       border:1px solid var(--line);
-      border-radius:14px;
-      background:#fff;
-      margin-bottom:18px;
-    }
-    .brand{
-      font-size:13px;
-      font-weight:850;
-      letter-spacing:.12em;
-      color:var(--muted);
-      text-transform:uppercase;
-    }
-    .nav-links{
+      border-radius:var(--radius);
+      box-shadow:0 2px 12px rgba(15,23,42,0.06);
+      padding:12px 14px;
+      margin:12px 0 14px;
+      backdrop-filter: blur(6px);
       display:flex;
-      gap:12px;
+      justify-content:space-between;
+      gap:10px;
       flex-wrap:wrap;
-      font-size:14px;
+      font-size:13px;
       color:var(--muted);
     }
-    .nav-links a{
+    .nav strong{color:var(--text)}
+    .nav a{
       border-bottom:1px solid rgba(100,116,139,.35);
       padding-bottom:2px;
     }
-    .nav-links a:hover{
+    .nav a:hover{color:var(--text)}
+    .nav a[aria-current="page"]{
       color:var(--text);
+      font-weight:800;
       border-bottom-color:rgba(15,23,42,.35);
     }
 
@@ -156,7 +146,6 @@
       gap:18px;
       margin-top:18px;
     }
-
     @media(min-width:720px){
       .grid{grid-template-columns:1fr 1fr;}
     }
@@ -170,9 +159,8 @@
       justify-content:space-between;
       background:#fff;
       transition:transform .15s ease, box-shadow .15s ease;
-      min-height: 190px;
+      min-height:190px;
     }
-
     .cat:hover{
       transform:translateY(-2px);
       box-shadow:0 10px 26px rgba(15,23,42,.12);
@@ -240,15 +228,18 @@
   <main class="wrap">
     <section class="card">
 
-      <!-- NAV simple -->
-      <div class="nav" role="navigation" aria-label="Navegación principal">
-        <div class="brand">ChicureoLocal</div>
-        <div class="nav-links">
-          <a href="/" aria-current="page">Inicio</a>
-          <a href="/restaurantes/">Restaurantes</a>
-          <a href="/talleres/">Talleres</a>
+      <!-- NAV ESTANDAR -->
+      <nav class="nav" aria-label="Navegación principal">
+        <div><strong>ChicureoLocal</strong></div>
+        <div>
+          <a href="/" aria-current="page">Inicio</a> ·
+          <a href="/restaurantes/">Restaurantes</a> ·
+          <a href="/talleres/">Talleres</a> ·
+          <a href="/privacidad/">Privacidad</a> ·
+          <a href="/terminos/">Términos</a> ·
+          <a href="/contacto/">Contacto</a>
         </div>
-      </div>
+      </nav>
 
       <header>
         <h1>Guías locales para elegir mejor en Chicureo</h1>
@@ -257,7 +248,7 @@
           Información clara, precios referenciales y links directos para decidir rápido.
         </p>
 
-        <div class="trust" aria-label="Señales de confianza">
+        <div class="trust">
           <span class="pill">Guía independiente</span>
           <span class="pill">Contacto directo</span>
           <span class="pill">Actualización periódica</span>
@@ -291,8 +282,7 @@
       <footer>
         <div>Guía independiente y local creada para ayudar a elegir mejor en Chicureo.</div>
 
-        <!-- Links legales (pendientes de crear) -->
-        <div class="footer-links" aria-label="Enlaces legales e informativos">
+        <div class="footer-links">
           <a href="/acerca/">Acerca</a>
           <a href="/contacto/">Contacto</a>
           <a href="/privacidad/">Privacidad</a>
