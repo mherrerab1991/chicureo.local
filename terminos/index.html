@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Términos de Uso | ChicureoLocal</title>
-  <meta name="description" content="Términos de Uso de ChicureoLocal: condiciones, responsabilidad, enlaces a terceros y uso del contenido." />
+  <title>Términos y condiciones | ChicureoLocal</title>
+  <meta name="description" content="Términos de uso de ChicureoLocal: alcance de la información, responsabilidad y uso del contenido." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://chicureolocal.cl/terminos/" />
 
@@ -23,115 +23,176 @@
     </svg>' />
 
   <style>
-    :root{--bg:#f6f7fb;--surface:#fff;--text:#0f172a;--muted:#64748b;--line:rgba(15,23,42,.1);--shadow:0 8px 28px rgba(15,23,42,.08);--radius:18px;--max:980px;}
+    :root{
+      --bg:#f6f7fb;
+      --surface:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:rgba(15,23,42,.10);
+      --shadow:0 6px 22px rgba(15,23,42,.08);
+      --radius:16px;
+      --max:980px;
+    }
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(1000px 600px at 10% -10%, rgba(255,183,3,.18), transparent 55%),radial-gradient(900px 500px at 90% 0%, rgba(255,106,61,.14), transparent 55%),var(--bg);}
-    a{color:inherit;text-decoration:none}
-    .wrap{min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:24px;}
-    .card{width:100%;max-width:var(--max);background:rgba(255,255,255,.95);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 22px 18px;}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 12px;border:1px solid var(--line);border-radius:14px;background:#fff;margin-bottom:18px;}
-    .brand{font-size:13px;font-weight:850;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;}
-    .nav-links{display:flex;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--muted);}
-    .nav-links a{border-bottom:1px solid rgba(100,116,139,.35);padding-bottom:2px;}
-    .nav-links a:hover{color:var(--text);border-bottom-color:rgba(15,23,42,.35);}
-    h1{margin:10px 0 10px;font-size:30px;letter-spacing:-.3px;line-height:1.15;}
-    .lead{margin:0;color:var(--muted);max-width:85ch;font-size:15px;}
-    .content{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 16px;}
-    h2{margin:18px 0 8px;font-size:18px;letter-spacing:-.2px;}
-    p,li{line-height:1.65;opacity:.95}
-    ul{margin:8px 0 0 18px;}
-    .box{margin-top:12px;border:1px dashed rgba(15,23,42,.18);background:rgba(15,23,42,.03);border-radius:12px;padding:12px;color:var(--muted);font-size:13px;line-height:1.6;}
-    footer{margin-top:18px;padding-top:14px;border-top:1px solid rgba(15,23,42,.08);text-align:center;color:var(--muted);font-size:13px;}
-    .footer-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:10px;}
-    .footer-links a{border-bottom:1px solid rgba(100,116,139,.35);padding-bottom:2px;}
-    .footer-links a:hover{color:var(--text);border-bottom-color:rgba(15,23,42,.35);}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 600px at 10% -10%, rgba(255,183,3,.18), transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(255,106,61,.14), transparent 55%),
+        var(--bg);
+      line-height:1.65;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
+    .card{
+      background:rgba(255,255,255,.95);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px 22px 18px;
+    }
+    h1{margin:0 0 10px; font-size:30px; letter-spacing:-.35px; line-height:1.15;}
+    h2{margin:18px 0 8px; font-size:18px; letter-spacing:-.2px;}
+    p{margin:10px 0;}
+    .muted{color:var(--muted); font-size:14px;}
+    ul{margin:8px 0 10px 20px;}
+    li{margin:6px 0;}
+    .nav{
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 2px 12px rgba(15,23,42,0.06);
+      padding:12px 14px;
+      margin:12px 0 14px;
+      backdrop-filter: blur(6px);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .nav strong{color:var(--text)}
+    .nav a{
+      color:inherit;
+      text-decoration:none;
+      border-bottom:1px solid rgba(100,116,139,.35);
+      padding-bottom:2px;
+    }
+    .nav a:hover{color:var(--text)}
+    .nav a[aria-current="page"]{
+      color:var(--text);
+      font-weight:800;
+      border-bottom-color:rgba(15,23,42,.35);
+    }
+    .box{
+      margin-top:12px;
+      border:1px dashed rgba(15,23,42,.18);
+      background:rgba(15,23,42,.03);
+      border-radius:14px;
+      padding:12px 12px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    footer{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid rgba(15,23,42,.08);
+      padding-top:12px;
+    }
+    .back-home{
+      margin-top:14px;
+      font-size:14px;
+    }
+    .back-home a{
+      color:#0f172a;
+      text-decoration:none;
+      border-bottom:1px solid rgba(15,23,42,.3);
+      padding-bottom:2px;
+    }
   </style>
 </head>
 
 <body>
-  <main class="wrap">
-    <section class="card">
+  <div class="wrap">
 
-      <div class="nav" role="navigation" aria-label="Navegación principal">
-        <div class="brand">ChicureoLocal</div>
-        <div class="nav-links">
-          <a href="/">Inicio</a>
-          <a href="/restaurantes/">Restaurantes</a>
-          <a href="/talleres/">Talleres</a>
-          <a href="/terminos/" aria-current="page">Términos</a>
-        </div>
+    <nav class="nav" aria-label="Navegación principal">
+      <div><strong>ChicureoLocal</strong></div>
+      <div>
+        <a href="/">Inicio</a> ·
+        <a href="/restaurantes/">Restaurantes</a> ·
+        <a href="/talleres/">Talleres</a> ·
+        <a href="/privacidad/">Privacidad</a> ·
+        <a href="/terminos/" aria-current="page">Términos</a> ·
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </nav>
+
+    <main class="card">
+      <h1>Términos y condiciones</h1>
+      <p class="muted">Última actualización: 12 de enero de 2026</p>
+
+      <p>
+        Al acceder y usar ChicureoLocal, aceptas estos términos. Si no estás de acuerdo, por favor no utilices el sitio.
+      </p>
+
+      <h2>1) Alcance de la información</h2>
+      <p>
+        ChicureoLocal publica guías y contenido informativo (por ejemplo, restaurantes y talleres). Los precios, horarios y servicios
+        son referenciales y pueden cambiar. Recomendamos verificar directamente con cada local antes de tomar una decisión.
+      </p>
+
+      <h2>2) No afiliación</h2>
+      <p>
+        ChicureoLocal es una guía independiente. Salvo que se indique expresamente, no existe relación comercial ni representación
+        con los locales mencionados.
+      </p>
+
+      <h2>3) Publicidad</h2>
+      <p>
+        El sitio puede incluir publicidad (por ejemplo, Google AdSense). La presencia de anuncios no implica recomendación ni aprobación
+        de productos o servicios anunciados.
+      </p>
+
+      <h2>4) Enlaces a terceros</h2>
+      <p>
+        El sitio contiene enlaces a páginas externas (web/Instagram/Facebook u otros). No controlamos esos sitios ni somos responsables
+        de su contenido o políticas.
+      </p>
+
+      <h2>5) Propiedad intelectual</h2>
+      <p>
+        El diseño del sitio, textos y estructura de las guías son propiedad de ChicureoLocal, salvo que se indique lo contrario.
+        No puedes copiar o reutilizar contenido de forma masiva sin autorización.
+      </p>
+
+      <h2>6) Limitación de responsabilidad</h2>
+      <p>
+        ChicureoLocal no se hace responsable por pérdidas o daños derivados del uso de la información publicada. El uso del sitio
+        es bajo tu propio criterio y responsabilidad.
+      </p>
+
+      <div class="box">
+        Si un local requiere corrección o actualización (por ejemplo, dirección o enlace), puedes solicitarlo desde la página de contacto.
       </div>
 
-      <header>
-        <h1>Términos de Uso</h1>
-        <p class="lead">
-          Al acceder y usar ChicureoLocal aceptas estos términos. Última actualización: <strong>enero 2026</strong>.
-        </p>
-      </header>
+      <h2>7) Cambios</h2>
+      <p>
+        Podemos actualizar estos términos en cualquier momento para reflejar cambios del sitio o exigencias publicitarias.
+      </p>
 
-      <section class="content">
-        <h2>1. Propósito del sitio</h2>
-        <p>
-          ChicureoLocal entrega guías informativas y recomendaciones locales (por ejemplo, restaurantes y talleres) con enlaces directos a terceros.
-          No somos el proveedor de los servicios listados.
-        </p>
-
-        <h2>2. Exactitud de la información</h2>
-        <p>
-          Procuramos mantener la información actualizada, pero puede cambiar (precios, horarios, promociones, ubicación, disponibilidad).
-          Recomendamos confirmar directamente con cada local antes de visitar o contratar servicios.
-        </p>
-        <div class="box">
-          <strong>Disclaimer de precios:</strong> Los valores publicados son referenciales y pueden variar según fecha, carta, promociones,
-          diagnóstico, repuestos y/o tipo de vehículo.
-        </div>
-
-        <h2>3. Enlaces a terceros</h2>
-        <p>
-          El sitio contiene enlaces a webs externas (por ejemplo, Instagram o sitios de locales). No controlamos el contenido ni las políticas
-          de terceros y no asumimos responsabilidad por sus prácticas.
-        </p>
-
-        <h2>4. Publicidad</h2>
-        <p>
-          Podemos mostrar publicidad para financiar el sitio. La presencia de anuncios no constituye recomendación del anunciante.
-        </p>
-
-        <h2>5. Propiedad intelectual</h2>
-        <p>
-          El diseño, estructura, textos y contenido editorial del sitio (salvo marcas y contenido de terceros) pertenecen a ChicureoLocal.
-          Se permite compartir enlaces al sitio citando la fuente. No se permite copiar y redistribuir contenido completo con fines comerciales
-          sin autorización.
-        </p>
-
-        <h2>6. Uso aceptable</h2>
-        <ul>
-          <li>No intentes vulnerar la seguridad del sitio.</li>
-          <li>No uses el sitio para actividades ilegales o dañinas.</li>
-          <li>No extraigas datos de forma masiva (scraping) que afecte el funcionamiento del sitio.</li>
-        </ul>
-
-        <h2>7. Cambios</h2>
-        <p>
-          Podemos modificar estos términos cuando sea necesario. Publicaremos la fecha de actualización.
-        </p>
-
-        <h2>8. Contacto</h2>
-        <p>
-          Para consultas, usa la página de <a href="/contacto/" style="border-bottom:1px solid rgba(100,116,139,.35)">Contacto</a>.
-        </p>
-      </section>
+      <div class="back-home">
+        ← <a href="/" aria-label="Volver al inicio de ChicureoLocal">Volver al inicio</a>
+      </div>
 
       <footer>
-        <div>ChicureoLocal · Guía independiente de servicios locales</div>
-        <div class="footer-links">
-          <a href="/acerca/">Acerca</a>
-          <a href="/contacto/">Contacto</a>
-          <a href="/privacidad/">Privacidad</a>
-        </div>
+        Para consultas, utiliza la página de contacto.
       </footer>
+    </main>
 
-    </section>
-  </main>
+  </div>
 </body>
 </html>
