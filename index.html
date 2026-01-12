@@ -16,7 +16,7 @@
   <meta property="og:url" content="https://chicureolocal.cl/" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon SVG -->
+  <!-- Favicon (igual al resto) -->
   <link rel="icon" type="image/svg+xml"
     href='data:image/svg+xml;utf8,
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
@@ -36,12 +36,11 @@
       --surface:#ffffff;
       --text:#0f172a;
       --muted:#64748b;
-      --line:rgba(15,23,42,.1);
-      --shadow:0 8px 28px rgba(15,23,42,.08);
-      --radius:18px;
+      --line:rgba(15,23,42,.10);
+      --shadow:0 6px 22px rgba(15,23,42,.08);
+      --radius:16px; /* IMPORTANTE: igual que Privacidad/Contacto */
       --max:980px;
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
 
@@ -53,29 +52,14 @@
         radial-gradient(1000px 600px at 10% -10%, rgba(255,183,3,.18), transparent 55%),
         radial-gradient(900px 500px at 90% 0%, rgba(255,106,61,.14), transparent 55%),
         var(--bg);
+      line-height:1.65;
     }
+    a{color:inherit; text-decoration:none}
 
-    a{text-decoration:none;color:inherit}
+    /* MISMA ESTRUCTURA QUE PRIVACIDAD/CONTACTO */
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
 
-    .wrap{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-    }
-
-    .card{
-      width:100%;
-      max-width:var(--max);
-      background:rgba(255,255,255,.95);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:22px 22px 18px;
-    }
-
-    /* NAV ESTANDAR (Privacidad / Contacto) */
+    /* NAV ESTÁNDAR (idéntico a Privacidad/Contacto) */
     .nav{
       background:rgba(255,255,255,0.92);
       border:1px solid var(--line);
@@ -93,6 +77,7 @@
     }
     .nav strong{color:var(--text)}
     .nav a{
+      color:inherit;
       border-bottom:1px solid rgba(100,116,139,.35);
       padding-bottom:2px;
     }
@@ -103,25 +88,21 @@
       border-bottom-color:rgba(15,23,42,.35);
     }
 
+    .card{
+      background:rgba(255,255,255,.95);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px 22px 18px;
+    }
+
     header{
       text-align:center;
-      margin:14px 0 22px;
+      margin:6px 0 22px;
       padding:6px 6px 0;
     }
-
-    h1{
-      margin:10px 0 12px;
-      font-size:36px;
-      line-height:1.15;
-      letter-spacing:-.4px;
-    }
-
-    .lead{
-      color:var(--muted);
-      max-width:70ch;
-      margin:0 auto;
-      font-size:16px;
-    }
+    h1{margin:10px 0 12px; font-size:36px; line-height:1.15; letter-spacing:-.4px;}
+    .lead{color:var(--muted); max-width:70ch; margin:0 auto; font-size:16px;}
 
     .trust{
       margin:16px auto 0;
@@ -165,18 +146,8 @@
       transform:translateY(-2px);
       box-shadow:0 10px 26px rgba(15,23,42,.12);
     }
-
-    .cat h2{
-      margin:0 0 8px;
-      font-size:20px;
-      letter-spacing:-.2px;
-    }
-
-    .cat p{
-      margin:0 0 18px;
-      color:var(--muted);
-      font-size:15px;
-    }
+    .cat h2{margin:0 0 8px; font-size:20px; letter-spacing:-.2px;}
+    .cat p{margin:0 0 18px; color:var(--muted); font-size:15px;}
 
     .btn{
       align-self:flex-start;
@@ -196,7 +167,6 @@
       color:var(--muted);
       font-size:13px;
     }
-
     .footer-links{
       display:flex;
       justify-content:center;
@@ -212,7 +182,6 @@
       color:var(--text);
       border-bottom-color:rgba(15,23,42,.35);
     }
-
     .disclaimer{
       margin-top:12px;
       font-size:12.5px;
@@ -225,22 +194,22 @@
 </head>
 
 <body>
-  <main class="wrap">
-    <section class="card">
+  <div class="wrap">
 
-      <!-- NAV ESTANDAR -->
-      <nav class="nav" aria-label="Navegación principal">
-        <div><strong>ChicureoLocal</strong></div>
-        <div>
-          <a href="/" aria-current="page">Inicio</a> ·
-          <a href="/restaurantes/">Restaurantes</a> ·
-          <a href="/talleres/">Talleres</a> ·
-          <a href="/privacidad/">Privacidad</a> ·
-          <a href="/terminos/">Términos</a> ·
-          <a href="/contacto/">Contacto</a>
-        </div>
-      </nav>
+    <!-- NAV (fuera del card) -->
+    <nav class="nav" aria-label="Navegación principal">
+      <div><strong>ChicureoLocal</strong></div>
+      <div>
+        <a href="/" aria-current="page">Inicio</a> ·
+        <a href="/restaurantes/">Restaurantes</a> ·
+        <a href="/talleres/">Talleres</a> ·
+        <a href="/privacidad/">Privacidad</a> ·
+        <a href="/terminos/">Términos</a> ·
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </nav>
 
+    <main class="card">
       <header>
         <h1>Guías locales para elegir mejor en Chicureo</h1>
         <p class="lead">
@@ -248,7 +217,7 @@
           Información clara, precios referenciales y links directos para decidir rápido.
         </p>
 
-        <div class="trust">
+        <div class="trust" aria-label="Señales de confianza">
           <span class="pill">Guía independiente</span>
           <span class="pill">Contacto directo</span>
           <span class="pill">Actualización periódica</span>
@@ -282,7 +251,7 @@
       <footer>
         <div>Guía independiente y local creada para ayudar a elegir mejor en Chicureo.</div>
 
-        <div class="footer-links">
+        <div class="footer-links" aria-label="Enlaces legales e informativos">
           <a href="/acerca/">Acerca</a>
           <a href="/contacto/">Contacto</a>
           <a href="/privacidad/">Privacidad</a>
@@ -294,8 +263,8 @@
           diagnóstico, repuestos y/o tipo de vehículo.
         </div>
       </footer>
+    </main>
 
-    </section>
-  </main>
+  </div>
 </body>
 </html>
