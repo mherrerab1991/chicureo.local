@@ -5,8 +5,24 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Contacto | ChicureoLocal</title>
-  <meta name="description" content="Contacto ChicureoLocal. Escríbenos o llámanos para sugerencias, correcciones o información general." />
+  <meta name="description" content="Contacto ChicureoLocal. WhatsApp o correo para sugerencias, correcciones o información general." />
   <meta name="robots" content="index,follow" />
+
+  <!-- Favicons (mismos del sitio, versión SVG embebida) -->
+  <link rel="icon" type="image/svg+xml"
+    href='data:image/svg+xml;utf8,
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="%23ff6a3d"/>
+          <stop offset="1" stop-color="%23ffb703"/>
+        </linearGradient>
+      </defs>
+      <rect x="6" y="6" width="52" height="52" rx="14" fill="url(%23g)"/>
+      <path d="M32 18c-7 0-12 5-12 12 0 10 12 22 12 22s12-12 12-22c0-7-5-12-12-12zm0 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" fill="%23fff" opacity="0.95"/>
+      <path d="M23 28h4v16c0 2-1 3-2 3s-2-1-2-3V28zm14 0h4v16c0 2-1 3-2 3s-2-1-2-3V28z" fill="%230f172a" opacity="0.75"/>
+      <path d="M25 22h2v4h-2v-4zm14 0h2v4h-2v-4z" fill="%230f172a" opacity="0.75"/>
+    </svg>' />
 
   <style>
     :root{
@@ -15,114 +31,262 @@
       --text:#0f172a;
       --muted:#64748b;
       --line:rgba(15, 23, 42, 0.10);
-      --shadow:0 10px 28px rgba(15, 23, 42, 0.08);
-      --radius:16px;
-      --max:720px;
+      --shadow2:0 2px 12px rgba(15, 23, 42, 0.06);
+      --shadow3:0 10px 28px rgba(15, 23, 42, 0.08);
+      --chip:rgba(15, 23, 42, 0.06);
+      --max: 1040px;
+      --radius: 16px;
+      --radius2: 14px;
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    /* Fondo sutil (mismo enfoque que el home) */
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
       color: var(--text);
-      line-height:1.6;
+      line-height: 1.55;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(255, 183, 3, 0.18), transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(255, 106, 61, 0.14), transparent 55%),
+        radial-gradient(900px 600px at 50% 110%, rgba(15, 23, 42, 0.08), transparent 55%),
+        var(--bg);
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:url("images/bg-food.jpg");
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      opacity:0.06;
+      filter: blur(2px) saturate(0.95);
+      pointer-events:none;
+      z-index:-1;
     }
 
     a{color:inherit}
 
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:48px 18px 80px;
-    }
+    .wrap{max-width:var(--max); margin:0 auto; padding:34px 18px 70px;}
 
-    .card{
-      background:var(--surface);
+    /* Header del sitio (re-implementado) */
+    header{
+      background:rgba(255,255,255,0.92);
       border:1px solid var(--line);
       border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:28px 26px;
+      box-shadow:var(--shadow2);
+      padding:18px 22px 16px;
+      margin-bottom:18px;
+      backdrop-filter: blur(6px);
+    }
+
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; flex-wrap:wrap;
+    }
+
+    .brand{
+      font-weight:850; letter-spacing:.2px; font-size:13px;
+      color:var(--muted); text-transform:uppercase;
+    }
+
+    .nav{
+      display:flex; gap:8px; flex-wrap:wrap; align-items:center;
+    }
+    .nav a{
+      text-decoration:none;
+      color:var(--text);
+      font-size:13px;
+      font-weight:700;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(15, 23, 42, 0.03);
+    }
+    .nav a:hover{background:rgba(15, 23, 42, 0.06);}
+    .nav a.active{
+      background:rgba(15, 23, 42, 0.10);
+      border-color:rgba(15, 23, 42, 0.14);
     }
 
     h1{
-      margin:0 0 12px;
-      font-size:32px;
-      letter-spacing:-0.3px;
+      margin:12px 0 8px;
+      font-size:30px; line-height:1.15; letter-spacing:-0.35px;
+    }
+    .lead{max-width:92ch; color:var(--muted); margin:0;}
+
+    /* Contenido contacto */
+    .panel{
+      max-width: 760px;
+      background:rgba(255,255,255,0.94);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow3);
+      padding:22px 20px;
+      backdrop-filter: blur(6px);
     }
 
-    p{
-      margin:0 0 18px;
-      color:var(--muted);
+    .section-title{
+      font-size:16px;
+      margin:0 0 12px;
+      color:var(--text);
+      letter-spacing:-0.2px;
+      font-weight:900;
     }
 
     .contact-item{
       display:flex;
-      align-items:center;
+      align-items:flex-start;
       gap:14px;
       padding:14px 0;
-      border-top:1px solid var(--line);
+      border-top:1px solid rgba(15,23,42,0.08);
     }
-
-    .contact-item:first-of-type{
-      border-top:none;
-    }
+    .contact-item:first-of-type{border-top:none;}
 
     .icon{
       font-size:22px;
       width:36px;
       text-align:center;
+      margin-top:2px;
     }
 
-    .contact-item a{
-      text-decoration:none;
-      font-weight:600;
-      border-bottom:1px solid rgba(100,116,139,.35);
-    }
-
-    .contact-item a:hover{
-      border-bottom-color: var(--text);
-    }
-
-    .note{
-      margin-top:22px;
+    .contact-item .label{
       font-size:13px;
       color:var(--muted);
+      margin-top:2px;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(15,23,42,0.04);
+      text-decoration:none;
+      font-size:13px;
+      font-weight:800;
+      color:var(--text);
+      white-space:nowrap;
+    }
+    .btn:hover{background:rgba(15,23,42,0.07);}
+
+    .btn.primary{
+      background:rgba(15,23,42,0.10);
+      border-color:rgba(15,23,42,0.14);
+    }
+    .btn.primary:hover{background:rgba(15,23,42,0.14);}
+
+    .note{
+      margin-top:14px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    footer{
+      margin-top:18px;
+      max-width: 760px;
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow2);
+      padding:16px 18px;
+      color:var(--muted);
+      font-size:13px;
+      backdrop-filter: blur(6px);
     }
   </style>
 </head>
 
 <body>
-  <main class="wrap">
-    <section class="card">
+  <div class="wrap">
+    <header>
+      <div class="topbar">
+        <div class="brand">ChicureoLocal</div>
+
+        <!-- Ajusta estas rutas según tu estructura -->
+        <nav class="nav" aria-label="Navegación principal">
+          <a href="index.html">Inicio</a>
+          <a href="restaurantes.html">Restaurantes</a>
+          <a href="talleres.html">Talleres</a>
+          <a class="active" href="contacto.html" aria-current="page">Contacto</a>
+        </nav>
+      </div>
+
       <h1>Contacto</h1>
-
-      <p>
-        ChicureoLocal es una guía local en desarrollo.  
-        Si quieres hacer una sugerencia, corregir información o ponerte en contacto, puedes escribirme directamente.
+      <p class="lead">
+        ¿Quieres sugerir un restaurante, corregir información o proponer una colaboración? Escríbeme directo y lo vemos.
       </p>
+    </header>
 
-      <div class="contact-item">
-        <div class="icon">📱</div>
-        <div>
-          <a href="tel:+56974957631">+56 9 7495 7631</a><br />
-          <span style="color:#64748b;font-size:14px;">Llamadas o WhatsApp</span>
+    <main>
+      <section class="panel" aria-label="Datos de contacto">
+        <h2 class="section-title">Escríbeme directo</h2>
+
+        <!-- WhatsApp con mensaje prellenado -->
+        <div class="contact-item">
+          <div class="icon">💬</div>
+          <div>
+            <div style="font-weight:900;">WhatsApp</div>
+            <div class="label">Respuesta más rápida</div>
+
+            <div class="actions">
+              <a class="btn primary"
+                 href="https://wa.me/56974957631?text=Hola%20Miguel%2C%20te%20escribo%20desde%20ChicureoLocal.%20Quisiera%20sugerir%20un%20cambio%20%2F%20nuevo%20restaurante%3A%20"
+                 target="_blank" rel="noopener noreferrer">
+                Abrir WhatsApp
+              </a>
+
+              <a class="btn"
+                 href="tel:+56974957631">
+                Llamar: +56 9 7495 7631
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="contact-item">
-        <div class="icon">✉️</div>
-        <div>
-          <a href="mailto:mherrerab1991@gmail.com">mherrerab1991@gmail.com</a><br />
-          <span style="color:#64748b;font-size:14px;">Correo electrónico</span>
+        <!-- Email (sin formulario, sin mailto “form”) -->
+        <div class="contact-item">
+          <div class="icon">✉️</div>
+          <div>
+            <div style="font-weight:900;">Correo</div>
+            <div class="label">Para mensajes más largos</div>
+
+            <div class="actions">
+              <a class="btn"
+                 href="mailto:mherrerab1991@gmail.com?subject=Contacto%20desde%20ChicureoLocal&body=Hola%20Miguel%2C%0A%0ATe%20escribo%20desde%20ChicureoLocal.%0A%0AMi%20mensaje%3A%20"
+                 rel="noopener noreferrer">
+                Escribir correo
+              </a>
+
+              <span class="btn" style="cursor:default;">
+                mherrerab1991@gmail.com
+              </span>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="note">
-        Respondo personalmente los mensajes.  
-        Este sitio se actualiza de forma periódica.
-      </div>
-    </section>
-  </main>
+        <div class="note">
+          Tip: si es una corrección de ficha, incluye el nombre del local y el cambio exacto (horario, ubicación, link o precio).
+        </div>
+      </section>
+
+      <footer>
+        ChicureoLocal es una guía local en desarrollo. Actualizamos contenido de forma periódica.
+      </footer>
+    </main>
+  </div>
 </body>
 </html>
