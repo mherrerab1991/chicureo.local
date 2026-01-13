@@ -16,7 +16,7 @@
   <meta property="og:url" content="https://chicureolocal.cl/" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon (igual al resto) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml"
     href='data:image/svg+xml;utf8,
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
@@ -38,7 +38,7 @@
       --muted:#64748b;
       --line:rgba(15,23,42,.10);
       --shadow:0 6px 22px rgba(15,23,42,.08);
-      --radius:16px; /* IMPORTANTE: igual que Privacidad/Contacto */
+      --radius:16px;
       --max:980px;
     }
     *{box-sizing:border-box}
@@ -56,10 +56,9 @@
     }
     a{color:inherit; text-decoration:none}
 
-    /* MISMA ESTRUCTURA QUE PRIVACIDAD/CONTACTO */
     .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
 
-    /* NAV ESTÁNDAR (idéntico a Privacidad/Contacto) */
+    /* NAV */
     .nav{
       background:rgba(255,255,255,0.92);
       border:1px solid var(--line);
@@ -77,7 +76,6 @@
     }
     .nav strong{color:var(--text)}
     .nav a{
-      color:inherit;
       border-bottom:1px solid rgba(100,116,139,.35);
       padding-bottom:2px;
     }
@@ -119,6 +117,45 @@
       background:rgba(15,23,42,.03);
       border-radius:999px;
       padding:7px 10px;
+    }
+
+    /* BLOQUE GUÍAS SEO */
+    .guides{
+      margin:18px 0 10px;
+      padding:18px 20px;
+      border:1px dashed rgba(15,23,42,.18);
+      background:rgba(15,23,42,.03);
+      border-radius:14px;
+      text-align:center;
+    }
+    .guides h2{
+      margin:0 0 6px;
+      font-size:18px;
+      letter-spacing:-.2px;
+    }
+    .guides p{
+      margin:0 auto 10px;
+      max-width:70ch;
+      color:var(--muted);
+      font-size:14.5px;
+    }
+    .guide-links{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .guide-links a{
+      font-weight:700;
+      border-bottom:1px solid rgba(100,116,139,.35);
+      padding-bottom:2px;
+    }
+    .guide-links a:hover{
+      color:var(--text);
+      border-bottom-color:rgba(15,23,42,.35);
     }
 
     .grid{
@@ -196,7 +233,6 @@
 <body>
   <div class="wrap">
 
-    <!-- NAV (fuera del card) -->
     <nav class="nav" aria-label="Navegación principal">
       <div><strong>ChicureoLocal</strong></div>
       <div>
@@ -217,12 +253,26 @@
           Información clara, precios referenciales y links directos para decidir rápido.
         </p>
 
-        <div class="trust" aria-label="Señales de confianza">
+        <div class="trust">
           <span class="pill">Guía independiente</span>
           <span class="pill">Contacto directo</span>
           <span class="pill">Actualización periódica</span>
         </div>
       </header>
+
+      <!-- BLOQUE GUÍAS SEO -->
+      <section class="guides" aria-label="Guías locales destacadas">
+        <h2>Guías locales destacadas</h2>
+        <p>
+          Si estás buscando <strong>dónde comer en Chicureo</strong> o necesitas un
+          <strong>taller mecánico confiable</strong>, revisa nuestras guías locales con
+          información clara y recomendaciones actualizadas.
+        </p>
+        <ul class="guide-links">
+          <li><a href="/donde-comer-en-chicureo/">👉 Dónde comer en Chicureo</a></li>
+          <li><a href="/talleres-mecanicos-en-chicureo/">👉 Talleres mecánicos en Chicureo</a></li>
+        </ul>
+      </section>
 
       <section class="grid" aria-label="Categorías">
         <a class="cat" href="/restaurantes/">
@@ -251,7 +301,7 @@
       <footer>
         <div>Guía independiente y local creada para ayudar a elegir mejor en Chicureo.</div>
 
-        <div class="footer-links" aria-label="Enlaces legales e informativos">
+        <div class="footer-links">
           <a href="/acerca/">Acerca</a>
           <a href="/contacto/">Contacto</a>
           <a href="/privacidad/">Privacidad</a>
