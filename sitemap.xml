@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://chicureolocal.cl/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
   </url>
+
+  <url>
+    <loc>https://chicureolocal.cl/donde-comer-en-chicureo/</loc>
+  </url>
+
+  <url>
+    <loc>https://chicureolocal.cl/talleres-mecanicos-en-chicureo/</loc>
+  </url>
+
+  <url>
+    <loc>https://chicureolocal.cl/restaurantes/</loc>
+  </url>
+
+  <url>
+    <loc>https://chicureolocal.cl/talleres/</loc>
+  </url>
+
+  <url>
+    <loc>https://chicureolocal.cl/contacto/</loc>
+  </url>
+
+  <url>
+    <loc>https://chicureolocal.cl/privacidad/</loc>
+  </url>
+
+  <url>
+    <loc>https://chicureolocal.cl/terminos/</loc>
+  </url>
+
 </urlset>
