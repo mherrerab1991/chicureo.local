@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Dónde comer en Chicureo: restaurantes recomendados y precios | ChicureoLocal</title>
+  <meta name="description" content="Dónde comer en Chicureo: guía con restaurantes recomendados, tipos de cocina, precios promedio por persona y links directos para decidir rápido." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://chicureolocal.cl/donde-comer-en-chicureo/" />
+
+  <!-- Favicon (SVG embebido) -->
+  <link rel="icon" type="image/svg+xml"
+    href='data:image/svg+xml;utf8,
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="%23ff6a3d"/>
+          <stop offset="1" stop-color="%23ffb703"/>
+        </linearGradient>
+      </defs>
+      <rect x="6" y="6" width="52" height="52" rx="14" fill="url(%23g)"/>
+      <path d="M32 18c-7 0-12 5-12 12 0 10 12 22 12 22s12-12 12-22c0-7-5-12-12-12z" fill="%23fff"/>
+    </svg>' />
+
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --surface:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:rgba(15,23,42,.10);
+      --shadow:0 6px 22px rgba(15,23,42,.08);
+      --radius:16px;
+      --max:980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 600px at 10% -10%, rgba(255,183,3,.18), transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(255,106,61,.14), transparent 55%),
+        var(--bg);
+      line-height:1.65;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
+    .card{
+      background:rgba(255,255,255,.95);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px 22px 18px;
+    }
+    h1{margin:0 0 10px; font-size:30px; letter-spacing:-.35px; line-height:1.15;}
+    h2{margin:18px 0 8px; font-size:18px; letter-spacing:-.2px;}
+    h3{margin:14px 0 6px; font-size:16px; letter-spacing:-.15px;}
+    p{margin:10px 0; color:var(--text);}
+    ul{margin:8px 0 10px 20px; color:var(--text);}
+    li{margin:6px 0;}
+    .muted{color:var(--muted); font-size:14px;}
+
+    /* NAV estándar (Privacidad/Contacto) */
+    .nav{
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 2px 12px rgba(15,23,42,0.06);
+      padding:12px 14px;
+      margin:12px 0 14px;
+      backdrop-filter: blur(6px);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .nav strong{color:var(--text)}
+    .nav a{
+      color:inherit;
+      text-decoration:none;
+      border-bottom:1px solid rgba(100,116,139,.35);
+      padding-bottom:2px;
+    }
+    .nav a:hover{color:var(--text)}
+    .nav a[aria-current="page"]{
+      color:var(--text);
+      font-weight:800;
+      border-bottom-color:rgba(15,23,42,.35);
+    }
+
+    .box{
+      margin-top:12px;
+      border:1px dashed rgba(15,23,42,.18);
+      background:rgba(15,23,42,.03);
+      border-radius:14px;
+      padding:12px 12px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    footer{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid rgba(15,23,42,.08);
+      padding-top:12px;
+    }
+    .back-home{
+      margin-top:14px;
+      font-size:14px;
+    }
+    .back-home a{
+      color:#0f172a;
+      text-decoration:none;
+      border-bottom:1px solid rgba(15,23,42,.3);
+      padding-bottom:2px;
+    }
+    .cta{
+      display:inline-block;
+      margin-top:6px;
+      font-weight:800;
+      text-decoration:none;
+      border-bottom:1px solid rgba(100,116,139,.35);
+      padding-bottom:2px;
+    }
+    .cta:hover{
+      color:var(--text);
+      border-bottom-color:rgba(15,23,42,.35);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- Header/Nav homologado -->
+    <nav class="nav" aria-label="Navegación principal">
+      <div><strong>ChicureoLocal</strong></div>
+      <div>
+        <a href="/">Inicio</a> ·
+        <a href="/restaurantes/">Restaurantes</a> ·
+        <a href="/talleres/">Talleres</a> ·
+        <a href="/privacidad/">Privacidad</a> ·
+        <a href="/terminos/">Términos</a> ·
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </nav>
+
+    <main class="card">
+      <h1>Dónde comer en Chicureo: restaurantes recomendados</h1>
+      <p class="muted">Guía local con recomendaciones, tipos de cocina y precios promedio por persona para decidir rápido.</p>
+
+      <p>
+        Chicureo se ha consolidado como uno de los polos gastronómicos más atractivos del sector norte de Santiago.
+        Con alternativas que van desde hamburgueserías premium y trattorias italianas, hasta cocina peruana,
+        parrillas chilenas y restobares, elegir <strong>dónde comer en Chicureo</strong> puede ser una excelente experiencia
+        si cuentas con información clara y comparable.
+      </p>
+
+      <p>
+        En esta guía encontrarás una selección curada de <strong>restaurantes recomendados en Chicureo</strong>, considerando
+        tipo de cocina, estilo del local, ubicación y <strong>precio promedio</strong>. La idea es simple:
+        ayudarte a elegir rápido según tu plan (familia, pareja, amigos o un almuerzo práctico).
+      </p>
+
+      <h2>Qué tipo de restaurantes puedes encontrar en Chicureo</h2>
+      <p>
+        La oferta gastronómica se concentra principalmente en sectores como <strong>Piedra Roja</strong>,
+        <strong>Chamisero</strong> y <strong>Boulevard Los Ingleses</strong>, con propuestas para distintos gustos.
+        Entre lo más común verás:
+      </p>
+
+      <ul>
+        <li>🍽 <strong>Restaurantes familiares</strong> con terraza y estacionamiento.</li>
+        <li>🍝 <strong>Cocina italiana</strong> (pastas artesanales, pizzas a la piedra, trattorias).</li>
+        <li>🥩 <strong>Parrillas y carnes</strong> con cortes premium y porciones generosas.</li>
+        <li>🐟 <strong>Peruano y mariscos</strong>, muy demandados por su frescura y sabor.</li>
+        <li>🍔 <strong>Hamburguesas y sangucherías</strong> para comidas rápidas con buen estándar.</li>
+        <li>🍺 <strong>Restobares</strong> con ambiente distendido, cervezas y coctelería.</li>
+      </ul>
+
+      <h2>Precios promedio para comer en Chicureo</h2>
+      <p>
+        En términos generales, <strong>comer en Chicureo</strong> se mueve en rangos de precio medio a medio-alto,
+        aunque existen alternativas para distintos presupuestos. Como referencia:
+      </p>
+
+      <ul>
+        <li><strong>Sangucherías y comida rápida:</strong> $10.000 – $18.000 p/p</li>
+        <li><strong>Restaurantes familiares / cocina variada:</strong> $14.000 – $26.000 p/p</li>
+        <li><strong>Gourmet / autor / celebraciones:</strong> $20.000 – $35.000 p/p</li>
+      </ul>
+
+      <div class="box">
+        <strong>Disclaimer:</strong> Los precios publicados son referenciales y pueden variar según fecha, carta, promociones
+        y consumo (por ejemplo, alcohol o postres).
+      </div>
+
+      <h2>Restaurantes recomendados en Chicureo (listado completo)</h2>
+      <p>
+        Para ver el detalle con fichas comparables (tipo de cocina, ubicación, precio promedio y links directos),
+        revisa el listado principal:
+        <br />
+        <a class="cta" href="/restaurantes/">Ver restaurantes recomendados en Chicureo</a>
+      </p>
+
+      <h2>Dónde comer según el tipo de plan</h2>
+
+      <h3>Almuerzos familiares</h3>
+      <p>
+        Si buscas un lugar cómodo, con opciones para niños y buen espacio, prioriza restaurantes con terraza,
+        estacionamiento y carta amplia. Son perfectos para fines de semana y celebraciones.
+      </p>
+
+      <h3>Cenas en pareja</h3>
+      <p>
+        Para una salida más tranquila o especial, suelen funcionar muy bien las trattorias italianas y propuestas
+        peruanas más cuidadas, especialmente si cuentan con coctelería y ambiente acogedor.
+      </p>
+
+      <h3>Salidas con amigos</h3>
+      <p>
+        Los restobares y locales con carta para compartir son una gran alternativa para encuentros informales,
+        after office o tardes largas en terraza.
+      </p>
+
+      <h2>Consejos rápidos para elegir bien</h2>
+      <ul>
+        <li>📅 Si vas en fin de semana, reserva con anticipación (especialmente en Piedra Roja).</li>
+        <li>🌤 En buen clima, la terraza hace la diferencia.</li>
+        <li>🚗 Considera estacionamiento y horarios punta.</li>
+        <li>💰 Usa el precio promedio para ajustar expectativas.</li>
+      </ul>
+
+      <h2>Conclusión</h2>
+      <p>
+        Chicureo ofrece una oferta gastronómica variada y de buen nivel, con opciones para distintos gustos y presupuestos.
+        En ChicureoLocal actualizamos periódicamente nuestras recomendaciones para ayudarte a elegir
+        <strong>dónde comer en Chicureo</strong> de forma informada y rápida.
+      </p>
+
+      <div class="back-home">
+        ← <a href="/" aria-label="Volver al inicio de ChicureoLocal">Volver al inicio</a>
+      </div>
+
+      <footer>
+        ¿Quieres sugerir un restaurante o corregir información? Escríbenos desde <a href="/contacto/">Contacto</a>.
+      </footer>
+    </main>
+
+  </div>
+</body>
+</html>
