@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="es-CL">
-  
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -986,5 +985,25 @@
       </footer>
     </main>
   </div>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const whatsappLinks = document.querySelectorAll(
+      'a[href*="wa.me"], a[href*="whatsapp.com"]'
+    );
+
+    whatsappLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', 'whatsapp_click', {
+            event_category: 'contact',
+            event_label: link.href,
+            page_location: window.location.href
+          });
+        }
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
