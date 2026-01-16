@@ -1,0 +1,454 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Clínicas en Chicureo | Centros médicos recomendados y contacto directo</title>
+  <meta name="description" content="Clínicas y centros médicos recomendados en Chicureo y Colina. Atención ambulatoria, especialidades, exámenes y contacto directo para agendar." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://chicureolocal.cl/clinicas/" />
+
+  <!-- Favicon (mismo estándar del sitio) -->
+  <link rel="icon" type="image/svg+xml"
+    href='data:image/svg+xml;utf8,
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="%23ff6a3d"/>
+          <stop offset="1" stop-color="%23ffb703"/>
+        </linearGradient>
+      </defs>
+      <rect x="6" y="6" width="52" height="52" rx="14" fill="url(%23g)"/>
+      <path d="M32 18c-7 0-12 5-12 12 0 10 12 22 12 22s12-12 12-22c0-7-5-12-12-12z" fill="%23fff"/>
+    </svg>' />
+
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --surface:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:rgba(15,23,42,.10);
+      --shadow:0 6px 22px rgba(15,23,42,.08);
+      --radius:16px;
+      --max:1040px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 600px at 10% -10%, rgba(59,130,246,.12), transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(100,116,139,.10), transparent 55%),
+        var(--bg);
+      line-height:1.65;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    /* ESTRUCTURA ESTÁNDAR (igual a Privacidad/Contacto/Home) */
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:22px 18px 70px;
+    }
+
+    /* NAV ESTÁNDAR (igual a Privacidad/Contacto/Home) */
+    .nav{
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 2px 12px rgba(15,23,42,0.06);
+      padding:12px 14px;
+      margin:12px 0 14px;
+      backdrop-filter: blur(6px);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .nav strong{color:var(--text)}
+    .nav a{
+      color:inherit;
+      border-bottom:1px solid rgba(100,116,139,.35);
+      padding-bottom:2px;
+    }
+    .nav a:hover{color:var(--text)}
+    .nav a[aria-current="page"]{
+      color:var(--text);
+      font-weight:800;
+      border-bottom-color:rgba(15,23,42,.35);
+    }
+
+    /* Card “hero” (igual que talleres) */
+    header{
+      background:rgba(255,255,255,.95);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px 26px;
+      margin:12px 0 22px;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:34px;
+      line-height:1.15;
+      letter-spacing:-.4px;
+    }
+
+    .lead{
+      margin:0;
+      color:var(--muted);
+      max-width:80ch;
+    }
+
+    .note{
+      margin-top:14px;
+      font-size:13px;
+      color:var(--muted);
+      border-left:4px solid rgba(15,23,42,.15);
+      padding-left:12px;
+    }
+
+    h2{
+      margin:24px 0 14px;
+      font-size:20px;
+      letter-spacing:-.2px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+
+    @media(min-width:900px){
+      .grid{grid-template-columns:1fr 1fr;}
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .card-media{
+      width:100%;
+      aspect-ratio:16/9;
+      background:rgba(15,23,42,.04);
+      overflow:hidden;
+      border-bottom:1px solid rgba(15,23,42,.08);
+    }
+    .card-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .card-body{
+      padding:18px 18px 16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .title{
+      margin:0;
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:-.25px;
+    }
+
+    .type{
+      margin-top:-6px;
+      font-size:14px;
+      font-weight:600;
+      color:var(--muted);
+    }
+
+    .desc{margin:0;}
+
+    .meta{
+      display:grid;
+      gap:6px;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .meta strong{color:var(--text);}
+
+    .contact{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:6px;
+      font-size:14px;
+    }
+    .contact a{
+      border-bottom:1px solid rgba(100,116,139,.4);
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:8px;
+    }
+
+    .chip{
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(15,23,42,.06);
+      border:1px solid var(--line);
+      font-size:13px;
+    }
+
+    footer{
+      margin-top:28px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:20px 22px;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .back-home{
+      margin-top:16px;
+      font-size:14px;
+    }
+
+    .back-home a{
+      color:#0f172a;
+      text-decoration:none;
+      border-bottom:1px solid rgba(15,23,42,.3);
+      padding-bottom:2px;
+    }
+
+    .back-home a:hover{
+      border-bottom-color:#0f172a;
+    }
+
+    .disclaimer{
+      margin-top:14px;
+      font-size:13px;
+      border-top:1px solid rgba(15,23,42,.1);
+      padding-top:12px;
+    }
+  </style>
+
+  <html lang="es-CL">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XT9KYK7JP6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XT9KYK7JP6', {
+      anonymize_ip: true
+    });
+  </script>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- NAV ESTÁNDAR -->
+    <nav class="nav" aria-label="Navegación principal">
+      <div><strong>ChicureoLocal</strong></div>
+      <div>
+        <a href="/">Inicio</a> ·
+        <a href="/restaurantes/">Restaurantes</a> ·
+        <a href="/talleres/">Talleres</a> ·
+        <a href="/clinicas/" aria-current="page">Clínicas</a> ·
+        <a href="/privacidad/">Privacidad</a> ·
+        <a href="/terminos/">Términos</a> ·
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </nav>
+
+    <header>
+      <h1>Clínicas y centros médicos recomendados en Chicureo</h1>
+      <p class="lead">
+        Selección inicial de clínicas y centros médicos en Chicureo y Colina.
+        Atención ambulatoria, especialidades, exámenes y contacto directo para consultar o agendar.
+      </p>
+      <div class="note">
+        Guía local en construcción: si eres clínica/centro médico y quieres actualizar tu información, contáctanos.
+      </div>
+    </header>
+
+    <h2>Listado de clínicas en Chicureo</h2>
+
+    <section class="grid">
+
+      <!-- CLINICA 1 -->
+      <article class="card" id="clinica-1">
+        <div class="card-media">
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='1200' height='675' fill='url(%23g)'/><text x='60' y='120' font-family='Arial' font-size='46' fill='%230f172a'>Imagen pendiente</text><text x='60' y='190' font-family='Arial' font-size='26' fill='%2364748b'>Sube una foto a /images y reemplaza el src</text></svg>"
+               alt="Clínica (nombre pendiente) – Imagen pendiente" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3 class="title">Clínica {{NOMBRE 1}}</h3>
+          <div class="type">Clínica / Centro médico · Atención ambulatoria</div>
+          <p class="desc">
+            Centro de salud orientado a consultas y controles, ideal para familias del sector que buscan atención cercana.
+            Recomendado para evaluación inicial y derivación a especialidades según disponibilidad.
+          </p>
+          <div class="meta">
+            📍 {{SECTOR / DIRECCIÓN CORTA}}, Chicureo<br>
+            💰 Consulta: <strong>{{RANGO REFERENCIAL (opcional)}}</strong> · Exámenes: <strong>{{RANGO (opcional)}}</strong>
+          </div>
+          <div class="contact">
+            📞 <a href="{{LINK WHATSAPP O TEL}}" target="_blank" rel="noopener noreferrer">WhatsApp / Teléfono</a>
+            🌐 <a href="{{URL SITIO / INSTAGRAM}}" target="_blank" rel="noopener noreferrer">Sitio / Redes</a>
+          </div>
+          <div class="tags">
+            <span class="chip">Atención ambulatoria</span>
+            <span class="chip">Reserva</span>
+            <span class="chip">Familias</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- CLINICA 2 -->
+      <article class="card" id="clinica-2">
+        <div class="card-media">
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='1200' height='675' fill='url(%23g)'/><text x='60' y='120' font-family='Arial' font-size='46' fill='%230f172a'>Imagen pendiente</text><text x='60' y='190' font-family='Arial' font-size='26' fill='%2364748b'>Sube una foto a /images y reemplaza el src</text></svg>"
+               alt="Centro médico (nombre pendiente) – Imagen pendiente" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3 class="title">Centro Médico {{NOMBRE 2}}</h3>
+          <div class="type">Centro médico · Medicina general y especialidades</div>
+          <p class="desc">
+            Centro médico con enfoque en consultas frecuentes y controles. Conveniente para residentes de Chicureo/Colina
+            que buscan agendamiento simple y atención cercana.
+          </p>
+          <div class="meta">
+            📍 {{SECTOR / DIRECCIÓN CORTA}}, Chicureo<br>
+            💰 Consulta: <strong>{{RANGO REFERENCIAL (opcional)}}</strong> · Procedimientos: <strong>{{RANGO (opcional)}}</strong>
+          </div>
+          <div class="contact">
+            📞 <a href="{{LINK WHATSAPP O TEL}}" target="_blank" rel="noopener noreferrer">WhatsApp / Teléfono</a>
+            🌐 <a href="{{URL SITIO / INSTAGRAM}}" target="_blank" rel="noopener noreferrer">Sitio / Redes</a>
+          </div>
+          <div class="tags">
+            <span class="chip">Medicina general</span>
+            <span class="chip">Especialidades</span>
+            <span class="chip">Agendamiento</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- CLINICA 3 -->
+      <article class="card" id="clinica-3">
+        <div class="card-media">
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='1200' height='675' fill='url(%23g)'/><text x='60' y='120' font-family='Arial' font-size='46' fill='%230f172a'>Imagen pendiente</text><text x='60' y='190' font-family='Arial' font-size='26' fill='%2364748b'>Sube una foto a /images y reemplaza el src</text></svg>"
+               alt="Clínica dental (nombre pendiente) – Imagen pendiente" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3 class="title">Clínica Dental {{NOMBRE 3}}</h3>
+          <div class="type">Odontología · Evaluación y tratamientos</div>
+          <p class="desc">
+            Clínica dental orientada a atención integral: evaluación, limpieza, tratamientos y controles.
+            Buena opción para resolver odontología en la zona sin desplazarse al centro.
+          </p>
+          <div class="meta">
+            📍 {{SECTOR / DIRECCIÓN CORTA}}, Chicureo<br>
+            💰 Evaluación: <strong>{{RANGO REFERENCIAL (opcional)}}</strong> · Tratamientos: <strong>{{SEGÚN PLAN}}</strong>
+          </div>
+          <div class="contact">
+            📞 <a href="{{LINK WHATSAPP O TEL}}" target="_blank" rel="noopener noreferrer">WhatsApp / Teléfono</a>
+            🌐 <a href="{{URL SITIO / INSTAGRAM}}" target="_blank" rel="noopener noreferrer">Sitio / Redes</a>
+          </div>
+          <div class="tags">
+            <span class="chip">Odontología</span>
+            <span class="chip">Evaluación</span>
+            <span class="chip">Familias</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- CLINICA 4 -->
+      <article class="card" id="clinica-4">
+        <div class="card-media">
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='1200' height='675' fill='url(%23g)'/><text x='60' y='120' font-family='Arial' font-size='46' fill='%230f172a'>Imagen pendiente</text><text x='60' y='190' font-family='Arial' font-size='26' fill='%2364748b'>Sube una foto a /images y reemplaza el src</text></svg>"
+               alt="Centro de exámenes (nombre pendiente) – Imagen pendiente" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3 class="title">Centro de Exámenes {{NOMBRE 4}}</h3>
+          <div class="type">Exámenes / Laboratorio · Procedimientos ambulatorios</div>
+          <p class="desc">
+            Centro enfocado en exámenes y procedimientos ambulatorios (según cartera). Útil para chequeos,
+            controles y derivaciones médicas con atención en la zona.
+          </p>
+          <div class="meta">
+            📍 {{SECTOR / DIRECCIÓN CORTA}}, Chicureo<br>
+            💰 Exámenes: <strong>{{RANGO REFERENCIAL (opcional)}}</strong> · Procedimientos: <strong>{{RANGO (opcional)}}</strong>
+          </div>
+          <div class="contact">
+            📞 <a href="{{LINK WHATSAPP O TEL}}" target="_blank" rel="noopener noreferrer">WhatsApp / Teléfono</a>
+            🌐 <a href="{{URL SITIO / INSTAGRAM}}" target="_blank" rel="noopener noreferrer">Sitio / Redes</a>
+          </div>
+          <div class="tags">
+            <span class="chip">Exámenes</span>
+            <span class="chip">Chequeos</span>
+            <span class="chip">Reserva</span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      ChicureoLocal · Guía independiente de servicios locales
+
+      <div class="back-home">
+        ← <a href="/" aria-label="Volver al inicio de ChicureoLocal">Volver al inicio</a>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Disclaimer:</strong> La información publicada es referencial y puede variar según especialidad,
+        profesional, convenios y disponibilidad de horas. Recomendamos confirmar directamente con cada clínica/centro médico.
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Evento WhatsApp GA4 (idéntico a talleres) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const whatsappLinks = document.querySelectorAll(
+        'a[href*="wa.me"], a[href*="whatsapp.com"]'
+      );
+
+      whatsappLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (typeof gtag === 'function') {
+            gtag('event', 'whatsapp_click', {
+              event_category: 'contact',
+              event_label: link.href,
+              page_location: window.location.href
+            });
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
