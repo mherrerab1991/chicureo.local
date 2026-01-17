@@ -3,34 +3,65 @@
 
   <url>
     <loc>https://chicureolocal.cl/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 
+  <!-- Landings SEO -->
   <url>
     <loc>https://chicureolocal.cl/donde-comer-en-chicureo/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://chicureolocal.cl/talleres-mecanicos-en-chicureo/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>
+    <loc>https://chicureolocal.cl/clinicas-en-chicureo/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Directorios -->
+  <url>
     <loc>https://chicureolocal.cl/restaurantes/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://chicureolocal.cl/talleres/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
+    <loc>https://chicureolocal.cl/clinicas/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Páginas legales / contacto -->
+  <url>
     <loc>https://chicureolocal.cl/contacto/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 
   <url>
     <loc>https://chicureolocal.cl/privacidad/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://chicureolocal.cl/terminos/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>
