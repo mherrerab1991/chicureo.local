@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- NO INDEX (oculta por ahora) -->
+  <meta name="robots" content="noindex,nofollow" />
+
+  <title>SM Automotriz en Chicureo | Taller destacado (Demo)</title>
+  <meta name="description" content="Página dedicada (demo) para un taller destacado en ChicureoLocal. Servicios, galería, ubicación y contacto directo." />
+  <link rel="canonical" href="https://chicureolocal.cl/talleres/sm-automotriz/" />
+
+  <!-- Favicon (mismo estándar del sitio) -->
+  <link rel="icon" type="image/svg+xml"
+    href='data:image/svg+xml;utf8,
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="%23ff6a3d"/>
+          <stop offset="1" stop-color="%23ffb703"/>
+        </linearGradient>
+      </defs>
+      <rect x="6" y="6" width="52" height="52" rx="14" fill="url(%23g)"/>
+      <path d="M32 18c-7 0-12 5-12 12 0 10 12 22 12 22s12-12 12-22c0-7-5-12-12-12z" fill="%23fff"/>
+    </svg>' />
+
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --surface:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:rgba(15,23,42,.10);
+      --shadow:0 6px 22px rgba(15,23,42,.08);
+      --radius:16px;
+      --max:1040px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 600px at 10% -10%, rgba(59,130,246,.12), transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(100,116,139,.10), transparent 55%),
+        var(--bg);
+      line-height:1.65;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:22px 18px 70px;
+    }
+
+    .nav{
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 2px 12px rgba(15,23,42,0.06);
+      padding:12px 14px;
+      margin:12px 0 14px;
+      backdrop-filter: blur(6px);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .nav strong{color:var(--text)}
+    .nav a{
+      color:inherit;
+      border-bottom:1px solid rgba(100,116,139,.35);
+      padding-bottom:2px;
+    }
+    .nav a:hover{color:var(--text)}
+    .nav a[aria-current="page"]{
+      color:var(--text);
+      font-weight:800;
+      border-bottom-color:rgba(15,23,42,.35);
+    }
+
+    header{
+      background:rgba(255,255,255,.95);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px 26px;
+      margin:12px 0 18px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid rgba(15,23,42,.14);
+      background:rgba(255,255,255,.85);
+      border-radius:999px;
+      padding:7px 12px;
+      font-size:13px;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+    .badge strong{color:var(--text)}
+
+    h1{
+      margin:0 0 10px;
+      font-size:34px;
+      line-height:1.15;
+      letter-spacing:-.4px;
+    }
+
+    .lead{
+      margin:0;
+      color:var(--muted);
+      max-width:85ch;
+    }
+
+    .quick{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background:rgba(15,23,42,.03);
+      border-radius:999px;
+      padding:7px 10px;
+    }
+
+    .cta-row{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      font-size:14px;
+      font-weight:700;
+      background:rgba(15,23,42,.04);
+    }
+    .btn:hover{
+      background:rgba(15,23,42,.06);
+    }
+    .btn-primary{
+      background:#0f172a;
+      border-color:#0f172a;
+      color:#fff;
+    }
+    .btn-primary:hover{
+      filter:brightness(1.05);
+    }
+
+    h2{
+      margin:24px 0 14px;
+      font-size:20px;
+      letter-spacing:-.2px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px 18px 16px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+    @media(min-width:900px){
+      .grid-2{grid-template-columns:1fr 1fr;}
+    }
+
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:var(--text);
+    }
+    .list li{margin:7px 0;}
+
+    .meta{
+      display:grid;
+      gap:8px;
+      font-size:14px;
+      color:var(--muted);
+      margin-top:6px;
+    }
+    .meta strong{color:var(--text);}
+
+    .contact{
+      margin-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .contact a{
+      color:var(--text);
+      border-bottom:1px solid rgba(100,116,139,.4);
+      padding-bottom:2px;
+    }
+    .contact a:hover{border-bottom-color:rgba(15,23,42,.35);}
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    .chip{
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(15,23,42,.06);
+      border:1px solid var(--line);
+      font-size:13px;
+      color:var(--text);
+    }
+
+    /* Galería */
+    .gallery{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+    @media(min-width:900px){
+      .gallery{grid-template-columns:repeat(3, 1fr);}
+    }
+    .g-item{
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:14px;
+      overflow:hidden;
+      background:rgba(15,23,42,.03);
+      aspect-ratio:4/3;
+    }
+    .g-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .note{
+      margin-top:12px;
+      font-size:13px;
+      color:var(--muted);
+      border-left:4px solid rgba(15,23,42,.15);
+      padding-left:12px;
+    }
+
+    footer{
+      margin-top:28px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:20px 22px;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .back-home{
+      margin-top:16px;
+      font-size:14px;
+    }
+    .back-home a{
+      color:#0f172a;
+      text-decoration:none;
+      border-bottom:1px solid rgba(15,23,42,.3);
+      padding-bottom:2px;
+    }
+    .back-home a:hover{border-bottom-color:#0f172a;}
+
+    .disclaimer{
+      margin-top:14px;
+      font-size:13px;
+      border-top:1px solid rgba(15,23,42,.1);
+      padding-top:12px;
+    }
+  </style>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XT9KYK7JP6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XT9KYK7JP6', { anonymize_ip: true });
+  </script>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- NAV ESTÁNDAR -->
+    <nav class="nav" aria-label="Navegación principal">
+      <div><strong>ChicureoLocal</strong></div>
+      <div>
+        <a href="/">Inicio</a> ·
+        <a href="/restaurantes/">Restaurantes</a> ·
+        <a href="/talleres/" aria-current="page">Talleres</a> ·
+        <a href="/clinicas/">Clínicas</a> ·
+        <a href="/privacidad/">Privacidad</a> ·
+        <a href="/terminos/">Términos</a> ·
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </nav>
+
+    <header>
+      <div class="badge">⭐ <strong>Taller destacado</strong> · Página dedicada (demo)</div>
+      <h1>SM Automotriz</h1>
+      <p class="lead">
+        Taller automotriz multimarca con enfoque en mantenciones, reparaciones y atención cercana.
+        Esta es una página dedicada de ejemplo para ver el formato final antes de publicarla.
+      </p>
+
+      <div class="quick" aria-label="Resumen rápido">
+        <span class="pill">📍 Chicureo / Colina (dummy)</span>
+        <span class="pill">🕒 Lun–Vie 09:00–18:00 (dummy)</span>
+        <span class="pill">🛠️ Multimarca</span>
+      </div>
+
+      <div class="cta-row" aria-label="Acciones principales">
+        <!-- WhatsApp con mensaje prellenado (dummy) -->
+        <a class="btn btn-primary"
+           href="https://wa.me/56900000000?text=Hola%20SM%20Automotriz%2C%20los%20contacto%20desde%20ChicureoLocal.%20Quisiera%20cotizar%20una%20mantenci%C3%B3n%20o%20revisi%C3%B3n.%20Gracias."
+           target="_blank" rel="noopener noreferrer">
+          💬 Contactar por WhatsApp
+        </a>
+        <a class="btn" href="https://www.smautomotriz.cl/" target="_blank" rel="noopener noreferrer">
+          🌐 Ver sitio del taller
+        </a>
+      </div>
+
+      <div class="note">
+        Sugerencia operativa: cuando la pases a producción visible, cambia <code>noindex,nofollow</code> por <code>index,follow</code>
+        y confirma que la URL final sea la definitiva.
+      </div>
+    </header>
+
+    <section class="grid-2" aria-label="Información principal">
+
+      <!-- Bloque: Servicios -->
+      <div class="card">
+        <h2>Servicios principales</h2>
+        <ul class="list">
+          <li>Mantenciones por kilometraje (aceite, filtros, revisión general)</li>
+          <li>Diagnóstico computarizado (scanner) y revisión de fallas</li>
+          <li>Frenos: pastillas, discos, mantención y reparación</li>
+          <li>Suspensión y dirección (bujes, amortiguadores, alineación según disponibilidad)</li>
+          <li>Reparaciones mecánicas generales (multimarca)</li>
+          <li>Servicios adicionales (dummy): baterías, luces, revisión pre-viaje</li>
+        </ul>
+
+        <div class="chips" aria-label="Tags">
+          <span class="chip">Multimarca</span>
+          <span class="chip">Mantenciones</span>
+          <span class="chip">Frenos</span>
+          <span class="chip">Diagnóstico</span>
+        </div>
+
+        <div class="note">
+          Nota: este listado es demostrativo. En la versión final, conviene dejar 8–12 servicios máximo, priorizando los más buscados.
+        </div>
+      </div>
+
+      <!-- Bloque: Información práctica -->
+      <div class="card">
+        <h2>Información práctica</h2>
+
+        <div class="meta">
+          📍 Dirección: <strong>Av. Ejemplo 1234, Chicureo (dummy)</strong><br>
+          🕒 Horario: <strong>Lun–Vie 09:00–18:00 (dummy)</strong><br>
+          💰 Referencia: <strong>Diagnóstico $15.000–$30.000 (dummy)</strong> · Mantención <strong>$60.000–$130.000 (dummy)</strong>
+        </div>
+
+        <div class="contact" aria-label="Contacto">
+          📞 <a href="tel:+56900000000">+56 9 0000 0000</a>
+          💬 <a href="https://wa.me/56900000000?text=Hola%20SM%20Automotriz%2C%20los%20contacto%20desde%20ChicureoLocal.%20Quisiera%20agendar%20una%20revisi%C3%B3n%20%2F%20mantenci%C3%B3n.%20Gracias."
+                target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          🌐 <a href="https://www.smautomotriz.cl/" target="_blank" rel="noopener noreferrer">smautomotriz.cl</a>
+          📍 <a href="https://www.google.com/maps?q=Chicureo+Colina" target="_blank" rel="noopener noreferrer">Ver en Maps (dummy)</a>
+        </div>
+
+        <div class="note">
+          En producción, si el taller tiene Instagram activo, añade el link aquí (mejora conversión y confianza).
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Galería -->
+    <section class="card" style="margin-top:16px;" aria-label="Galería de imágenes">
+      <h2>Galería (4–6 fotos)</h2>
+
+      <div class="gallery">
+        <!-- Reemplaza los src por tus imágenes reales en /images -->
+        <div class="g-item">
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 1: Fachada (pendiente)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Sube a /images y reemplaza src</text></svg>"
+               alt="Foto fachada (pendiente)" loading="lazy" />
+        </div>
+        <div class="g-item">
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 2: Taller interior (pendiente)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Sube a /images y reemplaza src</text></svg>"
+               alt="Foto interior (pendiente)" loading="lazy" />
+        </div>
+        <div class="g-item">
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 3: Equipo (pendiente)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Sube a /images y reemplaza src</text></svg>"
+               alt="Foto equipo (pendiente)" loading="lazy" />
+        </div>
+        <div class="g-item">
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 4: Trabajo en curso (pendiente)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Sube a /images y reemplaza src</text></svg>"
+               alt="Foto trabajo (pendiente)" loading="lazy" />
+        </div>
+        <div class="g-item">
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 5: Recepción (pendiente)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Opcional (hasta 6 fotos)</text></svg>"
+               alt="Foto recepción (pendiente)" loading="lazy" />
+        </div>
+        <div class="g-item">
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 6: Logo / Branding (pendiente)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Opcional (hasta 6 fotos)</text></svg>"
+               alt="Foto logo (pendiente)" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="note">
+        Para mantener el estándar del sitio: máximo 6 fotos, formato horizontal ideal, peso recomendado &lt; 300 KB por imagen.
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="card" style="margin-top:16px;" aria-label="CTA final">
+      <h2>¿Quieres cotizar o agendar?</h2>
+      <p class="lead" style="max-width:80ch;">
+        Escribe directamente por WhatsApp para solicitar una revisión, mantención o cotización. Respuesta más rápida.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary"
+           href="https://wa.me/56900000000?text=Hola%20SM%20Automotriz%2C%20los%20contacto%20desde%20ChicureoLocal.%20Quisiera%20cotizar%20y%20agendar%20una%20mantenci%C3%B3n%20%2F%20revisi%C3%B3n.%20Gracias."
+           target="_blank" rel="noopener noreferrer">
+          💬 Contactar por WhatsApp
+        </a>
+        <a class="btn" href="/talleres/">← Volver al listado de talleres</a>
+      </div>
+      <div class="note">
+        Este bloque mejora conversión: el usuario no tiene que buscar el contacto nuevamente al final de la página.
+      </div>
+    </section>
+
+    <footer>
+      ChicureoLocal · Guía independiente de servicios locales
+
+      <div class="back-home">
+        ← <a href="/" aria-label="Volver al inicio de ChicureoLocal">Volver al inicio</a>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Disclaimer:</strong> La información y precios (si existen) son referenciales. Recomendamos confirmar directamente con el taller.
+        ChicureoLocal no presta servicios mecánicos ni garantiza resultados; actúa como guía local y canal de contacto.
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Evento WhatsApp GA4 (idéntico a tu estándar) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const whatsappLinks = document.querySelectorAll(
+        'a[href*="wa.me"], a[href*="whatsapp.com"]'
+      );
+
+      whatsappLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (typeof gtag === 'function') {
+            gtag('event', 'whatsapp_click', {
+              event_category: 'contact',
+              event_label: link.href,
+              page_location: window.location.href
+            });
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
