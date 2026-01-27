@@ -4,15 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- DEMO / OCULTA POR AHORA -->
-  <meta name="robots" content="noindex,nofollow" />
+  <!-- PRODUCCIÓN -->
+  <meta name="robots" content="index,follow" />
 
-  <title>SMAutomotriz en Chicureo | Taller multimarca (Demo) | ChicureoLocal</title>
-  <meta name="description" content="Página dedicada (demo) para SMAutomotriz en ChicureoLocal. Servicios, galería, ubicación y contacto directo por WhatsApp." />
+  <title>SM Automotriz en Chicureo | Taller multimarca (mantenciones y diagnóstico) | ChicureoLocal</title>
+  <meta name="description" content="SM Automotriz en Chicureo (Colina): taller multimarca para mantenciones, diagnóstico y reparaciones. Dirección, horario y contacto directo por WhatsApp." />
+  <link rel="canonical" href="https://chicureolocal.cl/talleres/smautomotriz/" />
 
-  <!-- IMPORTANTE: en demo, canonical debe apuntar a la URL demo real.
-       Cuando la publiques visible, cambia a la URL final definitiva y a index,follow. -->
-  <link rel="canonical" href="https://chicureolocal.cl/talleres/smautomotriz-demo/" />
+  <!-- Open Graph básico -->
+  <meta property="og:title" content="SM Automotriz en Chicureo | Taller multimarca" />
+  <meta property="og:description" content="Mantenciones, diagnóstico y reparaciones. Contacto directo por WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chicureolocal.cl/talleres/smautomotriz/" />
 
   <!-- Favicon (estándar ChicureoLocal) -->
   <link rel="icon" type="image/svg+xml"
@@ -326,6 +329,28 @@
     gtag('js', new Date());
     gtag('config', 'G-XT9KYK7JP6', { anonymize_ip: true });
   </script>
+
+  <!-- JSON-LD (SEO local) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "SM Automotriz",
+    "url": "https://www.smautomotriz.cl/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Fermín Vergara Parcela 1 Lote 8-D",
+      "addressLocality": "Colina",
+      "addressRegion": "Región Metropolitana",
+      "addressCountry": "CL"
+    },
+    "telephone": "+56990442727",
+    "openingHours": "Mo-Fr 09:00-19:00",
+    "sameAs": [
+      "https://www.instagram.com/sm.automotrizoficial/"
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -347,50 +372,51 @@
 
     <!-- HERO -->
     <header>
-      <div class="badge">🔧 <strong>Taller destacado</strong> · Página dedicada (demo)</div>
-      <h1>SMAutomotriz</h1>
+      <div class="badge">🔧 <strong>Taller recomendado</strong> · ChicureoLocal</div>
+      <h1>SM Automotriz</h1>
 
-      <!-- Copy inspirado en la web real: sobrio, directo, sin exagerar -->
       <p class="lead">
-        Taller automotriz <strong>multimarca</strong> enfocado en mantenciones y reparaciones, con atención clara y cercana.
-        Si necesitas diagnóstico, revisión o mantención, lo más rápido es escribir por WhatsApp.
+        Taller automotriz <strong>multimarca</strong> en Chicureo (Colina), enfocado en mantenciones, diagnóstico y reparaciones.
+        Para cotizar o agendar, lo más rápido es escribir por WhatsApp.
       </p>
 
       <div class="quick" aria-label="Resumen rápido">
-        <span class="pill">📍 Chicureo / Colina (referencial)</span>
-        <span class="pill">🕒 Horario: confirmar con el taller</span>
-        <span class="pill">🛠️ Mantenciones · Diagnóstico · Reparaciones</span>
+        <span class="pill">📍 Chicureo / Colina</span>
+        <span class="pill">🕒 Lunes a viernes · 09:00–19:00</span>
+        <span class="pill">🛠️ Mantenciones · Diagnóstico · Mecánica general</span>
       </div>
 
       <div class="cta-row" aria-label="Acciones principales">
-        <!-- WhatsApp (pendiente reemplazar) -->
         <a class="btn btn-primary"
-           href="https://wa.me/56900000000?text=Hola%20SMAutomotriz%2C%20los%20contacto%20desde%20ChicureoLocal.%20Quisiera%20cotizar%20y%20agendar%20una%20revisi%C3%B3n%20%2F%20mantenci%C3%B3n.%20Gracias."
+           href="https://wa.me/56990442727?text=Hola%20SM%20Automotriz%2C%20los%20contacto%20desde%20ChicureoLocal.%20Quisiera%20cotizar%20y%20agendar%20una%20revisi%C3%B3n%20%2F%20mantenci%C3%B3n.%20Modelo%2Fa%C3%B1o%3A%20____%20%7C%20Motivo%3A%20____.%20Gracias."
            target="_blank" rel="noopener noreferrer">
           💬 WhatsApp (agendar)
         </a>
 
         <a class="btn" href="https://www.smautomotriz.cl/" target="_blank" rel="noopener noreferrer">
-          🌐 Ver sitio oficial
+          🌐 Sitio oficial
+        </a>
+
+        <a class="btn" href="https://www.instagram.com/sm.automotrizoficial/" target="_blank" rel="noopener noreferrer">
+          📸 Instagram
         </a>
 
         <a class="btn" href="#servicios">
-          🧾 Ver servicios
+          🧾 Servicios
         </a>
       </div>
 
       <div class="note">
-        Demo oculta: cuando la publiques, cambia <code>noindex,nofollow</code> por <code>index,follow</code>, ajusta el <code>canonical</code>
-        y reemplaza teléfono/Maps por los datos confirmados del taller.
+        Próximo upgrade (cuando quieras): sección de reseñas/ratings propias de ChicureoLocal para aumentar conversión y confianza.
       </div>
     </header>
 
     <!-- INFO PRINCIPAL -->
     <section class="grid-2" aria-label="Información principal">
 
-      <!-- Bloque: Servicios -->
+      <!-- Bloque: Servicios (por confirmar lista final) -->
       <div class="card" id="servicios">
-        <h2>Servicios principales</h2>
+        <h2>Servicios</h2>
         <ul class="list">
           <li><strong>Mantenciones</strong> por kilometraje: aceite, filtros y revisión general.</li>
           <li><strong>Diagnóstico</strong> y revisión de fallas (scanner / evaluación técnica).</li>
@@ -401,16 +427,17 @@
         </ul>
 
         <div class="chips" aria-label="Tags">
+          <span class="chip">Chicureo</span>
+          <span class="chip">Colina</span>
           <span class="chip">Multimarca</span>
           <span class="chip">Mantenciones</span>
           <span class="chip">Diagnóstico</span>
           <span class="chip">Frenos</span>
-          <span class="chip">Preventivo</span>
         </div>
 
         <div class="note">
-          Recomendación: en la versión final, deja 8–12 servicios máximo (los más buscados) y agrega 1–2 frases sobre
-          “cómo trabajan” (diagnóstico primero, presupuesto antes de intervenir, etc.) si SMA te lo confirma.
+          Si quieres “versión 100% exacta”, envíame los 8–12 servicios oficiales (lista corta) y los reemplazo aquí.
+          Mientras tanto, esto funciona como catálogo estándar de intención de búsqueda.
         </div>
       </div>
 
@@ -419,71 +446,64 @@
         <h2>Información práctica</h2>
 
         <div class="meta">
-          📍 Dirección: <strong>Chicureo / Colina (por confirmar)</strong><br>
-          🕒 Horario: <strong>por confirmar</strong><br>
-          💬 Canal recomendado: <strong>WhatsApp</strong><br>
-          🌐 Sitio: <strong>smautomotriz.cl</strong>
+          📍 Dirección: <strong>Fermín Vergara Parcela 1 Lote 8-D, Colina</strong><br>
+          🕒 Horario: <strong>Lunes a viernes · 09:00–19:00</strong><br>
+          💬 Contacto: <strong>WhatsApp +56 9 9044 2727</strong><br>
+          🌐 Web: <strong>smautomotriz.cl</strong>
         </div>
 
         <div class="contact" aria-label="Contacto">
-          📞 <a href="tel:+56900000000">+56 9 0000 0000</a>
-          💬 <a href="https://wa.me/56900000000?text=Hola%20SMAutomotriz%2C%20los%20contacto%20desde%20ChicureoLocal.%20Quisiera%20agendar%20una%20revisi%C3%B3n%20%2F%20mantenci%C3%B3n.%20Gracias."
+          💬 <a href="https://wa.me/56990442727?text=Hola%20SM%20Automotriz%2C%20los%20contacto%20desde%20ChicureoLocal.%20Quisiera%20agendar%20una%20revisi%C3%B3n%20%2F%20mantenci%C3%B3n.%20Gracias."
                 target="_blank" rel="noopener noreferrer">WhatsApp</a>
           🌐 <a href="https://www.smautomotriz.cl/" target="_blank" rel="noopener noreferrer">smautomotriz.cl</a>
-          📍 <a href="https://www.google.com/maps?q=Chicureo+Colina" target="_blank" rel="noopener noreferrer">Ver en Maps (referencial)</a>
+          📸 <a href="https://www.instagram.com/sm.automotrizoficial/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          📍 <a href="https://www.google.com/maps/place/SM+Automotriz/@-33.307824,-70.697939,15z/data=!4m6!3m5!1s0x9662b8bc1e6c06dd:0x9a514c7c8e90d4a7!8m2!3d-33.3078238!4d-70.6979389!16s%2Fg%2F11f3vnlnts?hl=es-419&entry=ttu&g_ep=EgoyMDI2MDEyNS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank" rel="noopener noreferrer">Cómo llegar (Maps)</a>
         </div>
 
         <div class="note">
-          En producción conviene sumar: Instagram (si existe), y “Cómo llegar” con link Maps exacto (mejora conversión).
+          Tip: si el taller trabaja con “hora agendada”, lo podemos destacar acá (sube conversión). Si no, lo dejamos neutro.
         </div>
       </div>
 
     </section>
 
-    <!-- GALERÍA -->
+    <!-- GALERÍA (placeholder hasta que tengas imágenes) -->
     <section class="card" style="margin-top:16px;" aria-label="Galería de imágenes">
       <h2>Galería</h2>
       <p class="lead" style="max-width:85ch;margin-top:-6px;">
-        Imágenes reales del taller (ideal: fachada, interior, trabajo en curso, equipo).
+        Próximamente: fotos reales del taller (fachada, interior, equipo y trabajos).
       </p>
 
       <div class="gallery">
-        <!-- Reemplaza src por imágenes reales en /images -->
         <div class="g-item">
-          <img src="/images/SMAutomotriz.JPG"
-               alt="SMAutomotriz - imagen 1"
-               loading="lazy"
-               onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;600&quot;><rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;%23e2e8f0&quot;/><text x=&quot;44&quot; y=&quot;86&quot; font-family=&quot;Arial&quot; font-size=&quot;30&quot; fill=&quot;%230f172a&quot;>Foto 1 (pendiente)</text></svg>';" />
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 1: Fachada (pendiente)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Sube a /images y reemplaza src</text></svg>"
+               alt="Foto fachada (pendiente)" loading="lazy" />
         </div>
-
         <div class="g-item">
-          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 2: interior (pendiente)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Sube a /images y reemplaza src</text></svg>"
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 2: Interior (pendiente)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Sube a /images y reemplaza src</text></svg>"
                alt="Foto interior (pendiente)" loading="lazy" />
         </div>
-
         <div class="g-item">
-          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 3: equipo (pendiente)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Sube a /images y reemplaza src</text></svg>"
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 3: Equipo (pendiente)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Sube a /images y reemplaza src</text></svg>"
                alt="Foto equipo (pendiente)" loading="lazy" />
         </div>
-
         <div class="g-item">
-          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 4: trabajo (pendiente)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Sube a /images y reemplaza src</text></svg>"
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 4: Trabajo (pendiente)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Sube a /images y reemplaza src</text></svg>"
                alt="Foto trabajo (pendiente)" loading="lazy" />
         </div>
-
         <div class="g-item">
-          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 5 (opcional)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Máximo recomendado: 6 fotos</text></svg>"
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 5 (opcional)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Recepción / logo</text></svg>"
                alt="Foto 5 (pendiente)" loading="lazy" />
         </div>
-
         <div class="g-item">
-          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 6 (opcional)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Logo / recepción / box</text></svg>"
+          <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23e2e8f0'/><stop offset='1' stop-color='%23f8fafc'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><text x='44' y='86' font-family='Arial' font-size='30' fill='%230f172a'>Foto 6 (opcional)</text><text x='44' y='130' font-family='Arial' font-size='18' fill='%2364748b'>Box / herramientas</text></svg>"
                alt="Foto 6 (pendiente)" loading="lazy" />
         </div>
       </div>
 
       <div class="note">
-        Estándar recomendado: fotos horizontales, peso &lt; 300 KB por imagen, nombres de archivo simples (ej: <code>sma-01.jpg</code>).
+        Cuando tengas imágenes, dime los paths (ej: <code>/images/sm-01.jpg</code>) y las reemplazo. Ideal: 4–6 fotos reales.
       </div>
     </section>
 
@@ -491,11 +511,11 @@
     <section class="card" style="margin-top:16px;" aria-label="CTA final">
       <h2>¿Quieres cotizar o agendar?</h2>
       <p class="lead" style="max-width:80ch;">
-        Escríbele a SMAutomotriz por WhatsApp indicando tu modelo/año y el motivo (mantención, diagnóstico, ruidos, frenos, etc.).
+        Escríbenos por WhatsApp indicando tu modelo/año y el motivo (mantención, diagnóstico, frenos, ruidos, etc.).
       </p>
       <div class="cta-row">
         <a class="btn btn-primary"
-           href="https://wa.me/56900000000?text=Hola%20SMAutomotriz%2C%20los%20contacto%20desde%20ChicureoLocal.%20Modelo%2Fa%C3%B1o%3A%20____%20%7C%20Motivo%3A%20____%20%7C%20%C2%BFPueden%20darme%20una%20orientaci%C3%B3n%20y%20agenda%3F%20Gracias."
+           href="https://wa.me/56990442727?text=Hola%20SM%20Automotriz%2C%20los%20contacto%20desde%20ChicureoLocal.%20Modelo%2Fa%C3%B1o%3A%20____%20%7C%20Motivo%3A%20____.%20Gracias."
            target="_blank" rel="noopener noreferrer">
           💬 Abrir WhatsApp
         </a>
@@ -503,7 +523,7 @@
       </div>
 
       <div class="note">
-        Esta página no incluye reseñas aún. Cuando implementes rating/reviews, este CTA se mantiene tal cual (no rompe la estructura).
+        Si más adelante quieres habilitar reseñas, las insertamos antes de este bloque sin cambiar el resto.
       </div>
     </section>
 
@@ -515,7 +535,7 @@
       </div>
 
       <div class="disclaimer">
-        <strong>Disclaimer:</strong> La información es referencial y puede cambiar. Recomendamos confirmar directamente con el taller.
+        <strong>Disclaimer:</strong> La información puede cambiar. Recomendamos confirmar directamente con el taller.
         ChicureoLocal no presta servicios mecánicos ni garantiza resultados; actúa como guía local y canal de contacto.
       </div>
     </footer>
@@ -525,10 +545,10 @@
   <!-- Sticky CTA móvil -->
   <div class="sticky" aria-label="Acciones rápidas (móvil)">
     <a class="btn btn-primary"
-       href="https://wa.me/56900000000?text=Hola%20SMAutomotriz%2C%20los%20contacto%20desde%20ChicureoLocal.%20Quisiera%20agendar%20una%20revisi%C3%B3n%20%2F%20mantenci%C3%B3n.%20Gracias."
+       href="https://wa.me/56990442727?text=Hola%20SM%20Automotriz%2C%20los%20contacto%20desde%20ChicureoLocal.%20Quisiera%20agendar%20una%20revisi%C3%B3n%20%2F%20mantenci%C3%B3n.%20Gracias."
        target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
     <a class="btn"
-       href="https://www.google.com/maps?q=Chicureo+Colina"
+       href="https://www.google.com/maps/place/SM+Automotriz/@-33.307824,-70.697939,15z/data=!4m6!3m5!1s0x9662b8bc1e6c06dd:0x9a514c7c8e90d4a7!8m2!3d-33.3078238!4d-70.6979389!16s%2Fg%2F11f3vnlnts?hl=es-419&entry=ttu&g_ep=EgoyMDI2MDEyNS4wIKXMDSoASAFQAw%3D%3D"
        target="_blank" rel="noopener noreferrer">📍 Maps</a>
   </div>
 
