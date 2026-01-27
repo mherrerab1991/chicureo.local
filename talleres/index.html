@@ -247,6 +247,40 @@
       border-top:1px solid rgba(15,23,42,.1);
       padding-top:12px;
     }
+    /* SM Automotriz: imagen + título clickeables + CTA pequeño */
+.card-media a{
+  display:block;
+  width:100%;
+  height:100%;
+}
+.card-media a img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.title a{
+  text-decoration:none;
+  color:inherit;
+}
+.card-cta{
+  margin-top:10px;
+}
+.card-cta a{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 12px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(15,23,42,.04);
+  font-size:13.5px;
+  font-weight:800;
+}
+.card-cta a:hover{
+  filter:brightness(.98);
+}
+
   </style>
 
   <html lang="es-CL">
@@ -295,34 +329,49 @@
 
     <section class="grid">
 
-         <!-- SM Automotriz -->
-      <article class="card" id="sm-automotriz">
-        <div class="card-media">
-          <img src="/images/SMAutomotriz.JPG" alt="SM Automotriz – Taller multimarca con reparaciones y mantenimiento" loading="lazy" />
-        </div>
-        <div class="card-body">
-          <h3 class="title">SM Automotriz</h3>
-          <div class="type">Taller multimarca integral · Reparaciones y mantenimiento</div>
-          <p class="desc">
-            Taller mecánico con más de 30 años de experiencia en vehículos multimarca. Servicio confiable para mantenciones
-            de autos particulares o flotas, con equipo profesional y amplia disponibilidad de repuestos.
-          </p>
-          <div class="meta">
-            📍 Colina (Fermín Vergara, Parcela 1 Lote 8-D, cercanías Chicureo)<br>
-            💰 Diagnóstico: <strong>$15.000–$30.000</strong> · Mantención: <strong>$60.000–$130.000</strong>
-          </div>
-          <div class="contact">
-            📞 <a href="https://wa.me/56990442727" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            ✉️ <a href="mailto:tallersmautomotriz@gmail.com">tallersmautomotriz@gmail.com</a>
-          </div>
-          <div class="tags">
-            <span class="chip">Multimarca</span>
-            <span class="chip">Frenos</span>
-            <span class="chip">Suspensión</span>
-            <span class="chip">Flotas</span>
-          </div>
-        </div>
-      </article>
+      <!-- SM Automotriz (Destacado con ficha extendida) -->
+<article class="card" id="sm-automotriz">
+  <div class="card-media">
+    <a href="/talleres/smautomotriz/" aria-label="Ver ficha extendida de SM Automotriz">
+      <img src="/images/SMAutomotriz.JPG" alt="SM Automotriz – Taller multimarca con reparaciones y mantenimiento" loading="lazy" />
+    </a>
+  </div>
+
+  <div class="card-body">
+    <h3 class="title">
+      <a href="/talleres/smautomotriz/">SM Automotriz</a>
+    </h3>
+
+    <div class="type">Taller multimarca integral · Reparaciones y mantenimiento</div>
+
+    <p class="desc">
+      Taller mecánico con más de 30 años de experiencia en vehículos multimarca. Servicio confiable para mantenciones
+      de autos particulares o flotas, con equipo profesional y amplia disponibilidad de repuestos.
+    </p>
+
+    <div class="meta">
+      📍 Colina (Fermín Vergara, Parcela 1 Lote 8-D, cercanías Chicureo)<br>
+      💰 Diagnóstico: <strong>$15.000–$30.000</strong> · Mantención: <strong>$60.000–$130.000</strong>
+    </div>
+
+    <div class="contact">
+      📞 <a href="https://wa.me/56990442727" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      ✉️ <a href="mailto:tallersmautomotriz@gmail.com">tallersmautomotriz@gmail.com</a>
+      🌟 <a href="/talleres/smautomotriz/" aria-label="Ver ficha extendida">Ficha extendida</a>
+    </div>
+
+    <div class="card-cta">
+      <a href="/talleres/smautomotriz/">⭐ Ver ficha extendida</a>
+    </div>
+
+    <div class="tags">
+      <span class="chip">Multimarca</span>
+      <span class="chip">Frenos</span>
+      <span class="chip">Suspensión</span>
+      <span class="chip">Flotas</span>
+    </div>
+  </div>
+</article>
 
       <!-- Taller Chicureo -->
       <article class="card" id="taller-chicureo">
