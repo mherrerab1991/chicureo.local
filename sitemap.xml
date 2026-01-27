@@ -44,6 +44,13 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <url>
+  <loc>https://chicureolocal.cl/talleres/smautomotriz/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
 
   <!-- Páginas legales / contacto -->
   <url>
