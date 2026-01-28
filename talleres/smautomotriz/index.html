@@ -527,6 +527,153 @@
      <!-- <div class="note">
         Si más adelante quieres habilitar reseñas, las insertamos antes de este bloque sin cambiar el resto.
       </div> -->
+
+      <!-- REVIEWS (ChicureoLocal) -->
+<section class="card" id="reviews" style="margin-top:18px;">
+  <div class="card-body" style="gap:12px;">
+    <h2 class="title" style="font-size:20px;">Opiniones de clientes</h2>
+
+    <!-- Resumen -->
+    <div id="reviews-summary" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+      <div id="reviews-stars" aria-label="Rating promedio" style="font-size:18px; letter-spacing:1px;">★★★★★</div>
+      <div style="color:var(--muted); font-size:14px;">
+        <strong id="reviews-avg">—</strong> · <span id="reviews-count">—</span> reseñas
+      </div>
+    </div>
+
+    <!-- Estado -->
+    <div id="reviews-status" class="note" style="margin:0; display:none;"></div>
+
+    <!-- Lista -->
+    <div id="reviews-list" style="display:grid; gap:12px;"></div>
+
+    <div class="disclaimer" style="margin-top:10px;">
+      <strong>Nota:</strong> Las opiniones son publicadas en ChicureoLocal y pueden estar sujetas a moderación.
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    // === CONFIG ===
+    const WORKER_BASE = "https://chicureolocal-reviews.mherrerab1991.workers.dev";
+    const TALLER_SLUG = "smautomotriz"; // cambia por el slug del taller
+    const ENDPOINT = `${WORKER_BASE}/reviews?taller=${encodeURIComponent(TALLER_SLUG)}`;
+
+    // === DOM ===
+    const elAvg = document.getElementById("reviews-avg");
+    const elCount = document.getElementById("reviews-count");
+    const elStars = document.getElementById("reviews-stars");
+    const elList = document.getElementById("reviews-list");
+    const elStatus = document.getElementById("reviews-status");
+
+    function setStatus(msg, show = true) {
+      elStatus.textContent = msg;
+      elStatus.style.display = show ? "block" : "none";
+    }
+
+    function starsFromAvg(avg) {
+      // redondeo a 0.5 para visualizar
+      const rounded = Math.round(avg * 2) / 2;
+      const full = Math.floor(rounded);
+      const half = (rounded - full) === 0.5;
+
+      // Usamos ★ y ☆ (sin media estrella para mantener simple)
+      // Si quieres media estrella visual, lo hacemos después.
+      let out = "★".repeat(full) + "☆".repeat(5 - full);
+      return { rounded, out };
+    }
+
+    function esc(s) {
+      return String(s ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function formatDate(iso) {
+      // iso viene como texto
+      try {
+        const d = new Date(iso);
+        return d.toLocaleDateString("es-CL", { year:"numeric", month:"short", day:"2-digit" });
+      } catch (e) {
+        return iso;
+      }
+    }
+
+    function renderReview(r) {
+      const rating = Number(r.rating || 0);
+      const stars = "★".repeat(Math.max(0, Math.min(5, rating))) + "☆".repeat(Math.max(0, 5 - rating));
+      const name = esc(r.name || "Anónimo");
+      const comment = esc(r.comment || "");
+      const created = formatDate(r.created_at);
+
+      const box = document.createElement("div");
+      box.style.border = "1px solid var(--line)";
+      box.style.borderRadius = "14px";
+      box.style.padding = "14px";
+      box.style.background = "#fff";
+      box.style.boxShadow = "0 4px 14px rgba(15,23,42,.06)";
+
+      box.innerHTML = `
+        <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+          <div style="font-weight:800;">${name}</div>
+          <div style="color:var(--muted); font-size:13px;">${created}</div>
+        </div>
+        <div style="margin-top:6px; font-size:16px; letter-spacing:1px;" aria-label="Rating">
+          ${stars}
+        </div>
+        <p style="margin:10px 0 0; color:var(--text);">${comment}</p>
+      `;
+      return box;
+    }
+
+    async function load() {
+      setStatus("Cargando opiniones…", true);
+
+      try {
+        const res = await fetch(ENDPOINT, { method: "GET" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        const data = await res.json();
+
+        const count = Number(data?.summary?.count ?? 0);
+        const avg = Number(data?.summary?.avg ?? 0);
+
+        elCount.textContent = count;
+        elAvg.textContent = count ? avg.toFixed(1) : "—";
+
+        if (count) {
+          const s = starsFromAvg(avg);
+          elStars.textContent = s.out;
+          elStars.title = `${s.rounded.toFixed(1)} / 5`;
+        } else {
+          elStars.textContent = "☆☆☆☆☆";
+          elStars.title = "Sin reseñas";
+        }
+
+        elList.innerHTML = "";
+        const reviews = Array.isArray(data?.reviews) ? data.reviews : [];
+
+        if (!reviews.length) {
+          setStatus("Aún no hay reseñas publicadas para este taller.", true);
+          return;
+        }
+
+        setStatus("", false);
+        reviews.forEach(r => elList.appendChild(renderReview(r)));
+      } catch (err) {
+        console.error(err);
+        setStatus("No pudimos cargar las reseñas en este momento. Intenta nuevamente más tarde.", true);
+      }
+    }
+
+    load();
+  })();
+</script>
+ <!-- ACA TERMINA REVIEWS (ChicureoLocal) -->
     </section>
 
     <footer>
