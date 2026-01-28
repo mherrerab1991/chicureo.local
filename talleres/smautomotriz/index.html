@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- PRODUCCIÓN -->
   <meta name="robots" content="index,follow" />
 
   <title>SM Automotriz en Chicureo | Taller multimarca (mantenciones y diagnóstico) | ChicureoLocal</title>
@@ -162,8 +161,13 @@
       font-size:14px;
       font-weight:700;
       background:rgba(15,23,42,.04);
+      cursor:pointer;
     }
     .btn:hover{ background:rgba(15,23,42,.06); }
+    .btn:disabled{
+      opacity:.6;
+      cursor:not-allowed;
+    }
     .btn-primary{
       background:#0f172a;
       border-color:#0f172a;
@@ -185,7 +189,6 @@
       padding:18px 18px 16px;
     }
 
-    /* IMPORTANTE: esta clase sí se usa en Reviews */
     .card-body{
       display:flex;
       flex-direction:column;
@@ -308,6 +311,71 @@
       padding-top:12px;
     }
 
+    /* Reviews */
+    .reviews-head{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .reviews-stars{
+      font-size:18px;
+      letter-spacing:1px;
+    }
+    .reviews-meta{
+      color:var(--muted);
+      font-size:14px;
+    }
+    .reviews-list{
+      display:grid;
+      gap:12px;
+    }
+    .review-card{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+      background:#fff;
+      box-shadow:0 4px 14px rgba(15,23,42,.06);
+    }
+    .review-top{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .review-name{ font-weight:800; }
+    .review-date{ color:var(--muted); font-size:13px; }
+    .review-stars{ margin-top:6px; font-size:16px; letter-spacing:1px; }
+    .review-text{ margin:10px 0 0; color:var(--text); }
+
+    .review-form-wrap{
+      margin-top:14px;
+      border-top:1px solid var(--line);
+      padding-top:14px;
+    }
+    .review-form{
+      display:grid;
+      gap:10px;
+      max-width:680px;
+    }
+    .field{
+      display:grid;
+      gap:6px;
+    }
+    .field-label{
+      font-size:13px;
+      color:var(--muted);
+    }
+    .field input,
+    .field select,
+    .field textarea{
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      font: inherit;
+    }
+    .field textarea{ min-height:110px; resize:vertical; }
+
     /* Sticky CTA (solo móvil) */
     .sticky{
       position:fixed;
@@ -321,8 +389,11 @@
       justify-content:center;
       z-index:50;
     }
-    .sticky .btn{width:100%; justify-content:center;}
-    .sticky .btn + .btn{max-width:46%}
+    .sticky .btn{
+      flex:1;
+      justify-content:center;
+      max-width:520px;
+    }
     @media(min-width:900px){
       .sticky{display:none;}
     }
@@ -413,12 +484,6 @@
           🧾 Servicios
         </a>
       </div>
-
-      <!--
-      <div class="note">
-        Próximo upgrade (cuando quieras): sección de reseñas/ratings propias de ChicureoLocal para aumentar conversión y confianza.
-      </div>
-      -->
     </header>
 
     <!-- INFO PRINCIPAL -->
@@ -429,7 +494,7 @@
         <h2>Servicios</h2>
         <ul class="list">
           <li><strong>Frenos</strong>: Inspección, mantención y reparación.</li>
-          <li><strong>Reparaciones Mecánicas en General</strong>: Para todo tipo de vehículos.</li>
+          <li><strong>Reparaciones mecánicas en general</strong>: Para todo tipo de vehículos.</li>
           <li><strong>Escáner automotriz</strong>: Taller multimarca.</li>
           <li><strong>Mantenciones</strong> por kilometraje: aceite, filtros y revisión general.</li>
           <li><strong>Diagnóstico</strong> y revisión de fallas (scanner / evaluación técnica).</li>
@@ -445,13 +510,6 @@
           <span class="chip">Diagnóstico</span>
           <span class="chip">Frenos</span>
         </div>
-
-        <!--
-        <div class="note">
-          Si quieres “versión 100% exacta”, envíame los 8–12 servicios oficiales (lista corta) y los reemplazo aquí.
-          Mientras tanto, esto funciona como catálogo estándar de intención de búsqueda.
-        </div>
-        -->
       </div>
 
       <!-- Bloque: Información práctica -->
@@ -470,15 +528,9 @@
                 target="_blank" rel="noopener noreferrer">WhatsApp</a>
           🌐 <a href="https://www.smautomotriz.cl/" target="_blank" rel="noopener noreferrer">smautomotriz.cl</a>
           📸 <a href="https://www.instagram.com/sm.automotrizoficial/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          📍 <a href="https://www.google.com/maps/place/SM+Automotriz/@-33.307824,-70.697939,15z/data=!4m6!3m5!1s0x9662b8bc1e6c06dd:0x9a514c7c8e90d4a7!8m2!3d-33.3078238!4d-70.6979389!16s%2Fg%2F11f3vnlnts?hl=es-419&entry=ttu&g_ep=EgoyMDI2MDEyNS4wIKXMDSoASAFQAw%3D%3D"
+          📍 <a href="https://www.google.com/maps/place/SM+Automotriz/@-33.307824,-70.697939,15z/data=!4m6!3m5!1s0x9662b8bc1e6c06dd:0x9a514c7c8e90d4a7!8m2!3d-33.3078238!4d-70.6979389!16s%2Fg%2F11f3vnlnts?hl=es-419&entry=ttu"
                 target="_blank" rel="noopener noreferrer">Cómo llegar (Maps)</a>
         </div>
-
-        <!--
-        <div class="note">
-          Tip: si el taller trabaja con “hora agendada”, lo podemos destacar acá (sube conversión). Si no, lo dejamos neutro.
-        </div>
-        -->
       </div>
 
     </section>
@@ -488,36 +540,24 @@
       <h2>Galería</h2>
 
       <div class="gallery">
-        <div class="g-item">
-          <img src="/images/SMAutomotriz3.jpg" alt="SM Automotriz – Foto 1" loading="lazy" />
-        </div>
-        <div class="g-item">
-          <img src="/images/SMAutomotriz4.jpg" alt="SM Automotriz – Foto 2" loading="lazy" />
-        </div>
-        <div class="g-item">
-          <img src="/images/SMAutomotriz5.jpg" alt="SM Automotriz – Foto 3" loading="lazy" />
-        </div>
-        <div class="g-item">
-          <img src="/images/SMAutomotriz6.jpg" alt="SM Automotriz – Foto 4" loading="lazy" />
-        </div>
-        <div class="g-item">
-          <img src="/images/SMAutomotriz7.jpg" alt="SM Automotriz – Foto 5" loading="lazy" />
-        </div>
-        <div class="g-item">
-          <img src="/images/SMAutomotriz8.jpg" alt="SM Automotriz – Foto 6" loading="lazy" />
-        </div>
+        <div class="g-item"><img src="/images/SMAutomotriz3.jpg" alt="SM Automotriz – Foto 1" loading="lazy" /></div>
+        <div class="g-item"><img src="/images/SMAutomotriz4.jpg" alt="SM Automotriz – Foto 2" loading="lazy" /></div>
+        <div class="g-item"><img src="/images/SMAutomotriz5.jpg" alt="SM Automotriz – Foto 3" loading="lazy" /></div>
+        <div class="g-item"><img src="/images/SMAutomotriz6.jpg" alt="SM Automotriz – Foto 4" loading="lazy" /></div>
+        <div class="g-item"><img src="/images/SMAutomotriz7.jpg" alt="SM Automotriz – Foto 5" loading="lazy" /></div>
+        <div class="g-item"><img src="/images/SMAutomotriz8.jpg" alt="SM Automotriz – Foto 6" loading="lazy" /></div>
       </div>
     </section>
 
     <!-- REVIEWS (ChicureoLocal) -->
     <section class="card" id="reviews" style="margin-top:16px;" aria-label="Opiniones de clientes">
-      <div class="card-body" style="gap:12px;">
+      <div class="card-body">
         <h2 style="margin:0; font-size:20px; letter-spacing:-.2px;">Opiniones de clientes</h2>
 
         <!-- Resumen -->
-        <div id="reviews-summary" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
-          <div id="reviews-stars" aria-label="Rating promedio" style="font-size:18px; letter-spacing:1px;">☆☆☆☆☆</div>
-          <div style="color:var(--muted); font-size:14px;">
+        <div class="reviews-head">
+          <div id="reviews-stars" class="reviews-stars" aria-label="Rating promedio">☆☆☆☆☆</div>
+          <div class="reviews-meta">
             <strong id="reviews-avg">—</strong> · <span id="reviews-count">—</span> reseñas
           </div>
         </div>
@@ -526,227 +566,47 @@
         <div id="reviews-status" class="note" style="margin:0; display:none;"></div>
 
         <!-- Lista -->
-        <div id="reviews-list" style="display:grid; gap:12px;"></div>
+        <div id="reviews-list" class="reviews-list"></div>
 
-        <!-- Formulario (embebido) -->
-<div style="margin-top:14px; border-top:1px solid var(--line); padding-top:14px;">
-  <h3 style="margin:0 0 10px; font-size:16px;">Dejar una reseña</h3>
+        <!-- Formulario -->
+        <div class="review-form-wrap">
+          <h3 style="margin:0 0 10px; font-size:16px;">Dejar una reseña</h3>
 
-  <form id="review-form" style="display:grid; gap:10px; max-width:680px;">
-    <label style="display:grid; gap:6px;">
-      <span style="font-size:13px; color:var(--muted);">Tu nombre</span>
-      <input id="rf-name" type="text" maxlength="40" required
-        style="padding:10px 12px; border:1px solid var(--line); border-radius:12px;" />
-    </label>
+          <form id="review-form" class="review-form" novalidate>
+            <label class="field">
+              <span class="field-label">Tu nombre</span>
+              <input id="rf-name" name="name" type="text" maxlength="40" autocomplete="name" required />
+            </label>
 
-    <label style="display:grid; gap:6px;">
-      <span style="font-size:13px; color:var(--muted);">Rating</span>
-      <select id="rf-rating" required
-        style="padding:10px 12px; border:1px solid var(--line); border-radius:12px;">
-        <option value="5">★★★★★ (5)</option>
-        <option value="4">★★★★☆ (4)</option>
-        <option value="3">★★★☆☆ (3)</option>
-        <option value="2">★★☆☆☆ (2)</option>
-        <option value="1">★☆☆☆☆ (1)</option>
-      </select>
-    </label>
+            <label class="field">
+              <span class="field-label">Rating</span>
+              <select id="rf-rating" name="rating" required>
+                <option value="5">★★★★★ (5)</option>
+                <option value="4">★★★★☆ (4)</option>
+                <option value="3">★★★☆☆ (3)</option>
+                <option value="2">★★☆☆☆ (2)</option>
+                <option value="1">★☆☆☆☆ (1)</option>
+              </select>
+            </label>
 
-    <label style="display:grid; gap:6px;">
-      <span style="font-size:13px; color:var(--muted);">Comentario</span>
-      <textarea id="rf-comment" minlength="10" maxlength="800" required
-        style="padding:10px 12px; border:1px solid var(--line); border-radius:12px; min-height:110px;"></textarea>
-    </label>
+            <label class="field">
+              <span class="field-label">Comentario</span>
+              <textarea id="rf-comment" name="comment" minlength="10" maxlength="800" required></textarea>
+            </label>
 
-    <button class="btn btn-primary" type="submit" style="width:max-content;">
-      Publicar reseña
-    </button>
+            <button id="rf-submit" class="btn btn-primary" type="submit" style="width:max-content;">
+              Publicar reseña
+            </button>
 
-    <div id="rf-msg" class="note" style="display:none; margin:0;"></div>
-  </form>
-</div>
-
-<script>
-(function () {
-  const WORKER_BASE = "https://chicureolocal-reviews.mherrerab1991.workers.dev";
-  const TALLER_ID = "smautomotriz";
-
-  const form = document.getElementById("review-form");
-  const msg = document.getElementById("rf-msg");
-
-  const elName = document.getElementById("rf-name");
-  const elRating = document.getElementById("rf-rating");
-  const elComment = document.getElementById("rf-comment");
-
-  function setMsg(text, show = true) {
-    msg.textContent = text;
-    msg.style.display = show ? "block" : "none";
-  }
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    setMsg("Publicando…", true);
-
-    try {
-      const payload = {
-        taller_id: TALLER_ID,
-        name: elName.value.trim(),
-        rating: Number(elRating.value),
-        comment: elComment.value.trim()
-      };
-
-      const res = await fetch(`${WORKER_BASE}/reviews`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-
-      const data = await res.json().catch(() => ({}));
-
-      if (!res.ok) {
-        throw new Error(data?.error || `HTTP ${res.status}`);
-      }
-
-      setMsg("¡Gracias! Tu reseña fue publicada.", true);
-
-      // Limpia
-      elComment.value = "";
-      elRating.value = "5";
-
-      // Recarga reseñas: llama a tu loader actual si existe
-      if (typeof window.__reloadReviews === "function") {
-        window.__reloadReviews();
-      } else {
-        // fallback simple: recargar página
-        // location.reload();
-      }
-    } catch (err) {
-      console.error(err);
-      setMsg("No se pudo publicar. Revisa que no incluyas links y que el comentario tenga al menos 10 caracteres.", true);
-    }
-  });
-})();
-</script>
+            <div id="rf-msg" class="note" style="display:none; margin:0;"></div>
+          </form>
+        </div>
 
         <div class="disclaimer" style="margin-top:10px;">
           <strong>Nota:</strong> Las opiniones son publicadas en ChicureoLocal y pueden estar sujetas a moderación.
         </div>
       </div>
     </section>
-
-    <script>
-      (function () {
-        // === CONFIG ===
-        const WORKER_BASE = "https://chicureolocal-reviews.mherrerab1991.workers.dev";
-        const TALLER_SLUG = "smautomotriz";
-        const ENDPOINT = `${WORKER_BASE}/reviews?taller=${encodeURIComponent(TALLER_SLUG)}`;
-
-        // === DOM ===
-        const elAvg = document.getElementById("reviews-avg");
-        const elCount = document.getElementById("reviews-count");
-        const elStars = document.getElementById("reviews-stars");
-        const elList = document.getElementById("reviews-list");
-        const elStatus = document.getElementById("reviews-status");
-
-        function setStatus(msg, show = true) {
-          elStatus.textContent = msg;
-          elStatus.style.display = show ? "block" : "none";
-        }
-
-        function starsFromAvg(avg) {
-          const rounded = Math.round(avg * 2) / 2;
-          const full = Math.floor(rounded);
-          let out = "★".repeat(full) + "☆".repeat(5 - full);
-          return { rounded, out };
-        }
-
-        function esc(s) {
-          return String(s ?? "")
-            .replaceAll("&", "&amp;")
-            .replaceAll("<", "&lt;")
-            .replaceAll(">", "&gt;")
-            .replaceAll('"', "&quot;")
-            .replaceAll("'", "&#039;");
-        }
-
-        function formatDate(iso) {
-          try {
-            const d = new Date(iso);
-            return d.toLocaleDateString("es-CL", { year:"numeric", month:"short", day:"2-digit" });
-          } catch (e) {
-            return iso;
-          }
-        }
-
-        function renderReview(r) {
-          const rating = Number(r.rating || 0);
-          const stars = "★".repeat(Math.max(0, Math.min(5, rating))) + "☆".repeat(Math.max(0, 5 - rating));
-          const name = esc(r.name || "Anónimo");
-          const comment = esc(r.comment || "");
-          const created = formatDate(r.created_at);
-
-          const box = document.createElement("div");
-          box.style.border = "1px solid var(--line)";
-          box.style.borderRadius = "14px";
-          box.style.padding = "14px";
-          box.style.background = "#fff";
-          box.style.boxShadow = "0 4px 14px rgba(15,23,42,.06)";
-
-          box.innerHTML = `
-            <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-              <div style="font-weight:800;">${name}</div>
-              <div style="color:var(--muted); font-size:13px;">${created}</div>
-            </div>
-            <div style="margin-top:6px; font-size:16px; letter-spacing:1px;" aria-label="Rating">
-              ${stars}
-            </div>
-            <p style="margin:10px 0 0; color:var(--text);">${comment}</p>
-          `;
-          return box;
-        }
-
-        async function load() {
-          setStatus("Cargando opiniones…", true);
-
-          try {
-            const res = await fetch(ENDPOINT, { method: "GET" });
-            if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-            const data = await res.json();
-
-            const count = Number(data?.summary?.count ?? 0);
-            const avg = Number(data?.summary?.avg ?? 0);
-
-            elCount.textContent = count;
-            elAvg.textContent = count ? avg.toFixed(1) : "—";
-
-            if (count) {
-              const s = starsFromAvg(avg);
-              elStars.textContent = s.out;
-              elStars.title = `${s.rounded.toFixed(1)} / 5`;
-            } else {
-              elStars.textContent = "☆☆☆☆☆";
-              elStars.title = "Sin reseñas";
-            }
-
-            elList.innerHTML = "";
-            const reviews = Array.isArray(data?.reviews) ? data.reviews : [];
-
-            if (!reviews.length) {
-              setStatus("Aún no hay reseñas publicadas para este taller.", true);
-              return;
-            }
-
-            setStatus("", false);
-            reviews.forEach(r => elList.appendChild(renderReview(r)));
-          } catch (err) {
-            console.error(err);
-            setStatus("No pudimos cargar las reseñas en este momento. Intenta nuevamente más tarde.", true);
-          }
-        }
-
-        load();
-      })();
-    </script>
 
     <!-- CTA FINAL -->
     <section class="card" style="margin-top:16px;" aria-label="CTA final">
@@ -785,19 +645,198 @@
        href="https://wa.me/56990442727?text=Hola%20SM%20Automotriz%2C%20los%20contacto%20desde%20ChicureoLocal.%20Quisiera%20agendar%20una%20revisi%C3%B3n%20%2F%20mantenci%C3%B3n.%20Gracias."
        target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
     <a class="btn"
-       href="https://www.google.com/maps/place/SM+Automotriz/@-33.307824,-70.697939,15z/data=!4m6!3m5!1s0x9662b8bc1e6c06dd:0x9a514c7c8e90d4a7!8m2!3d-33.3078238!4d-70.6979389!16s%2Fg%2F11f3vnlnts?hl=es-419&entry=ttu&g_ep=EgoyMDI2MDEyNS4wIKXMDSoASAFQAw%3D%3D"
+       href="https://www.google.com/maps/place/SM+Automotriz/@-33.307824,-70.697939,15z/data=!4m6!3m5!1s0x9662b8bc1e6c06dd:0x9a514c7c8e90d4a7!8m2!3d-33.3078238!4d-70.6979389!16s%2Fg%2F11f3vnlnts?hl=es-419&entry=ttu"
        target="_blank" rel="noopener noreferrer">📍 Maps</a>
   </div>
 
+  <!-- Reviews + Form (unificado, sin duplicaciones) -->
+  <script>
+    (function () {
+      // === CONFIG ===
+      const WORKER_BASE = "https://chicureolocal-reviews.mherrerab1991.workers.dev";
+      const TALLER_ID = "smautomotriz";
+      const GET_ENDPOINT = `${WORKER_BASE}/reviews?taller=${encodeURIComponent(TALLER_ID)}`;
+      const POST_ENDPOINT = `${WORKER_BASE}/reviews`;
+
+      // === DOM (Resumen + Lista) ===
+      const elAvg = document.getElementById("reviews-avg");
+      const elCount = document.getElementById("reviews-count");
+      const elStars = document.getElementById("reviews-stars");
+      const elList = document.getElementById("reviews-list");
+      const elStatus = document.getElementById("reviews-status");
+
+      // === DOM (Formulario) ===
+      const form = document.getElementById("review-form");
+      const msg = document.getElementById("rf-msg");
+      const btn = document.getElementById("rf-submit");
+      const elName = document.getElementById("rf-name");
+      const elRating = document.getElementById("rf-rating");
+      const elComment = document.getElementById("rf-comment");
+
+      function setStatus(text, show = true) {
+        elStatus.textContent = text;
+        elStatus.style.display = show ? "block" : "none";
+      }
+
+      function setMsg(text, show = true) {
+        msg.textContent = text;
+        msg.style.display = show ? "block" : "none";
+      }
+
+      function esc(s) {
+        return String(s ?? "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function formatDate(iso) {
+        try {
+          const d = new Date(iso);
+          return d.toLocaleDateString("es-CL", { year:"numeric", month:"short", day:"2-digit" });
+        } catch {
+          return iso;
+        }
+      }
+
+      function starsFromAvg(avg) {
+        const rounded = Math.round(avg * 2) / 2;
+        const full = Math.floor(rounded);
+        return { rounded, out: "★".repeat(full) + "☆".repeat(5 - full) };
+      }
+
+      function renderReview(r) {
+        const rating = Number(r.rating || 0);
+        const stars = "★".repeat(Math.max(0, Math.min(5, rating))) + "☆".repeat(Math.max(0, 5 - rating));
+        const name = esc(r.name || "Anónimo");
+        const comment = esc(r.comment || "");
+        const created = formatDate(r.created_at);
+
+        const box = document.createElement("div");
+        box.className = "review-card";
+        box.innerHTML = `
+          <div class="review-top">
+            <div class="review-name">${name}</div>
+            <div class="review-date">${created}</div>
+          </div>
+          <div class="review-stars" aria-label="Rating">${stars}</div>
+          <p class="review-text">${comment}</p>
+        `;
+        return box;
+      }
+
+      async function loadReviews() {
+        setStatus("Cargando opiniones…", true);
+
+        try {
+          const res = await fetch(GET_ENDPOINT, { method: "GET" });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+          const data = await res.json();
+          const count = Number(data?.summary?.count ?? 0);
+          const avg = Number(data?.summary?.avg ?? 0);
+
+          elCount.textContent = String(count);
+          elAvg.textContent = count ? avg.toFixed(1) : "—";
+
+          if (count) {
+            const s = starsFromAvg(avg);
+            elStars.textContent = s.out;
+            elStars.title = `${s.rounded.toFixed(1)} / 5`;
+          } else {
+            elStars.textContent = "☆☆☆☆☆";
+            elStars.title = "Sin reseñas";
+          }
+
+          elList.innerHTML = "";
+          const reviews = Array.isArray(data?.reviews) ? data.reviews : [];
+
+          if (!reviews.length) {
+            setStatus("Aún no hay reseñas publicadas para este taller.", true);
+            return;
+          }
+
+          setStatus("", false);
+          reviews.forEach(r => elList.appendChild(renderReview(r)));
+        } catch (err) {
+          console.error(err);
+          setStatus("No pudimos cargar las reseñas en este momento. Intenta nuevamente más tarde.", true);
+        }
+      }
+
+      // Expone recarga para uso interno si quieres llamarla desde otro lado
+      window.__reloadReviews = loadReviews;
+
+      // === Submit handler ===
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        setMsg("", false);
+
+        // Validación simple (client-side)
+        const name = elName.value.trim();
+        const comment = elComment.value.trim();
+        const rating = Number(elRating.value);
+
+        if (!name) return setMsg("Ingresa tu nombre.", true);
+        if (!comment || comment.length < 10) return setMsg("Tu comentario debe tener al menos 10 caracteres.", true);
+        if (!Number.isFinite(rating) || rating < 1 || rating > 5) return setMsg("Selecciona un rating válido (1 a 5).", true);
+
+        btn.disabled = true;
+        setMsg("Publicando…", true);
+
+        try {
+          const payload = { taller_id: TALLER_ID, name, rating, comment };
+
+          const res = await fetch(POST_ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+
+          const data = await res.json().catch(() => ({}));
+          if (!res.ok) throw new Error(data?.error || `HTTP ${res.status}`);
+
+          setMsg("¡Gracias! Tu reseña fue publicada.", true);
+
+          // GA4 event opcional
+          if (typeof gtag === "function") {
+            gtag("event", "review_submit", {
+              event_category: "engagement",
+              event_label: TALLER_ID,
+              value: rating
+            });
+          }
+
+          // Limpieza
+          elComment.value = "";
+          elRating.value = "5";
+
+          // Recarga listado
+          await loadReviews();
+        } catch (err) {
+          console.error(err);
+          setMsg("No se pudo publicar. Intenta nuevamente en unos minutos.", true);
+        } finally {
+          btn.disabled = false;
+        }
+      });
+
+      // Carga inicial
+      loadReviews();
+    })();
+  </script>
+
   <!-- Evento WhatsApp GA4 -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener("DOMContentLoaded", function () {
       const whatsappLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]');
       whatsappLinks.forEach(function (link) {
-        link.addEventListener('click', function () {
-          if (typeof gtag === 'function') {
-            gtag('event', 'whatsapp_click', {
-              event_category: 'contact',
+        link.addEventListener("click", function () {
+          if (typeof gtag === "function") {
+            gtag("event", "whatsapp_click", {
+              event_category: "contact",
               event_label: link.href,
               page_location: window.location.href
             });
