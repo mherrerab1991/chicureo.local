@@ -528,6 +528,105 @@
         <!-- Lista -->
         <div id="reviews-list" style="display:grid; gap:12px;"></div>
 
+        <!-- Formulario (embebido) -->
+<div style="margin-top:14px; border-top:1px solid var(--line); padding-top:14px;">
+  <h3 style="margin:0 0 10px; font-size:16px;">Dejar una reseña</h3>
+
+  <form id="review-form" style="display:grid; gap:10px; max-width:680px;">
+    <label style="display:grid; gap:6px;">
+      <span style="font-size:13px; color:var(--muted);">Tu nombre</span>
+      <input id="rf-name" type="text" maxlength="40" required
+        style="padding:10px 12px; border:1px solid var(--line); border-radius:12px;" />
+    </label>
+
+    <label style="display:grid; gap:6px;">
+      <span style="font-size:13px; color:var(--muted);">Rating</span>
+      <select id="rf-rating" required
+        style="padding:10px 12px; border:1px solid var(--line); border-radius:12px;">
+        <option value="5">★★★★★ (5)</option>
+        <option value="4">★★★★☆ (4)</option>
+        <option value="3">★★★☆☆ (3)</option>
+        <option value="2">★★☆☆☆ (2)</option>
+        <option value="1">★☆☆☆☆ (1)</option>
+      </select>
+    </label>
+
+    <label style="display:grid; gap:6px;">
+      <span style="font-size:13px; color:var(--muted);">Comentario</span>
+      <textarea id="rf-comment" minlength="10" maxlength="800" required
+        style="padding:10px 12px; border:1px solid var(--line); border-radius:12px; min-height:110px;"></textarea>
+    </label>
+
+    <button class="btn btn-primary" type="submit" style="width:max-content;">
+      Publicar reseña
+    </button>
+
+    <div id="rf-msg" class="note" style="display:none; margin:0;"></div>
+  </form>
+</div>
+
+<script>
+(function () {
+  const WORKER_BASE = "https://chicureolocal-reviews.mherrerab1991.workers.dev";
+  const TALLER_ID = "smautomotriz";
+
+  const form = document.getElementById("review-form");
+  const msg = document.getElementById("rf-msg");
+
+  const elName = document.getElementById("rf-name");
+  const elRating = document.getElementById("rf-rating");
+  const elComment = document.getElementById("rf-comment");
+
+  function setMsg(text, show = true) {
+    msg.textContent = text;
+    msg.style.display = show ? "block" : "none";
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    setMsg("Publicando…", true);
+
+    try {
+      const payload = {
+        taller_id: TALLER_ID,
+        name: elName.value.trim(),
+        rating: Number(elRating.value),
+        comment: elComment.value.trim()
+      };
+
+      const res = await fetch(`${WORKER_BASE}/reviews`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        throw new Error(data?.error || `HTTP ${res.status}`);
+      }
+
+      setMsg("¡Gracias! Tu reseña fue publicada.", true);
+
+      // Limpia
+      elComment.value = "";
+      elRating.value = "5";
+
+      // Recarga reseñas: llama a tu loader actual si existe
+      if (typeof window.__reloadReviews === "function") {
+        window.__reloadReviews();
+      } else {
+        // fallback simple: recargar página
+        // location.reload();
+      }
+    } catch (err) {
+      console.error(err);
+      setMsg("No se pudo publicar. Revisa que no incluyas links y que el comentario tenga al menos 10 caracteres.", true);
+    }
+  });
+})();
+</script>
+
         <div class="disclaimer" style="margin-top:10px;">
           <strong>Nota:</strong> Las opiniones son publicadas en ChicureoLocal y pueden estar sujetas a moderación.
         </div>
