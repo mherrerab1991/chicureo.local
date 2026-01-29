@@ -376,6 +376,16 @@
     }
     .field textarea{ min-height:110px; resize:vertical; }
 
+    /* Ver más */
+    .reviews-more-wrap{
+      display:flex;
+      justify-content:center;
+      margin-top:10px;
+    }
+    .btn-secondary{
+      background:rgba(15,23,42,.03);
+    }
+
     /* Sticky CTA (solo móvil) */
     .sticky{
       position:fixed;
@@ -568,6 +578,13 @@
         <!-- Lista -->
         <div id="reviews-list" class="reviews-list"></div>
 
+        <!-- Ver más (paginación client-side) -->
+        <div class="reviews-more-wrap">
+          <button id="reviews-more" class="btn btn-secondary" type="button" style="display:none;">
+            Ver más reseñas
+          </button>
+        </div>
+
         <!-- Formulario -->
         <div class="review-form-wrap">
           <h3 style="margin:0 0 10px; font-size:16px;">Dejar una reseña</h3>
@@ -655,7 +672,7 @@
        target="_blank" rel="noopener noreferrer">📍 Maps</a>
   </div>
 
-  <!-- Reviews + Form (unificado, con email) -->
+  <!-- Reviews + Form (unificado, con paginación "Ver más") -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const WORKER_BASE = "https://chicureolocal-reviews.mherrerab1991.workers.dev";
@@ -663,12 +680,18 @@
       const GET_ENDPOINT = `${WORKER_BASE}/reviews?taller=${encodeURIComponent(TALLER_ID)}`;
       const POST_ENDPOINT = `${WORKER_BASE}/reviews`;
 
+      // Paginación client-side
+      const PAGE_SIZE = 10;
+      let allReviews = [];
+      let visibleCount = 0;
+
       // DOM (Resumen + Lista)
       const elAvg = document.getElementById("reviews-avg");
       const elCount = document.getElementById("reviews-count");
       const elStars = document.getElementById("reviews-stars");
       const elList = document.getElementById("reviews-list");
       const elStatus = document.getElementById("reviews-status");
+      const btnMore = document.getElementById("reviews-more");
 
       // DOM (Formulario)
       const form = document.getElementById("review-form");
@@ -687,6 +710,7 @@
       if (!elStars) missing.push("reviews-stars");
       if (!elList) missing.push("reviews-list");
       if (!elStatus) missing.push("reviews-status");
+      if (!btnMore) missing.push("reviews-more");
       if (!form) missing.push("review-form");
       if (!msg) missing.push("rf-msg");
       if (!btn) missing.push("rf-submit");
@@ -740,9 +764,8 @@
 
       function renderReview(r) {
         const rating = Number(r?.rating || 0);
-        const stars =
-          "★".repeat(Math.max(0, Math.min(5, rating))) +
-          "☆".repeat(Math.max(0, 5 - Math.max(0, Math.min(5, rating))));
+        const clamped = Math.max(0, Math.min(5, rating));
+        const stars = "★".repeat(clamped) + "☆".repeat(5 - clamped);
 
         const name = esc(r?.name || "Anónimo");
         const comment = esc(r?.comment || "");
@@ -761,8 +784,33 @@
         return box;
       }
 
+      function syncMoreButton() {
+        if (visibleCount < allReviews.length) {
+          btnMore.style.display = "inline-flex";
+          btnMore.disabled = false;
+          const remaining = allReviews.length - visibleCount;
+          const next = Math.min(PAGE_SIZE, remaining);
+          btnMore.textContent = `Ver más reseñas (+${next})`;
+        } else {
+          btnMore.style.display = "none";
+        }
+      }
+
+      function renderVisible() {
+        elList.innerHTML = "";
+        const slice = allReviews.slice(0, visibleCount);
+        slice.forEach(r => elList.appendChild(renderReview(r)));
+        syncMoreButton();
+      }
+
+      function showNextPage() {
+        visibleCount = Math.min(allReviews.length, visibleCount + PAGE_SIZE);
+        renderVisible();
+      }
+
       async function loadReviews() {
         setStatus("Cargando opiniones…", true);
+        btnMore.style.display = "none";
 
         try {
           const res = await fetch(GET_ENDPOINT, { method: "GET", cache: "no-store" });
@@ -787,21 +835,30 @@
             elStars.title = "Sin reseñas";
           }
 
-          elList.innerHTML = "";
-          const reviews = Array.isArray(data?.reviews) ? data.reviews : [];
+          allReviews = Array.isArray(data?.reviews) ? data.reviews : [];
 
-          if (!reviews.length) {
+          if (!allReviews.length) {
+            elList.innerHTML = "";
             setStatus("Aún no hay reseñas publicadas para este taller.", true);
+            btnMore.style.display = "none";
             return;
           }
 
+          // Inicial: 10 (o menos)
+          visibleCount = Math.min(PAGE_SIZE, allReviews.length);
           setStatus("", false);
-          reviews.forEach(r => elList.appendChild(renderReview(r)));
+          renderVisible();
         } catch (err) {
           console.error("loadReviews error:", err);
           setStatus("No pudimos cargar las reseñas en este momento. Intenta nuevamente más tarde.", true);
+          btnMore.style.display = "none";
         }
       }
+
+      // Botón ver más
+      btnMore.addEventListener("click", () => {
+        showNextPage();
+      });
 
       // Exponer por si se necesita
       window.__reloadReviews = loadReviews;
@@ -848,7 +905,7 @@
             });
           }
 
-          // Limpieza
+          // Limpieza (pendiente: elName)
           elComment.value = "";
           elRating.value = "5";
           elEmail.value = "";
