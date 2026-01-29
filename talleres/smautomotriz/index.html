@@ -655,199 +655,213 @@
        target="_blank" rel="noopener noreferrer">📍 Maps</a>
   </div>
 
-  <!-- Reviews + Form (unificado, con email) -->
+<!-- Reviews + Form (unificado, sin duplicaciones) -->
   <script>
-    (function () {
-      // === CONFIG ===
-      const WORKER_BASE = "https://chicureolocal-reviews.mherrerab1991.workers.dev";
-      const TALLER_ID = "smautomotriz";
-      const GET_ENDPOINT = `${WORKER_BASE}/reviews?taller=${encodeURIComponent(TALLER_ID)}`;
-      const POST_ENDPOINT = `${WORKER_BASE}/reviews`;
+  document.addEventListener("DOMContentLoaded", () => {
+    // === CONFIG ===
+    const WORKER_BASE = "https://chicureolocal-reviews.mherrerab1991.workers.dev";
+    const TALLER_ID = "smautomotriz";
+    const GET_ENDPOINT = `${WORKER_BASE}/reviews?taller=${encodeURIComponent(TALLER_ID)}`;
+    const POST_ENDPOINT = `${WORKER_BASE}/reviews`;
 
-      // === DOM (Resumen + Lista) ===
-      const elAvg = document.getElementById("reviews-avg");
-      const elCount = document.getElementById("reviews-count");
-      const elStars = document.getElementById("reviews-stars");
-      const elList = document.getElementById("reviews-list");
-      const elStatus = document.getElementById("reviews-status");
+    // === DOM (Resumen + Lista) ===
+    const elAvg = document.getElementById("reviews-avg");
+    const elCount = document.getElementById("reviews-count");
+    const elStars = document.getElementById("reviews-stars");
+    const elList = document.getElementById("reviews-list");
+    const elStatus = document.getElementById("reviews-status");
 
-      // === DOM (Formulario) ===
-      const form = document.getElementById("review-form");
-      const msg = document.getElementById("rf-msg");
-      const btn = document.getElementById("rf-submit");
-      const elName = document.getElementById("rf-name");
-      const elEmail = document.getElementById("rf-email");
-      const elRating = document.getElementById("rf-rating");
-      const elComment = document.getElementById("rf-comment");
+    // === DOM (Formulario) ===
+    const form = document.getElementById("review-form");
+    const msg = document.getElementById("rf-msg");
+    const btn = document.getElementById("rf-submit");
+    const elName = document.getElementById("rf-name");
+    const elRating = document.getElementById("rf-rating");
+    const elComment = document.getElementById("rf-comment");
 
-      function setStatus(text, show = true) {
-        elStatus.textContent = text;
-        elStatus.style.display = show ? "block" : "none";
+    // Guard rails: si falta algún elemento, no seguimos (y lo mostramos)
+    const missing = [];
+    if (!elAvg) missing.push("reviews-avg");
+    if (!elCount) missing.push("reviews-count");
+    if (!elStars) missing.push("reviews-stars");
+    if (!elList) missing.push("reviews-list");
+    if (!elStatus) missing.push("reviews-status");
+    if (!form) missing.push("review-form");
+    if (!msg) missing.push("rf-msg");
+    if (!btn) missing.push("rf-submit");
+    if (!elName) missing.push("rf-name");
+    if (!elRating) missing.push("rf-rating");
+    if (!elComment) missing.push("rf-comment");
+
+    if (missing.length) {
+      console.error("ChicureoLocal Reviews: faltan IDs en el HTML:", missing);
+      // Si al menos existe elStatus, avisamos al usuario
+      if (elStatus) {
+        elStatus.textContent = "Error de integración: faltan componentes del módulo de reseñas.";
+        elStatus.style.display = "block";
       }
+      return;
+    }
 
-      function setMsg(text, show = true) {
-        msg.textContent = text;
-        msg.style.display = show ? "block" : "none";
+    function setStatus(text, show = true) {
+      elStatus.textContent = text;
+      elStatus.style.display = show ? "block" : "none";
+    }
+
+    function setMsg(text, show = true) {
+      msg.textContent = text;
+      msg.style.display = show ? "block" : "none";
+    }
+
+    function esc(s) {
+      return String(s ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function formatDate(iso) {
+      try {
+        const d = new Date(iso);
+        return d.toLocaleDateString("es-CL", { year:"numeric", month:"short", day:"2-digit" });
+      } catch {
+        return String(iso ?? "");
       }
+    }
 
-      function esc(s) {
-        return String(s ?? "")
-          .replaceAll("&", "&amp;")
-          .replaceAll("<", "&lt;")
-          .replaceAll(">", "&gt;")
-          .replaceAll('"', "&quot;")
-          .replaceAll("'", "&#039;");
-      }
+    function starsFromAvg(avg) {
+      const rounded = Math.round(avg * 2) / 2;
+      const full = Math.floor(rounded);
+      return { rounded, out: "★".repeat(full) + "☆".repeat(5 - full) };
+    }
 
-      function formatDate(iso) {
-        try {
-          const d = new Date(iso);
-          return d.toLocaleDateString("es-CL", { year:"numeric", month:"short", day:"2-digit" });
-        } catch {
-          return iso;
-        }
-      }
+    function renderReview(r) {
+      const rating = Number(r?.rating || 0);
+      const stars =
+        "★".repeat(Math.max(0, Math.min(5, rating))) +
+        "☆".repeat(Math.max(0, 5 - Math.max(0, Math.min(5, rating))));
 
-      function starsFromAvg(avg) {
-        const rounded = Math.round(avg * 2) / 2;
-        const full = Math.floor(rounded);
-        return { rounded, out: "★".repeat(full) + "☆".repeat(5 - full) };
-      }
+      const name = esc(r?.name || "Anónimo");
+      const comment = esc(r?.comment || "");
+      const created = formatDate(r?.created_at);
 
-      function renderReview(r) {
-        const rating = Number(r.rating || 0);
-        const stars = "★".repeat(Math.max(0, Math.min(5, rating))) + "☆".repeat(Math.max(0, 5 - rating));
-        const name = esc(r.name || "Anónimo");
-        const comment = esc(r.comment || "");
-        const created = formatDate(r.created_at);
+      const box = document.createElement("div");
+      box.className = "review-card";
+      box.innerHTML = `
+        <div class="review-top">
+          <div class="review-name">${name}</div>
+          <div class="review-date">${created}</div>
+        </div>
+        <div class="review-stars" aria-label="Rating">${stars}</div>
+        <p class="review-text">${comment}</p>
+      `;
+      return box;
+    }
 
-        const box = document.createElement("div");
-        box.className = "review-card";
-        box.innerHTML = `
-          <div class="review-top">
-            <div class="review-name">${name}</div>
-            <div class="review-date">${created}</div>
-          </div>
-          <div class="review-stars" aria-label="Rating">${stars}</div>
-          <p class="review-text">${comment}</p>
-        `;
-        return box;
-      }
+    async function loadReviews() {
+      setStatus("Cargando opiniones…", true);
 
-      async function loadReviews() {
-        setStatus("Cargando opiniones…", true);
+      try {
+        console.log("GET", GET_ENDPOINT);
+        const res = await fetch(GET_ENDPOINT, { method: "GET", cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-        try {
-          const res = await fetch(GET_ENDPOINT, { method: "GET" });
-          if (!res.ok) throw new Error(\`HTTP \${res.status}\`);
+        const data = await res.json();
+        console.log("DATA", data);
 
-          const data = await res.json();
-          const count = Number(data?.summary?.count ?? 0);
-          const avg = Number(data?.summary?.avg ?? 0);
+        const count = Number(data?.summary?.count ?? 0);
+        const avg = data?.summary?.avg === null || data?.summary?.avg === undefined
+          ? null
+          : Number(data.summary.avg);
 
-          elCount.textContent = String(count);
-          elAvg.textContent = count ? avg.toFixed(1) : "—";
+        elCount.textContent = String(count);
+        elAvg.textContent = count && avg !== null && Number.isFinite(avg) ? avg.toFixed(1) : "—";
 
-          if (count) {
-            const s = starsFromAvg(avg);
-            elStars.textContent = s.out;
-            elStars.title = \`\${s.rounded.toFixed(1)} / 5\`;
-          } else {
-            elStars.textContent = "☆☆☆☆☆";
-            elStars.title = "Sin reseñas";
-          }
-
-          elList.innerHTML = "";
-          const reviews = Array.isArray(data?.reviews) ? data.reviews : [];
-
-          if (!reviews.length) {
-            setStatus("Aún no hay reseñas publicadas para este taller.", true);
-            return;
-          }
-
-          setStatus("", false);
-          reviews.forEach(r => elList.appendChild(renderReview(r)));
-        } catch (err) {
-          console.error(err);
-          setStatus("No pudimos cargar las reseñas en este momento. Intenta nuevamente más tarde.", true);
-        }
-      }
-
-      // Expone recarga por si la quieres usar después
-      window.__reloadReviews = loadReviews;
-
-      // === Submit handler ===
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        setMsg("", false);
-
-        // Validación simple
-        const name = elName.value.trim();
-        const email = (elEmail.value || "").trim().toLowerCase();
-        const comment = elComment.value.trim();
-        const rating = Number(elRating.value);
-
-        if (!name) return setMsg("Ingresa tu nombre.", true);
-        if (!comment || comment.length < 10) return setMsg("Tu comentario debe tener al menos 10 caracteres.", true);
-        if (!Number.isFinite(rating) || rating < 1 || rating > 5) return setMsg("Selecciona un rating válido (1 a 5).", true);
-
-        // Validación email (solo si viene)
-        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email)) {
-          return setMsg("El email no parece válido. Déjalo vacío si no quieres ingresarlo.", true);
+        if (count && avg !== null && Number.isFinite(avg)) {
+          const s = starsFromAvg(avg);
+          elStars.textContent = s.out;
+          elStars.title = `${s.rounded.toFixed(1)} / 5`;
+        } else {
+          elStars.textContent = "☆☆☆☆☆";
+          elStars.title = "Sin reseñas";
         }
 
-        btn.disabled = true;
-        setMsg("Publicando…", true);
+        elList.innerHTML = "";
+        const reviews = Array.isArray(data?.reviews) ? data.reviews : [];
 
-        try {
-          const payload = {
-            taller_id: TALLER_ID,
-            name,
-            email: email || null,
-            rating,
-            comment
-          };
+        if (!reviews.length) {
+          setStatus("Aún no hay reseñas publicadas para este taller.", true);
+          return;
+        }
 
-          const res = await fetch(POST_ENDPOINT, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
+        setStatus("", false);
+        reviews.forEach(r => elList.appendChild(renderReview(r)));
+      } catch (err) {
+        console.error("loadReviews error:", err);
+        setStatus("No pudimos cargar las reseñas en este momento. Intenta nuevamente más tarde.", true);
+      }
+    }
+
+    // Expone recarga por si quieres llamarla
+    window.__reloadReviews = loadReviews;
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      setMsg("", false);
+
+      const name = elName.value.trim();
+      const comment = elComment.value.trim();
+      const rating = Number(elRating.value);
+
+      if (!name) return setMsg("Ingresa tu nombre.", true);
+      if (!comment || comment.length < 10) return setMsg("Tu comentario debe tener al menos 10 caracteres.", true);
+      if (!Number.isFinite(rating) || rating < 1 || rating > 5) return setMsg("Selecciona un rating válido (1 a 5).", true);
+
+      btn.disabled = true;
+      setMsg("Publicando…", true);
+
+      try {
+        const payload = { taller_id: TALLER_ID, name, rating, comment };
+
+        console.log("POST", POST_ENDPOINT, payload);
+        const res = await fetch(POST_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data?.error || `HTTP ${res.status}`);
+
+        setMsg("¡Gracias! Tu reseña fue publicada.", true);
+
+        if (typeof gtag === "function") {
+          gtag("event", "review_submit", {
+            event_category: "engagement",
+            event_label: TALLER_ID,
+            value: rating
           });
-
-          const data = await res.json().catch(() => ({}));
-          if (!res.ok) throw new Error(data?.error || \`HTTP \${res.status}\`);
-
-          setMsg("¡Gracias! Tu reseña fue publicada.", true);
-
-          // GA4 event opcional
-          if (typeof gtag === "function") {
-            gtag("event", "review_submit", {
-              event_category: "engagement",
-              event_label: TALLER_ID,
-              value: rating
-            });
-          }
-
-          // Limpieza
-          elComment.value = "";
-          elRating.value = "5";
-          elEmail.value = "";
-
-          // Recarga listado
-          await loadReviews();
-        } catch (err) {
-          console.error(err);
-          setMsg("No se pudo publicar. Intenta nuevamente en unos minutos.", true);
-        } finally {
-          btn.disabled = false;
         }
-      });
 
-      // Carga inicial
-      loadReviews();
-    })();
-  </script>
+        elComment.value = "";
+        elRating.value = "5";
 
+        await loadReviews();
+      } catch (err) {
+        console.error("submit error:", err);
+        setMsg("No se pudo publicar. Intenta nuevamente en unos minutos.", true);
+      } finally {
+        btn.disabled = false;
+      }
+    });
+
+    // Carga inicial
+    loadReviews();
+  });
+</script>
+ 
   <!-- Evento WhatsApp GA4 -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
