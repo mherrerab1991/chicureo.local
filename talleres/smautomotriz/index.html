@@ -579,6 +579,11 @@
             </label>
 
             <label class="field">
+              <span class="field-label">Email (opcional, no se publica)</span>
+              <input id="rf-email" name="email" type="email" maxlength="120" autocomplete="email" placeholder="tuemail@ejemplo.com" />
+            </label>
+
+            <label class="field">
               <span class="field-label">Rating</span>
               <select id="rf-rating" name="rating" required>
                 <option value="5">★★★★★ (5)</option>
@@ -604,6 +609,7 @@
 
         <div class="disclaimer" style="margin-top:10px;">
           <strong>Nota:</strong> Las opiniones son publicadas en ChicureoLocal y pueden estar sujetas a moderación.
+          <br><strong>Privacidad:</strong> El email (si lo ingresas) <strong>no se publica</strong> y se usa solo para contacto/seguimiento.
         </div>
       </div>
     </section>
@@ -649,7 +655,7 @@
        target="_blank" rel="noopener noreferrer">📍 Maps</a>
   </div>
 
-  <!-- Reviews + Form (unificado, sin duplicaciones) -->
+  <!-- Reviews + Form (unificado, con email) -->
   <script>
     (function () {
       // === CONFIG ===
@@ -670,6 +676,7 @@
       const msg = document.getElementById("rf-msg");
       const btn = document.getElementById("rf-submit");
       const elName = document.getElementById("rf-name");
+      const elEmail = document.getElementById("rf-email");
       const elRating = document.getElementById("rf-rating");
       const elComment = document.getElementById("rf-comment");
 
@@ -732,7 +739,7 @@
 
         try {
           const res = await fetch(GET_ENDPOINT, { method: "GET" });
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          if (!res.ok) throw new Error(\`HTTP \${res.status}\`);
 
           const data = await res.json();
           const count = Number(data?.summary?.count ?? 0);
@@ -744,7 +751,7 @@
           if (count) {
             const s = starsFromAvg(avg);
             elStars.textContent = s.out;
-            elStars.title = `${s.rounded.toFixed(1)} / 5`;
+            elStars.title = \`\${s.rounded.toFixed(1)} / 5\`;
           } else {
             elStars.textContent = "☆☆☆☆☆";
             elStars.title = "Sin reseñas";
@@ -766,7 +773,7 @@
         }
       }
 
-      // Expone recarga para uso interno si quieres llamarla desde otro lado
+      // Expone recarga por si la quieres usar después
       window.__reloadReviews = loadReviews;
 
       // === Submit handler ===
@@ -774,8 +781,9 @@
         e.preventDefault();
         setMsg("", false);
 
-        // Validación simple (client-side)
+        // Validación simple
         const name = elName.value.trim();
+        const email = (elEmail.value || "").trim().toLowerCase();
         const comment = elComment.value.trim();
         const rating = Number(elRating.value);
 
@@ -783,11 +791,22 @@
         if (!comment || comment.length < 10) return setMsg("Tu comentario debe tener al menos 10 caracteres.", true);
         if (!Number.isFinite(rating) || rating < 1 || rating > 5) return setMsg("Selecciona un rating válido (1 a 5).", true);
 
+        // Validación email (solo si viene)
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email)) {
+          return setMsg("El email no parece válido. Déjalo vacío si no quieres ingresarlo.", true);
+        }
+
         btn.disabled = true;
         setMsg("Publicando…", true);
 
         try {
-          const payload = { taller_id: TALLER_ID, name, rating, comment };
+          const payload = {
+            taller_id: TALLER_ID,
+            name,
+            email: email || null,
+            rating,
+            comment
+          };
 
           const res = await fetch(POST_ENDPOINT, {
             method: "POST",
@@ -796,7 +815,7 @@
           });
 
           const data = await res.json().catch(() => ({}));
-          if (!res.ok) throw new Error(data?.error || `HTTP ${res.status}`);
+          if (!res.ok) throw new Error(data?.error || \`HTTP \${res.status}\`);
 
           setMsg("¡Gracias! Tu reseña fue publicada.", true);
 
@@ -812,6 +831,7 @@
           // Limpieza
           elComment.value = "";
           elRating.value = "5";
+          elEmail.value = "";
 
           // Recarga listado
           await loadReviews();
@@ -848,3 +868,4 @@
 
 </body>
 </html>
+
