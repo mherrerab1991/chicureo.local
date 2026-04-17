@@ -120,6 +120,213 @@
       padding:7px 10px;
     }
 
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    @media(min-width:720px){
+      .grid{grid-template-columns:1fr 1fr;}
+    }
+
+    .cat{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:24px 22px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      background:#fff;
+      transition:transform .15s ease, box-shadow .15s ease;
+      min-height:190px;
+    }
+    .cat:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 26px rgba(15,23,42,.12);
+    }
+    .cat h2{margin:0 0 8px; font-size:20px; letter-spacing:-.2px;}
+    .cat p{margin:0 0 18px; color:var(--muted); font-size:15px;}
+
+    .btn{
+      align-self:flex-start;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      font-size:14px;
+      font-weight:650;
+      background:rgba(15,23,42,.04);
+    }
+
+    /* BANNER PATROCINADO REUTILIZABLE */
+    .sponsored-banner{
+      position:relative;
+      overflow:hidden;
+      margin:22px 0;
+      border-radius:18px;
+      border:1px solid rgba(15,23,42,.10);
+      box-shadow:0 14px 34px rgba(15,23,42,.10);
+      color:#fff;
+      background:
+        linear-gradient(135deg, rgba(15,23,42,.88), rgba(15,23,42,.58)),
+        var(--banner-image, url('/images/smautomotriz-banner.jpg')) center/cover no-repeat;
+    }
+
+    .sponsored-banner::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(500px 240px at 0% 0%, rgba(255,183,3,.24), transparent 60%),
+        radial-gradient(500px 240px at 100% 100%, rgba(255,106,61,.18), transparent 60%);
+      pointer-events:none;
+    }
+
+    .sponsored-banner__inner{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      padding:26px 22px;
+      align-items:center;
+    }
+
+    @media(min-width:760px){
+      .sponsored-banner__inner{
+        grid-template-columns:1.4fr auto;
+        padding:30px 28px;
+      }
+    }
+
+    .sponsored-banner__top{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px;
+      margin-bottom:12px;
+    }
+
+    .sponsored-banner__label{
+      display:inline-flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#fff;
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.18);
+      backdrop-filter:blur(4px);
+    }
+
+    .sponsored-banner__category{
+      display:inline-flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.84);
+      background:rgba(15,23,42,.18);
+      border:1px solid rgba(255,255,255,.14);
+    }
+
+    .sponsored-banner h2{
+      margin:0 0 8px;
+      font-size:30px;
+      line-height:1.1;
+      letter-spacing:-.4px;
+      color:#fff;
+    }
+
+    .sponsored-banner p{
+      margin:0;
+      max-width:62ch;
+      font-size:15.5px;
+      line-height:1.6;
+      color:rgba(255,255,255,.88);
+    }
+
+    .sponsored-banner__actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .sponsored-banner__btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 16px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:800;
+      transition:transform .15s ease, opacity .15s ease, background .15s ease;
+    }
+
+    .sponsored-banner__btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .sponsored-banner__btn--primary{
+      background:#fff;
+      color:#0f172a;
+      border:1px solid rgba(255,255,255,.25);
+    }
+
+    .sponsored-banner__btn--secondary{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.18);
+      backdrop-filter:blur(4px);
+    }
+
+    .sponsored-banner__badge{
+      justify-self:start;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-width:220px;
+      padding:16px 16px 14px;
+      border-radius:16px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      backdrop-filter:blur(6px);
+    }
+
+    @media(min-width:760px){
+      .sponsored-banner__badge{
+        justify-self:end;
+      }
+    }
+
+    .sponsored-banner__badge-title{
+      font-size:13px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:rgba(255,255,255,.8);
+    }
+
+    .sponsored-banner__badge-name{
+      font-size:22px;
+      font-weight:900;
+      line-height:1.1;
+      color:#fff;
+    }
+
+    .sponsored-banner__badge-text{
+      font-size:14px;
+      line-height:1.5;
+      color:rgba(255,255,255,.84);
+    }
+
     /* BLOQUE GUÍAS SEO */
     .guides{
       margin:18px 0 10px;
@@ -159,44 +366,6 @@
       border-bottom-color:rgba(15,23,42,.35);
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
-      margin-top:18px;
-    }
-    @media(min-width:720px){
-      .grid{grid-template-columns:1fr 1fr;}
-    }
-
-    .cat{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:24px 22px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      background:#fff;
-      transition:transform .15s ease, box-shadow .15s ease;
-      min-height:190px;
-    }
-    .cat:hover{
-      transform:translateY(-2px);
-      box-shadow:0 10px 26px rgba(15,23,42,.12);
-    }
-    .cat h2{margin:0 0 8px; font-size:20px; letter-spacing:-.2px;}
-    .cat p{margin:0 0 18px; color:var(--muted); font-size:15px;}
-
-    .btn{
-      align-self:flex-start;
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      font-size:14px;
-      font-weight:650;
-      background:rgba(15,23,42,.04);
-    }
-
     footer{
       margin-top:18px;
       padding-top:14px;
@@ -230,17 +399,17 @@
     }
   </style>
 
-   <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XT9KYK7JP6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XT9KYK7JP6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-XT9KYK7JP6', {
-    anonymize_ip: true
-  });
-</script>
+    gtag('config', 'G-XT9KYK7JP6', {
+      anonymize_ip: true
+    });
+  </script>
 </head>
 
 <body>
@@ -273,20 +442,6 @@
         </div>
       </header>
 
-      <!-- BLOQUE GUÍAS SEO -->
-      <section class="guides" aria-label="Guías locales destacadas">
-        <h2>Guías locales destacadas</h2>
-        <p>
-          Si estás buscando <strong>dónde comer en Chicureo</strong> o necesitas un
-          <strong>taller mecánico confiable</strong>, revisa nuestras guías locales con
-          información clara y recomendaciones actualizadas.
-        </p>
-        <ul class="guide-links">
-          <li><a href="/donde-comer-en-chicureo/">👉 Dónde comer en Chicureo</a></li>
-          <li><a href="/talleres-mecanicos-en-chicureo/">👉 Talleres mecánicos en Chicureo</a></li>
-        </ul>
-      </section>
-
       <section class="grid" aria-label="Categorías">
         <a class="cat" href="/restaurantes/">
           <div>
@@ -309,6 +464,71 @@
           </div>
           <span class="btn">Ver talleres</span>
         </a>
+      </section>
+
+      <!-- BANNER PATROCINADO REUTILIZABLE -->
+      <section
+        class="sponsored-banner"
+        aria-label="Espacio patrocinado"
+        style="--banner-image: url('/images/smautomotriz-banner.jpg');"
+      >
+        <div class="sponsored-banner__inner">
+          <div>
+            <div class="sponsored-banner__top">
+              <span class="sponsored-banner__label">Espacio patrocinado</span>
+              <span class="sponsored-banner__category">Taller automotriz destacado</span>
+            </div>
+
+            <h2>SM Automotriz</h2>
+
+            <p>
+              Mantenciones, diagnóstico y servicio multimarca en Chicureo.
+              Revisa su página destacada con información útil, contacto directo y acceso rápido para cotizar.
+            </p>
+
+            <div class="sponsored-banner__actions">
+              <a
+                class="sponsored-banner__btn sponsored-banner__btn--primary"
+                href="/talleres/smautomotriz/"
+                onclick="gtag('event','click_banner_home',{'cliente':'SM Automotriz','ubicacion':'home_principal','tipo':'ficha_destacada'});"
+              >
+                Ver ficha destacada
+              </a>
+
+              <a
+                class="sponsored-banner__btn sponsored-banner__btn--secondary"
+                href="https://wa.me/56993223574?text=Hola%20SM%20Automotriz%2C%20los%20vi%20en%20ChicureoLocal%20y%20quisiera%20hacer%20una%20consulta."
+                target="_blank"
+                rel="noopener nofollow"
+                onclick="gtag('event','click_whatsapp_banner_home',{'cliente':'SM Automotriz','ubicacion':'home_principal','tipo':'contacto_directo'});"
+              >
+                Contactar por WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div class="sponsored-banner__badge" aria-hidden="true">
+            <div class="sponsored-banner__badge-title">Publicidad destacada</div>
+            <div class="sponsored-banner__badge-name">SM Automotriz</div>
+            <div class="sponsored-banner__badge-text">
+              Servicio multimarca con atención directa en Chicureo y Colina.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOQUE GUÍAS SEO -->
+      <section class="guides" aria-label="Guías locales destacadas">
+        <h2>Guías locales destacadas</h2>
+        <p>
+          Si estás buscando <strong>dónde comer en Chicureo</strong> o necesitas un
+          <strong>taller mecánico confiable</strong>, revisa nuestras guías locales con
+          información clara y recomendaciones actualizadas.
+        </p>
+        <ul class="guide-links">
+          <li><a href="/donde-comer-en-chicureo/">👉 Dónde comer en Chicureo</a></li>
+          <li><a href="/talleres-mecanicos-en-chicureo/">👉 Talleres mecánicos en Chicureo</a></li>
+        </ul>
       </section>
 
       <footer>
