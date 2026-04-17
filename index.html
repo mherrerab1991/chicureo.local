@@ -56,6 +56,7 @@
       line-height:1.65;
     }
     a{color:inherit; text-decoration:none}
+    button{font:inherit}
 
     .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
 
@@ -158,9 +159,30 @@
       background:rgba(15,23,42,.04);
     }
 
-    /* FICHA DESTACADA PREMIUM */
-    .sponsored-feature{
+    /* SLIDER PATROCINADOS */
+    .sponsored-slider{
+      position:relative;
       margin:22px 0;
+    }
+
+    .sponsored-slider__viewport{
+      overflow:hidden;
+      border-radius:18px;
+    }
+
+    .sponsored-slider__track{
+      display:flex;
+      transition:transform .38s ease;
+      will-change:transform;
+    }
+
+    .sponsored-slide{
+      min-width:100%;
+      box-sizing:border-box;
+    }
+
+    /* FICHA DESTACADA */
+    .sponsored-feature{
       border:1px solid var(--line);
       border-radius:18px;
       background:#fff;
@@ -297,6 +319,89 @@
 
     .sponsored-feature__btn--secondary:hover{
       background:rgba(15,23,42,.03);
+    }
+
+    /* FLECHAS */
+    .sponsored-slider__arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.96);
+      color:var(--text);
+      box-shadow:0 8px 22px rgba(15,23,42,.12);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      z-index:5;
+      transition:transform .15s ease, background .15s ease, box-shadow .15s ease;
+    }
+
+    .sponsored-slider__arrow:hover{
+      background:#fff;
+      box-shadow:0 10px 26px rgba(15,23,42,.16);
+    }
+
+    .sponsored-slider__arrow:active{
+      transform:translateY(-50%) scale(.98);
+    }
+
+    .sponsored-slider__arrow--prev{
+      left:-12px;
+    }
+
+    .sponsored-slider__arrow--next{
+      right:-12px;
+    }
+
+    .sponsored-slider__arrow svg{
+      width:18px;
+      height:18px;
+    }
+
+    @media(max-width:760px){
+      .sponsored-slider__arrow{
+        width:38px;
+        height:38px;
+      }
+      .sponsored-slider__arrow--prev{
+        left:-6px;
+      }
+      .sponsored-slider__arrow--next{
+        right:-6px;
+      }
+    }
+
+    /* INDICADORES */
+    .sponsored-slider__dots{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      margin-top:12px;
+    }
+
+    .sponsored-slider__dot{
+      width:9px;
+      height:9px;
+      border-radius:999px;
+      border:none;
+      padding:0;
+      background:rgba(100,116,139,.35);
+      cursor:pointer;
+      transition:transform .15s ease, background .15s ease;
+    }
+
+    .sponsored-slider__dot:hover{
+      transform:scale(1.08);
+      background:rgba(100,116,139,.55);
+    }
+
+    .sponsored-slider__dot.is-active{
+      background:var(--text);
     }
 
     /* BLOQUE GUÍAS SEO */
@@ -438,50 +543,126 @@
         </a>
       </section>
 
-      <!-- FICHA DESTACADA PREMIUM -->
-      <section class="sponsored-feature" aria-label="Espacio patrocinado">
-        <div class="sponsored-feature__label">Espacio patrocinado</div>
+      <!-- SLIDER DE ESPACIOS PATROCINADOS -->
+      <section class="sponsored-slider" aria-label="Espacios patrocinados">
+        <button class="sponsored-slider__arrow sponsored-slider__arrow--prev" type="button" aria-label="Ver banner anterior" id="sliderPrev">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
 
-        <div class="sponsored-feature__inner">
-          <div class="sponsored-feature__media">
-            <img
-              src="/images/SMAutomotriz2.jpg"
-              alt="SM Automotriz en Chicureo"
-              loading="lazy"
-            />
-          </div>
+        <div class="sponsored-slider__viewport">
+          <div class="sponsored-slider__track" id="sponsoredSliderTrack">
 
-          <div class="sponsored-feature__content">
-            <div class="sponsored-feature__kicker">Taller automotriz destacado</div>
+            <!-- SLIDE 1 -->
+            <div class="sponsored-slide">
+              <section class="sponsored-feature" aria-label="Espacio patrocinado SM Automotriz">
+                <div class="sponsored-feature__label">Espacio patrocinado</div>
 
-            <h2>SM Automotriz</h2>
+                <div class="sponsored-feature__inner">
+                  <div class="sponsored-feature__media">
+                    <img
+                      src="/images/SMAutomotriz2.jpg"
+                      alt="SM Automotriz en Chicureo"
+                      loading="lazy"
+                    />
+                  </div>
 
-            <p>
-              Mantenciones, diagnóstico y servicio multimarca en Chicureo.
-              Revisa su ficha destacada con información útil, contacto directo
-              y acceso rápido para cotizar.
-            </p>
+                  <div class="sponsored-feature__content">
+                    <div class="sponsored-feature__kicker">Taller automotriz destacado</div>
 
-            <div class="sponsored-feature__actions">
-              <a
-                class="sponsored-feature__btn sponsored-feature__btn--primary"
-                href="/talleres/smautomotriz/"
-                onclick="gtag('event','click_banner_home',{'cliente':'SM Automotriz','ubicacion':'home_principal','tipo':'ficha_destacada'});"
-              >
-                Ver ficha destacada
-              </a>
+                    <h2>SM Automotriz</h2>
 
-              <a
-                class="sponsored-feature__btn sponsored-feature__btn--secondary"
-                href="https://wa.me/56990442727?text=Hola%20SM%20Automotriz%2C%20los%20vi%20en%20ChicureoLocal%20y%20quisiera%20hacer%20una%20consulta."
-                target="_blank"
-                rel="noopener nofollow"
-                onclick="gtag('event','click_whatsapp_banner_home',{'cliente':'SM Automotriz','ubicacion':'home_principal','tipo':'contacto_directo'});"
-              >
-                Contactar por WhatsApp
-              </a>
+                    <p>
+                      Mantenciones, diagnóstico y servicio multimarca en Chicureo.
+                      Revisa su ficha destacada con información útil, contacto directo
+                      y acceso rápido para cotizar.
+                    </p>
+
+                    <div class="sponsored-feature__actions">
+                      <a
+                        class="sponsored-feature__btn sponsored-feature__btn--primary"
+                        href="/talleres/smautomotriz/"
+                        onclick="gtag('event','click_banner_home',{'cliente':'SM Automotriz','ubicacion':'home_principal','slide':1,'tipo':'ficha_destacada'});"
+                      >
+                        Ver ficha destacada
+                      </a>
+
+                      <a
+                        class="sponsored-feature__btn sponsored-feature__btn--secondary"
+                        href="https://wa.me/56990442727?text=Hola%20SM%20Automotriz%2C%20los%20vi%20en%20ChicureoLocal%20y%20quisiera%20hacer%20una%20consulta."
+                        target="_blank"
+                        rel="noopener nofollow"
+                        onclick="gtag('event','click_whatsapp_banner_home',{'cliente':'SM Automotriz','ubicacion':'home_principal','slide':1,'tipo':'contacto_directo'});"
+                      >
+                        Contactar por WhatsApp
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
             </div>
+
+            <!-- SLIDE 2 -->
+            <div class="sponsored-slide">
+              <section class="sponsored-feature" aria-label="Espacio patrocinado Cliente 2">
+                <div class="sponsored-feature__label">Espacio patrocinado</div>
+
+                <div class="sponsored-feature__inner">
+                  <div class="sponsored-feature__media">
+                    <img
+                      src="/images/cliente2-banner.jpg"
+                      alt="Cliente 2 en Chicureo"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <div class="sponsored-feature__content">
+                    <div class="sponsored-feature__kicker">Servicio destacado</div>
+
+                    <h2>Nombre Cliente 2</h2>
+
+                    <p>
+                      Aquí puedes destacar a tu segundo cliente con una descripción breve,
+                      clara y comercial, manteniendo el mismo formato premium del sitio.
+                    </p>
+
+                    <div class="sponsored-feature__actions">
+                      <a
+                        class="sponsored-feature__btn sponsored-feature__btn--primary"
+                        href="/cliente2/"
+                        onclick="gtag('event','click_banner_home',{'cliente':'Cliente 2','ubicacion':'home_principal','slide':2,'tipo':'ficha_destacada'});"
+                      >
+                        Ver ficha destacada
+                      </a>
+
+                      <a
+                        class="sponsored-feature__btn sponsored-feature__btn--secondary"
+                        href="https://wa.me/56900000000?text=Hola%2C%20los%20vi%20en%20ChicureoLocal%20y%20quisiera%20hacer%20una%20consulta."
+                        target="_blank"
+                        rel="noopener nofollow"
+                        onclick="gtag('event','click_whatsapp_banner_home',{'cliente':'Cliente 2','ubicacion':'home_principal','slide':2,'tipo':'contacto_directo'});"
+                      >
+                        Contactar por WhatsApp
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
           </div>
+        </div>
+
+        <button class="sponsored-slider__arrow sponsored-slider__arrow--next" type="button" aria-label="Ver siguiente banner" id="sliderNext">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <div class="sponsored-slider__dots" aria-label="Indicadores de banners">
+          <button class="sponsored-slider__dot is-active" type="button" aria-label="Ver banner 1" data-slide="0"></button>
+          <button class="sponsored-slider__dot" type="button" aria-label="Ver banner 2" data-slide="1"></button>
         </div>
       </section>
 
@@ -517,5 +698,50 @@
     </main>
 
   </div>
+
+  <script>
+    (function () {
+      const track = document.getElementById('sponsoredSliderTrack');
+      const prevBtn = document.getElementById('sliderPrev');
+      const nextBtn = document.getElementById('sliderNext');
+      const dots = Array.from(document.querySelectorAll('.sponsored-slider__dot'));
+      const totalSlides = track ? track.children.length : 0;
+      let currentSlide = 0;
+
+      function updateSlider() {
+        if (!track) return;
+        track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('is-active', index === currentSlide);
+        });
+      }
+
+      function goToSlide(index) {
+        if (totalSlides === 0) return;
+        currentSlide = (index + totalSlides) % totalSlides;
+        updateSlider();
+      }
+
+      function nextSlide() {
+        goToSlide(currentSlide + 1);
+      }
+
+      function prevSlide() {
+        goToSlide(currentSlide - 1);
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+      if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', function () {
+          goToSlide(index);
+        });
+      });
+
+      updateSlider();
+    })();
+  </script>
 </body>
 </html>
