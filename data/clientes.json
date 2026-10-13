@@ -132,7 +132,6 @@
 
     "disclaimer": "La disponibilidad, valores, horarios y condiciones del servicio deben confirmarse directamente con la prestadora. ChicureoLocal no realiza los traslados ni interviene en la contratación del servicio; actúa como guía local y canal de contacto."
 
-
   },
 
   "smautomotriz": {
@@ -418,4 +417,6 @@
     "provider_type": "Organization"
   },
   "disclaimer": "La disponibilidad de productos, precios, horarios y condiciones de despacho deben confirmarse directamente con Bandido Pet. ChicureoLocal no vende los productos ni interviene en las compras; actúa como guía local y canal de contacto."
+
+    }
 }
