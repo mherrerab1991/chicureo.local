@@ -1,6 +1,7 @@
 import json
 import html
 import os
+import re
 from pathlib import Path
 from urllib.parse import quote
 
@@ -921,10 +922,43 @@ def generar_html(template, cliente):
 
     resultado = template
 
-    for variable, valor in reemplazos.items():
+       for variable, valor in reemplazos.items():
         resultado = resultado.replace(
             variable,
             valor
+        )
+
+    # =====================================================
+    # VALIDACIÓN DE VARIABLES DE PLANTILLA
+    # =====================================================
+    #
+    # Si por error agregamos una variable nueva a
+    # templates/ficha.html y olvidamos programar su
+    # reemplazo, detenemos la generación.
+    #
+    # Esto evita publicar cosas como:
+    #
+    #   {{TITULO}}
+    #   {{WHATSAPP_URL}}
+    #   {{VARIABLE_NUEVA}}
+    #
+    # en una página real.
+    # =====================================================
+
+    variables_pendientes = re.findall(
+        r"\{\{[A-Z0-9_]+\}\}",
+        resultado
+    )
+
+    if variables_pendientes:
+
+        variables_unicas = sorted(
+            set(variables_pendientes)
+        )
+
+        raise ValueError(
+            "Variables de plantilla sin reemplazar: "
+            + ", ".join(variables_unicas)
         )
 
     return resultado
