@@ -294,5 +294,128 @@
     },
 
     "disclaimer": "La información puede cambiar. Recomendamos confirmar directamente con el taller. ChicureoLocal no presta servicios mecánicos ni garantiza resultados; actúa como guía local y canal de contacto."
-  }
+  },
+
+  "bandido-pet": {
+  "activo": true,
+  "business_id": "bandido-pet",
+  "tipo": "mascotas",
+  "categoria": "Mascotas",
+  "slug": "bandido-pet",
+  "ruta": "/mascotas/bandido-pet/",
+  "nombre": "Bandido Pet",
+  "nombre_corto": "Bandido Pet",
+  "badge_icono": "🐾",
+  "badge_texto": "Tienda local de mascotas",
+  "titulo": "Bandido Pet",
+  "descripcion": "Bandido Pet es un emprendimiento familiar de Chicureo dedicado a la alimentación y bienestar de perros y gatos. Ofrece una selección de alimentos premium, super premium y ultra premium, snacks, arenas y accesorios, con atención personalizada para ayudar a cada familia a elegir productos adecuados para su mascota. Además, apoya a organizaciones y rescatistas de Colina y sus alrededores.",
+  "seo": {
+    "title": "Bandido Pet en Chicureo | Alimentos y accesorios para mascotas | ChicureoLocal",
+    "description": "Bandido Pet en Chicureo: alimentos para perros y gatos, snacks, arenas, accesorios y productos para mascotas, con despacho a domicilio en Chicureo.",
+    "canonical": "https://chicureolocal.cl/mascotas/bandido-pet/",
+    "og_title": "Bandido Pet en Chicureo | Alimentos y accesorios para mascotas",
+    "og_description": "Alimentos, snacks, arenas y accesorios para perros y gatos, con atención personalizada y despacho a domicilio en Chicureo."
+  },
+  "contacto": {
+    "whatsapp": "56929060176",
+    "whatsapp_visible": "+56 9 2906 0176",
+    "mensaje_whatsapp": "Hola Bandido Pet, los contacto desde ChicureoLocal. Quisiera consultar por productos para mi mascota. Tipo de mascota: ____ | Producto o necesidad: ____. Gracias.",
+    "web": "https://bandidopet.cl/",
+    "instagram": "https://www.instagram.com/bandidopet.cl/"
+  },
+  "resumen": [
+    "📍 Chicureo",
+    "🚚 Despacho a domicilio en Chicureo",
+    "🐶 Productos para perros",
+    "🐱 Productos para gatos"
+  ],
+  "servicios": [
+    {
+      "icono": "🐶",
+      "titulo": "Alimentos para perros",
+      "descripcion": "Selección de alimentos para perros, incluyendo alternativas premium, super premium y ultra premium."
+    },
+    {
+      "icono": "🐱",
+      "titulo": "Alimentos para gatos",
+      "descripcion": "Alimentos y productos orientados a la alimentación y bienestar de gatos."
+    },
+    {
+      "icono": "🦴",
+      "titulo": "Snacks y premios",
+      "descripcion": "Snacks y premios para complementar el cuidado y alimentación de las mascotas."
+    },
+    {
+      "icono": "🐾",
+      "titulo": "Accesorios y cuidado",
+      "descripcion": "Accesorios, arenas y otros productos para el cuidado cotidiano de perros y gatos."
+    },
+    {
+      "icono": "🚚",
+      "titulo": "Despacho a domicilio",
+      "descripcion": "Despacho de productos a domicilio dentro de Chicureo."
+    }
+  ],
+  "caracteristicas": [
+    "Chicureo",
+    "Perros",
+    "Gatos",
+    "Alimentos premium",
+    "Despacho a domicilio"
+  ],
+  "informacion": [
+    {
+      "icono": "📍",
+      "etiqueta": "Sector",
+      "valor": "Chicureo"
+    },
+    {
+      "icono": "🚚",
+      "etiqueta": "Despachos",
+      "valor": "A domicilio en Chicureo"
+    },
+    {
+      "icono": "🗓️",
+      "etiqueta": "Atención",
+      "valor": "Lunes a viernes"
+    },
+    {
+      "icono": "💬",
+      "etiqueta": "WhatsApp",
+      "valor": "+56 9 2906 0176"
+    },
+    {
+      "icono": "🌐",
+      "etiqueta": "Web",
+      "valor": "bandidopet.cl"
+    }
+  ],
+  "nota_contacto": "Para una atención más rápida, recomendamos indicar si buscas productos para perro o gato y el producto o necesidad específica.",
+  "galeria": [
+    {
+      "src": "/images/bandido-pet.png",
+      "alt": "Bandido Pet - alimentos y accesorios para mascotas en Chicureo"
+    }
+  ],
+  "reviews": {
+    "activo": true,
+    "titulo": "Opiniones de clientes",
+    "placeholder": "Cuéntanos tu experiencia con Bandido Pet"
+  },
+  "cta_final": {
+    "titulo": "¿Buscas productos para tu mascota?",
+    "texto": "Consulta directamente con Bandido Pet por WhatsApp sobre alimentos, snacks, accesorios, disponibilidad y despacho en Chicureo.",
+    "boton": "💬 Consultar por WhatsApp"
+  },
+  "schema": {
+    "tipo": "PetStore",
+    "service_type": "Tienda de alimentos y accesorios para mascotas",
+    "area_served": [
+      "Chicureo",
+      "Colina",
+      "Región Metropolitana"
+    ],
+    "provider_type": "Organization"
+  },
+  "disclaimer": "La disponibilidad de productos, precios, horarios y condiciones de despacho deben confirmarse directamente con Bandido Pet. ChicureoLocal no vende los productos ni interviene en las compras; actúa como guía local y canal de contacto."
 }
