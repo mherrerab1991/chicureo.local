@@ -1,5 +1,6 @@
 import json
 import html
+import os
 from pathlib import Path
 from urllib.parse import quote
 
@@ -29,7 +30,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_FILE = BASE_DIR / "data" / "clientes.json"
 TEMPLATE_FILE = BASE_DIR / "templates" / "ficha.html"
 
-PRUEBA = True
+MODO = os.environ.get(
+    "CHICUREOLOCAL_MODO",
+    "prueba"
+).strip().lower()
+
+if MODO not in ("prueba", "produccion"):
+    raise ValueError(
+        "CHICUREOLOCAL_MODO debe ser 'prueba' o 'produccion'."
+    )
+
+PRUEBA = MODO == "prueba"
+
 
 
 # =========================================================
