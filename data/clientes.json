@@ -1,0 +1,135 @@
+{
+  "traslados-ayres": {
+    "activo": true,
+    "business_id": "traslados-ayres",
+
+    "tipo": "servicio",
+    "categoria": "Traslados",
+    "slug": "traslados-ayres",
+    "ruta": "/servicios/traslados-ayres/",
+
+    "nombre": "Traslados desde Ayres de Chicureo",
+    "nombre_corto": "Traslados Ayres",
+
+    "badge_icono": "🚙",
+    "badge_texto": "Servicio local destacado",
+
+    "titulo": "Traslados desde Ayres de Chicureo",
+
+    "descripcion": "Servicio de traslados dentro y fuera de Colina, con salidas desde el sector de Ayres de Chicureo. Especialmente orientado a viajes hacia Metro Los Libertadores, Aeropuerto de Santiago y otros destinos según disponibilidad. Traslados en una camioneta amplia, cómoda y segura, realizados por una vecina del sector.",
+
+    "seo": {
+      "title": "Traslados desde Chicureo y Colina | Aeropuerto y Metro Los Libertadores | ChicureoLocal",
+      "description": "Servicio local de traslados desde Ayres de Chicureo hacia Colina, Metro Los Libertadores, Aeropuerto y otros destinos. Camioneta amplia, cómoda y segura. Consulta disponibilidad por WhatsApp.",
+      "canonical": "https://chicureolocal.cl/servicios/traslados-ayres/",
+      "og_title": "Traslados desde Chicureo y Colina | ChicureoLocal",
+      "og_description": "Traslados desde Ayres de Chicureo hacia Metro Los Libertadores, Aeropuerto y otros destinos. Consulta disponibilidad y valores por WhatsApp."
+    },
+
+    "contacto": {
+      "whatsapp": "56998848728",
+      "whatsapp_visible": "+56 9 9884 8728",
+      "mensaje_whatsapp": "Hola, te contacto desde ChicureoLocal. Quisiera consultar por un traslado."
+    },
+
+    "resumen": [
+      "📍 Salidas desde Ayres de Chicureo",
+      "✈️ Traslados al Aeropuerto",
+      "🚇 Metro Los Libertadores",
+      "🚙 Camioneta amplia y cómoda"
+    ],
+
+    "servicios": [
+      {
+        "icono": "✈️",
+        "titulo": "Aeropuerto de Santiago",
+        "descripcion": "Traslados desde Chicureo y Colina hacia el aeropuerto, según disponibilidad."
+      },
+      {
+        "icono": "🚇",
+        "titulo": "Metro Los Libertadores",
+        "descripcion": "Traslados desde Ayres de Chicureo y sectores cercanos."
+      },
+      {
+        "icono": "📍",
+        "titulo": "Viajes dentro de Colina",
+        "descripcion": "Consulta disponibilidad para traslados dentro de la comuna."
+      },
+      {
+        "icono": "🛣️",
+        "titulo": "Otros destinos",
+        "descripcion": "También se realizan viajes fuera de Colina. Consulta destino, horario y valor directamente."
+      }
+    ],
+
+    "caracteristicas": [
+      "Chicureo",
+      "Colina",
+      "Aeropuerto",
+      "Metro Los Libertadores",
+      "Traslados particulares"
+    ],
+
+    "informacion": [
+      {
+        "icono": "📍",
+        "etiqueta": "Salida habitual",
+        "valor": "Ayres de Chicureo"
+      },
+      {
+        "icono": "🚙",
+        "etiqueta": "Vehículo",
+        "valor": "Camioneta amplia y cómoda"
+      },
+      {
+        "icono": "🗓️",
+        "etiqueta": "Disponibilidad",
+        "valor": "Consultar previamente"
+      },
+      {
+        "icono": "💰",
+        "etiqueta": "Valores",
+        "valor": "Según trayecto"
+      },
+      {
+        "icono": "💬",
+        "etiqueta": "WhatsApp",
+        "valor": "+56 9 9884 8728"
+      }
+    ],
+
+    "nota_contacto": "Para obtener un valor más rápido, recomendamos indicar origen, destino, fecha y hora al realizar la consulta.",
+
+    "galeria": [
+      {
+        "src": "/images/sylvanaburgos.jpg",
+        "alt": "Servicio de traslados desde Ayres de Chicureo"
+      }
+    ],
+
+    "reviews": {
+      "activo": true,
+      "titulo": "Opiniones de pasajeros",
+      "placeholder": "¿Cómo fue tu experiencia con el traslado?"
+    },
+
+    "cta_final": {
+      "titulo": "¿Necesitas un traslado?",
+      "texto": "Consulta directamente por WhatsApp indicando tu origen, destino, fecha y hora del viaje.",
+      "boton": "💬 Consultar disponibilidad y valor"
+    },
+
+    "schema": {
+      "tipo": "Service",
+      "service_type": "Traslados de pasajeros",
+      "area_served": [
+        "Chicureo",
+        "Colina",
+        "Santiago"
+      ],
+      "provider_type": "Person"
+    },
+
+    "disclaimer": "La disponibilidad, valores, horarios y condiciones del servicio deben confirmarse directamente con la prestadora. ChicureoLocal no realiza los traslados ni interviene en la contratación del servicio; actúa como guía local y canal de contacto."
+  }
+}
