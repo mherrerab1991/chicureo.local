@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <meta name="robots" content="index,follow" />
+
+  <title>SM Automotriz en Chicureo | Taller multimarca (mantenciones y diagnóstico) | ChicureoLocal</title>
+  <meta name="description" content="SM Automotriz en Chicureo (Colina): taller multimarca para mantenciones, diagnóstico y reparaciones. Dirección, horario y contacto directo por WhatsApp." />
+  <link rel="canonical" href="https://chicureolocal.cl/talleres/smautomotriz/" />
+
+  <!-- Open Graph básico -->
+  <meta property="og:title" content="SM Automotriz en Chicureo | Taller multimarca" />
+  <meta property="og:description" content="Mantenciones, diagnóstico y reparaciones. Contacto directo por WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chicureolocal.cl/talleres/smautomotriz/" />
+
+  <!-- Favicon (estándar ChicureoLocal) -->
+  <link rel="icon" type="image/svg+xml"
+    href='data:image/svg+xml;utf8,
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="%23ff6a3d"/>
+          <stop offset="1" stop-color="%23ffb703"/>
+        </linearGradient>
+      </defs>
+      <rect x="6" y="6" width="52" height="52" rx="14" fill="url(%23g)"/>
+      <path d="M32 18c-7 0-12 5-12 12 0 10 12 22 12 22s12-12 12-22c0-7-5-12-12-12z" fill="%23fff"/>
+    </svg>' />
+
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --surface:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:rgba(15,23,42,.10);
+      --shadow:0 6px 22px rgba(15,23,42,.08);
+      --radius:16px;
+      --max:1040px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 600px at 10% -10%, rgba(59,130,246,.12), transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(100,116,139,.10), transparent 55%),
+        var(--bg);
+      line-height:1.65;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:22px 18px 70px;
+    }
+
+    /* NAV */
+    .nav{
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 2px 12px rgba(15,23,42,0.06);
+      padding:12px 14px;
+      margin:12px 0 14px;
+      backdrop-filter: blur(6px);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .nav strong{color:var(--text)}
+    .nav a{
+      color:inherit;
+      border-bottom:1px solid rgba(100,116,139,.35);
+      padding-bottom:2px;
+    }
+    .nav a:hover{color:var(--text)}
+    .nav a[aria-current="page"]{
+      color:var(--text);
+      font-weight:800;
+      border-bottom-color:rgba(15,23,42,.35);
+    }
+
+    header{
+      background:rgba(255,255,255,.95);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px 26px;
+      margin:12px 0 18px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid rgba(15,23,42,.14);
+      background:rgba(255,255,255,.85);
+      border-radius:999px;
+      padding:7px 12px;
+      font-size:13px;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+    .badge strong{color:var(--text)}
+
+    h1{
+      margin:0 0 10px;
+      font-size:34px;
+      line-height:1.15;
+      letter-spacing:-.4px;
+    }
+
+    .lead{
+      margin:0;
+      color:var(--muted);
+      max-width:85ch;
+    }
+
+    .quick{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background:rgba(15,23,42,.03);
+      border-radius:999px;
+      padding:7px 10px;
+    }
+
+    .cta-row{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      font-size:14px;
+      font-weight:700;
+      background:rgba(15,23,42,.04);
+      cursor:pointer;
+    }
+    .btn:hover{ background:rgba(15,23,42,.06); }
+    .btn:disabled{
+      opacity:.6;
+      cursor:not-allowed;
+    }
+    .btn-primary{
+      background:#0f172a;
+      border-color:#0f172a;
+      color:#fff;
+    }
+    .btn-primary:hover{ filter:brightness(1.05); }
+
+    h2{
+      margin:24px 0 14px;
+      font-size:20px;
+      letter-spacing:-.2px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px 18px 16px;
+    }
+
+    .card-body{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+    @media(min-width:900px){
+      .grid-2{grid-template-columns:1.15fr .85fr;}
+    }
+
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:var(--text);
+    }
+    .list li{margin:7px 0;}
+
+    .meta{
+      display:grid;
+      gap:8px;
+      font-size:14px;
+      color:var(--muted);
+      margin-top:6px;
+    }
+    .meta strong{color:var(--text);}
+
+    .contact{
+      margin-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .contact a{
+      color:var(--text);
+      border-bottom:1px solid rgba(100,116,139,.4);
+      padding-bottom:2px;
+    }
+    .contact a:hover{border-bottom-color:rgba(15,23,42,.35);}
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    .chip{
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(15,23,42,.06);
+      border:1px solid var(--line);
+      font-size:13px;
+      color:var(--text);
+    }
+
+    /* Galería */
+    .gallery{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+    @media(min-width:900px){
+      .gallery{grid-template-columns:repeat(3, 1fr);}
+    }
+    .g-item{
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:14px;
+      overflow:hidden;
+      background:rgba(15,23,42,.03);
+      aspect-ratio:4/3;
+    }
+    .g-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .note{
+      margin-top:12px;
+      font-size:13px;
+      color:var(--muted);
+      border-left:4px solid rgba(15,23,42,.15);
+      padding-left:12px;
+    }
+
+    footer{
+      margin-top:28px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:20px 22px;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .back-home{
+      margin-top:16px;
+      font-size:14px;
+    }
+    .back-home a{
+      color:#0f172a;
+      text-decoration:none;
+      border-bottom:1px solid rgba(15,23,42,.3);
+      padding-bottom:2px;
+    }
+    .back-home a:hover{border-bottom-color:#0f172a;}
+
+    .disclaimer{
+      margin-top:14px;
+      font-size:13px;
+      border-top:1px solid rgba(15,23,42,.1);
+      padding-top:12px;
+    }
+
+    /* Reviews */
+    .reviews-head{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .reviews-stars{
+      font-size:18px;
+      letter-spacing:1px;
+    }
+    .reviews-meta{
+      color:var(--muted);
+      font-size:14px;
+    }
+    .reviews-list{
+      display:grid;
+      gap:12px;
+    }
+    .review-card{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+      background:#fff;
+      box-shadow:0 4px 14px rgba(15,23,42,.06);
+    }
+    .review-top{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .review-name{ font-weight:800; }
+    .review-date{ color:var(--muted); font-size:13px; }
+    .review-stars{ margin-top:6px; font-size:16px; letter-spacing:1px; }
+    .review-text{ margin:10px 0 0; color:var(--text); }
+
+    .review-form-wrap{
+      margin-top:14px;
+      border-top:1px solid var(--line);
+      padding-top:14px;
+    }
+    .review-form{
+      display:grid;
+      gap:10px;
+      max-width:680px;
+    }
+    .field{
+      display:grid;
+      gap:6px;
+    }
+    .field-label{
+      font-size:13px;
+      color:var(--muted);
+    }
+    .field input,
+    .field select,
+    .field textarea{
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      font: inherit;
+    }
+    .field textarea{ min-height:110px; resize:vertical; }
+
+    /* Ver más */
+    .reviews-more-wrap{
+      display:flex;
+      justify-content:center;
+      margin-top:10px;
+    }
+    .btn-secondary{
+      background:rgba(15,23,42,.03);
+    }
+
+    /* Sticky CTA (solo móvil) */
+    .sticky{
+      position:fixed;
+      left:0; right:0; bottom:0;
+      padding:10px 12px;
+      background:rgba(246,247,251,.92);
+      border-top:1px solid rgba(15,23,42,.12);
+      backdrop-filter: blur(8px);
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      z-index:50;
+    }
+    .sticky .btn{
+      flex:1;
+      justify-content:center;
+      max-width:520px;
+    }
+    @media(min-width:900px){
+      .sticky{display:none;}
+    }
+  </style>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XT9KYK7JP6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XT9KYK7JP6', { anonymize_ip: true });
+  </script>
+
+  <!-- JSON-LD (SEO local) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "SM Automotriz",
+    "url": "https://www.smautomotriz.cl/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Fermín Vergara Parcela 1 Lote 8-D",
+      "addressLocality": "Colina",
+      "addressRegion": "Región Metropolitana",
+      "addressCountry": "CL"
+    },
+    "telephone": "+56990442727",
+    "openingHours": "Mo-Fr 09:00-19:00",
+    "sameAs": [
+      "https://www.instagram.com/sm.automotrizoficial/"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- NAV ESTÁNDAR -->
+    <nav class="nav" aria-label="Navegación principal">
+      <div><strong>ChicureoLocal</strong></div>
+      <div>
+        <a href="/">Inicio</a> ·
+        <a href="/restaurantes/">Restaurantes</a> ·
+        <a href="/talleres/" aria-current="page">Talleres</a> ·
+        <a href="/clinicas/">Clínicas</a> ·
+        <a href="/privacidad/">Privacidad</a> ·
+        <a href="/terminos/">Términos</a> ·
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header>
+      <div class="badge">🔧 <strong>Taller recomendado</strong> · ChicureoLocal</div>
+      <h1>SM Automotriz</h1>
+
+      <p class="lead">
+        Taller automotriz <strong>multimarca</strong> en Chicureo (Colina), enfocado en reparación de frenos, mantenciones, diagnóstico, mantención por kilometraje y reparaciones.
+        Con más de 30 años de experiencia. Servicio confiable para mantenciones de autos particulares o flotas, con equipo profesional y amplia disponibilidad de repuestos.
+        Para cotizar o agendar, lo más rápido es escribir por WhatsApp.
+      </p>
+
+      <div class="quick" aria-label="Resumen rápido">
+        <span class="pill">📍 Chicureo / Colina</span>
+        <span class="pill">🕒 Lunes a viernes · 09:00–19:00</span>
+        <span class="pill">🛠️ Mantenciones · Diagnóstico · Mecánica general</span>
+      </div>
+
+      <div class="cta-row" aria-label="Acciones principales">
+        <a class="btn btn-primary"
+           href="https://wa.me/56990442727?text=Hola%20SM%20Automotriz%2C%20los%20contacto%20desde%20ChicureoLocal.%20Quisiera%20cotizar%20y%20agendar%20una%20revisi%C3%B3n%20%2F%20mantenci%C3%B3n.%20Modelo%2Fa%C3%B1o%3A%20____%20%7C%20Motivo%3A%20____.%20Gracias."
+           target="_blank" rel="noopener noreferrer">
+          💬 WhatsApp (agendar)
+        </a>
+
+        <a class="btn" href="https://www.smautomotriz.cl/" target="_blank" rel="noopener noreferrer">
+          🌐 Sitio oficial
+        </a>
+
+        <a class="btn" href="https://www.instagram.com/sm.automotrizoficial/" target="_blank" rel="noopener noreferrer">
+          📸 Instagram
+        </a>
+
+        <a class="btn" href="#servicios">
+          🧾 Servicios
+        </a>
+      </div>
+    </header>
+
+    <!-- INFO PRINCIPAL -->
+    <section class="grid-2" aria-label="Información principal">
+
+      <!-- Bloque: Servicios -->
+      <div class="card" id="servicios">
+        <h2>Servicios</h2>
+        <ul class="list">
+          <li><strong>Frenos</strong>: Inspección, mantención y reparación.</li>
+          <li><strong>Reparaciones mecánicas en general</strong>: Para todo tipo de vehículos.</li>
+          <li><strong>Escáner automotriz</strong>: Taller multimarca.</li>
+          <li><strong>Mantenciones</strong> por kilometraje: aceite, filtros y revisión general.</li>
+          <li><strong>Diagnóstico</strong> y revisión de fallas (scanner / evaluación técnica).</li>
+          <li><strong>Suspensión y dirección</strong>: revisión y trabajos según diagnóstico.</li>
+          <li><strong>Reparaciones mecánicas</strong> generales (multimarca).</li>
+          <li><strong>Revisión pre-viaje</strong> y chequeo preventivo.</li>
+        </ul>
+
+        <div class="chips" aria-label="Tags">
+          <span class="chip">Chicureo</span>
+          <span class="chip">Multimarca</span>
+          <span class="chip">Mantenciones</span>
+          <span class="chip">Diagnóstico</span>
+          <span class="chip">Frenos</span>
+        </div>
+      </div>
+
+      <!-- Bloque: Información práctica -->
+      <div class="card" id="contacto">
+        <h2>Información práctica</h2>
+
+        <div class="meta">
+          📍 Dirección: <strong>Fermín Vergara Parcela 1 Lote 8-D, Colina</strong><br>
+          🕒 Horario: <strong>Lunes a viernes · 09:00–19:00</strong><br>
+          💬 Contacto: <strong>WhatsApp +56 9 9044 2727</strong><br>
+          🌐 Web: <strong>smautomotriz.cl</strong>
+        </div>
+
+        <div class="contact" aria-label="Contacto">
+          💬 <a href="https://wa.me/56990442727?text=Hola%20SM%20Automotriz%2C%20los%20contacto%20desde%20ChicureoLocal.%20Quisiera%20agendar%20una%20revisi%C3%B3n%20%2F%20mantenci%C3%B3n.%20Gracias."
+                target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          🌐 <a href="https://www.smautomotriz.cl/" target="_blank" rel="noopener noreferrer">smautomotriz.cl</a>
+          📸 <a href="https://www.instagram.com/sm.automotrizoficial/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          📍 <a href="https://www.google.com/maps/place/SM+Automotriz/@-33.307824,-70.697939,15z/data=!4m6!3m5!1s0x9662b8bc1e6c06dd:0x9a514c7c8e90d4a7!8m2!3d-33.3078238!4d-70.6979389!16s%2Fg%2F11f3vnlnts?hl=es-419&entry=ttu"
+                target="_blank" rel="noopener noreferrer">Cómo llegar (Maps)</a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="card" style="margin-top:16px;" aria-label="Galería de imágenes">
+      <h2>Galería</h2>
+
+      <div class="gallery">
+        <div class="g-item"><img src="/images/SMAutomotriz3.jpg" alt="SM Automotriz – Foto 1" loading="lazy" /></div>
+        <div class="g-item"><img src="/images/SMAutomotriz4.jpg" alt="SM Automotriz – Foto 2" loading="lazy" /></div>
+        <div class="g-item"><img src="/images/SMAutomotriz5.jpg" alt="SM Automotriz – Foto 3" loading="lazy" /></div>
+        <div class="g-item"><img src="/images/SMAutomotriz6.jpg" alt="SM Automotriz – Foto 4" loading="lazy" /></div>
+        <div class="g-item"><img src="/images/SMAutomotriz7.jpg" alt="SM Automotriz – Foto 5" loading="lazy" /></div>
+        <div class="g-item"><img src="/images/SMAutomotriz8.jpg" alt="SM Automotriz – Foto 6" loading="lazy" /></div>
+      </div>
+    </section>
+
+    <!-- REVIEWS (ChicureoLocal) -->
+    <section class="card" id="reviews" style="margin-top:16px;" aria-label="Opiniones de clientes">
+      <div class="card-body">
+        <h2 style="margin:0; font-size:20px; letter-spacing:-.2px;">Opiniones de clientes</h2>
+
+        <!-- Resumen -->
+        <div class="reviews-head">
+          <div id="reviews-stars" class="reviews-stars" aria-label="Rating promedio">☆☆☆☆☆</div>
+          <div class="reviews-meta">
+            <strong id="reviews-avg">—</strong> · <span id="reviews-count">—</span> reseñas
+          </div>
+        </div>
+
+        <!-- Estado -->
+        <div id="reviews-status" class="note" style="margin:0; display:none;"></div>
+
+        <!-- Lista -->
+        <div id="reviews-list" class="reviews-list"></div>
+
+        <!-- Ver más (paginación client-side) -->
+        <div class="reviews-more-wrap">
+          <button id="reviews-more" class="btn btn-secondary" type="button" style="display:none;">
+            Ver más reseñas
+          </button>
+        </div>
+
+        <!-- Formulario -->
+        <div class="review-form-wrap">
+          <h3 style="margin:0 0 10px; font-size:16px;">Dejar una reseña</h3>
+
+          <form id="review-form" class="review-form" novalidate>
+            <label class="field">
+              <span class="field-label">Tu nombre</span>
+              <input id="rf-name" name="name" type="text" maxlength="40" autocomplete="name" required />
+            </label>
+
+            <label class="field">
+              <span class="field-label">Email (opcional, no se publica)</span>
+              <input id="rf-email" name="email" type="email" maxlength="120" autocomplete="email" placeholder="tuemail@ejemplo.com" />
+            </label>
+
+            <label class="field">
+              <span class="field-label">Rating</span>
+              <select id="rf-rating" name="rating" required>
+                <option value="5">★★★★★ (5)</option>
+                <option value="4">★★★★☆ (4)</option>
+                <option value="3">★★★☆☆ (3)</option>
+                <option value="2">★★☆☆☆ (2)</option>
+                <option value="1">★☆☆☆☆ (1)</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="field-label">Comentario</span>
+              <textarea id="rf-comment" name="comment" minlength="10" maxlength="800" required></textarea>
+            </label>
+
+            <button id="rf-submit" class="btn btn-primary" type="submit" style="width:max-content;">
+              Publicar reseña
+            </button>
+
+            <div id="rf-msg" class="note" style="display:none; margin:0;"></div>
+          </form>
+        </div>
+
+        <div class="disclaimer" style="margin-top:10px;">
+          <strong>Nota:</strong> Las opiniones son publicadas en ChicureoLocal y pueden estar sujetas a moderación.
+          <br><strong>Privacidad:</strong> El email (si lo ingresas) <strong>no se publica</strong> y se usa solo para contacto/seguimiento.
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="card" style="margin-top:16px;" aria-label="CTA final">
+      <h2>¿Quieres cotizar o agendar?</h2>
+      <p class="lead" style="max-width:80ch;">
+        Escríbenos por WhatsApp indicando tu modelo/año y el motivo (mantención, diagnóstico, frenos, ruidos, etc.).
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary"
+           href="https://wa.me/56990442727?text=Hola%20SM%20Automotriz%2C%20los%20contacto%20desde%20ChicureoLocal.%20Modelo%2Fa%C3%B1o%3A%20____%20%7C%20Motivo%3A%20____.%20Gracias."
+           target="_blank" rel="noopener noreferrer">
+          💬 Abrir WhatsApp
+        </a>
+        <a class="btn" href="/talleres/">← Volver al listado de talleres</a>
+      </div>
+    </section>
+
+    <footer>
+      ChicureoLocal · Guía independiente de servicios locales
+
+      <div class="back-home">
+        ← <a href="/" aria-label="Volver al inicio de ChicureoLocal">Volver al inicio</a>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Disclaimer:</strong> La información puede cambiar. Recomendamos confirmar directamente con el taller.
+        ChicureoLocal no presta servicios mecánicos ni garantiza resultados; actúa como guía local y canal de contacto.
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Sticky CTA móvil -->
+  <div class="sticky" aria-label="Acciones rápidas (móvil)">
+    <a class="btn btn-primary"
+       href="https://wa.me/56990442727?text=Hola%20SM%20Automotriz%2C%20los%20contacto%20desde%20ChicureoLocal.%20Quisiera%20agendar%20una%20revisi%C3%B3n%20%2F%20mantenci%C3%B3n.%20Gracias."
+       target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+    <a class="btn"
+       href="https://www.google.com/maps/place/SM+Automotriz/@-33.307824,-70.697939,15z/data=!4m6!3m5!1s0x9662b8bc1e6c06dd:0x9a514c7c8e90d4a7!8m2!3d-33.3078238!4d-70.6979389!16s%2Fg%2F11f3vnlnts?hl=es-419&entry=ttu"
+       target="_blank" rel="noopener noreferrer">📍 Maps</a>
+  </div>
+
+  <!-- Reviews + Form (unificado, con paginación "Ver más") -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const WORKER_BASE = "https://chicureolocal-reviews.mherrerab1991.workers.dev";
+      const TALLER_ID = "smautomotriz";
+      const GET_ENDPOINT = `${WORKER_BASE}/reviews?taller=${encodeURIComponent(TALLER_ID)}`;
+      const POST_ENDPOINT = `${WORKER_BASE}/reviews`;
+
+      // Paginación client-side
+      const PAGE_SIZE = 10;
+      let allReviews = [];
+      let visibleCount = 0;
+
+      // DOM (Resumen + Lista)
+      const elAvg = document.getElementById("reviews-avg");
+      const elCount = document.getElementById("reviews-count");
+      const elStars = document.getElementById("reviews-stars");
+      const elList = document.getElementById("reviews-list");
+      const elStatus = document.getElementById("reviews-status");
+      const btnMore = document.getElementById("reviews-more");
+
+      // DOM (Formulario)
+      const form = document.getElementById("review-form");
+      const msg = document.getElementById("rf-msg");
+      const btn = document.getElementById("rf-submit");
+
+      const elName = document.getElementById("rf-name");
+      const elEmail = document.getElementById("rf-email");
+      const elRating = document.getElementById("rf-rating");
+      const elComment = document.getElementById("rf-comment");
+
+      // Guard rails
+      const missing = [];
+      if (!elAvg) missing.push("reviews-avg");
+      if (!elCount) missing.push("reviews-count");
+      if (!elStars) missing.push("reviews-stars");
+      if (!elList) missing.push("reviews-list");
+      if (!elStatus) missing.push("reviews-status");
+      if (!btnMore) missing.push("reviews-more");
+      if (!form) missing.push("review-form");
+      if (!msg) missing.push("rf-msg");
+      if (!btn) missing.push("rf-submit");
+      if (!elName) missing.push("rf-name");
+      if (!elEmail) missing.push("rf-email");
+      if (!elRating) missing.push("rf-rating");
+      if (!elComment) missing.push("rf-comment");
+
+      if (missing.length) {
+        console.error("ChicureoLocal Reviews: faltan IDs en el HTML:", missing);
+        if (elStatus) {
+          elStatus.textContent = "Error de integración: faltan componentes del módulo de reseñas.";
+          elStatus.style.display = "block";
+        }
+        return;
+      }
+
+      function setStatus(text, show = true) {
+        elStatus.textContent = text;
+        elStatus.style.display = show ? "block" : "none";
+      }
+
+      function setMsg(text, show = true) {
+        msg.textContent = text;
+        msg.style.display = show ? "block" : "none";
+      }
+
+      function esc(s) {
+        return String(s ?? "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function formatDate(iso) {
+        try {
+          const d = new Date(iso);
+          return d.toLocaleDateString("es-CL", { year:"numeric", month:"short", day:"2-digit" });
+        } catch {
+          return String(iso ?? "");
+        }
+      }
+
+      function starsFromAvg(avg) {
+        const rounded = Math.round(avg * 2) / 2;
+        const full = Math.floor(rounded);
+        return { rounded, out: "★".repeat(full) + "☆".repeat(5 - full) };
+      }
+
+      function renderReview(r) {
+        const rating = Number(r?.rating || 0);
+        const clamped = Math.max(0, Math.min(5, rating));
+        const stars = "★".repeat(clamped) + "☆".repeat(5 - clamped);
+
+        const name = esc(r?.name || "Anónimo");
+        const comment = esc(r?.comment || "");
+        const created = formatDate(r?.created_at);
+
+        const box = document.createElement("div");
+        box.className = "review-card";
+        box.innerHTML = `
+          <div class="review-top">
+            <div class="review-name">${name}</div>
+            <div class="review-date">${created}</div>
+          </div>
+          <div class="review-stars" aria-label="Rating">${stars}</div>
+          <p class="review-text">${comment}</p>
+        `;
+        return box;
+      }
+
+      function syncMoreButton() {
+        if (visibleCount < allReviews.length) {
+          btnMore.style.display = "inline-flex";
+          btnMore.disabled = false;
+          const remaining = allReviews.length - visibleCount;
+          const next = Math.min(PAGE_SIZE, remaining);
+          btnMore.textContent = `Ver más reseñas (+${next})`;
+        } else {
+          btnMore.style.display = "none";
+        }
+      }
+
+      function renderVisible() {
+        elList.innerHTML = "";
+        const slice = allReviews.slice(0, visibleCount);
+        slice.forEach(r => elList.appendChild(renderReview(r)));
+        syncMoreButton();
+      }
+
+      function showNextPage() {
+        visibleCount = Math.min(allReviews.length, visibleCount + PAGE_SIZE);
+        renderVisible();
+      }
+
+      async function loadReviews() {
+        setStatus("Cargando opiniones…", true);
+        btnMore.style.display = "none";
+
+        try {
+          const res = await fetch(GET_ENDPOINT, { method: "GET", cache: "no-store" });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+          const data = await res.json();
+
+          const count = Number(data?.summary?.count ?? 0);
+          const avg = data?.summary?.avg === null || data?.summary?.avg === undefined
+            ? null
+            : Number(data.summary.avg);
+
+          elCount.textContent = String(count);
+          elAvg.textContent = count && avg !== null && Number.isFinite(avg) ? avg.toFixed(1) : "—";
+
+          if (count && avg !== null && Number.isFinite(avg)) {
+            const s = starsFromAvg(avg);
+            elStars.textContent = s.out;
+            elStars.title = `${s.rounded.toFixed(1)} / 5`;
+          } else {
+            elStars.textContent = "☆☆☆☆☆";
+            elStars.title = "Sin reseñas";
+          }
+
+          allReviews = Array.isArray(data?.reviews) ? data.reviews : [];
+
+          if (!allReviews.length) {
+            elList.innerHTML = "";
+            setStatus("Aún no hay reseñas publicadas para este taller.", true);
+            btnMore.style.display = "none";
+            return;
+          }
+
+          // Inicial: 10 (o menos)
+          visibleCount = Math.min(PAGE_SIZE, allReviews.length);
+          setStatus("", false);
+          renderVisible();
+        } catch (err) {
+          console.error("loadReviews error:", err);
+          setStatus("No pudimos cargar las reseñas en este momento. Intenta nuevamente más tarde.", true);
+          btnMore.style.display = "none";
+        }
+      }
+
+      // Botón ver más
+      btnMore.addEventListener("click", () => {
+        showNextPage();
+      });
+
+      // Exponer por si se necesita
+      window.__reloadReviews = loadReviews;
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        setMsg("", false);
+
+        const name = elName.value.trim();
+        const emailRaw = elEmail.value.trim();
+        const email = emailRaw ? emailRaw.toLowerCase() : null;
+        const comment = elComment.value.trim();
+        const rating = Number(elRating.value);
+
+        if (!name) return setMsg("Ingresa tu nombre.", true);
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          return setMsg("Ingresa un email válido (o déjalo vacío).", true);
+        }
+        if (!comment || comment.length < 10) return setMsg("Tu comentario debe tener al menos 10 caracteres.", true);
+        if (!Number.isFinite(rating) || rating < 1 || rating > 5) return setMsg("Selecciona un rating válido (1 a 5).", true);
+
+        btn.disabled = true;
+        setMsg("Publicando…", true);
+
+        try {
+          const payload = { taller_id: TALLER_ID, name, rating, comment, email };
+
+          const res = await fetch(POST_ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+
+          const data = await res.json().catch(() => ({}));
+          if (!res.ok) throw new Error(data?.error || `HTTP ${res.status}`);
+
+          setMsg("¡Gracias! Tu reseña fue publicada.", true);
+
+          if (typeof gtag === "function") {
+            gtag("event", "review_submit", {
+              event_category: "engagement",
+              event_label: TALLER_ID,
+              value: rating
+            });
+          }
+
+          // Limpieza (pendiente: elName)
+          elComment.value = "";
+          elRating.value = "5";
+          elEmail.value = "";
+
+          await loadReviews();
+        } catch (err) {
+          console.error("submit error:", err);
+          setMsg("No se pudo publicar. Intenta nuevamente en unos minutos.", true);
+        } finally {
+          btn.disabled = false;
+        }
+      });
+
+      loadReviews();
+    });
+  </script>
+
+  <!-- Evento WhatsApp GA4 -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const whatsappLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]');
+      whatsappLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (typeof gtag === "function") {
+            gtag("event", "whatsapp_click", {
+              event_category: "contact",
+              event_label: link.href,
+              page_location: window.location.href
+            });
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
