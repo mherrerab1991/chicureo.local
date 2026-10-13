@@ -920,9 +920,9 @@ def generar_html(template, cliente):
             )
     }
 
-    resultado = template
+       resultado = template
 
-       for variable, valor in reemplazos.items():
+    for variable, valor in reemplazos.items():
         resultado = resultado.replace(
             variable,
             valor
@@ -951,7 +951,6 @@ def generar_html(template, cliente):
     )
 
     if variables_pendientes:
-
         variables_unicas = sorted(
             set(variables_pendientes)
         )
@@ -962,7 +961,6 @@ def generar_html(template, cliente):
         )
 
     return resultado
-
 
 # =========================================================
 # RUTA DE SALIDA
