@@ -920,7 +920,7 @@ def generar_html(template, cliente):
             )
     }
 
-       resultado = template
+    resultado = template
 
     for variable, valor in reemplazos.items():
         resultado = resultado.replace(
@@ -930,19 +930,6 @@ def generar_html(template, cliente):
 
     # =====================================================
     # VALIDACIÓN DE VARIABLES DE PLANTILLA
-    # =====================================================
-    #
-    # Si por error agregamos una variable nueva a
-    # templates/ficha.html y olvidamos programar su
-    # reemplazo, detenemos la generación.
-    #
-    # Esto evita publicar cosas como:
-    #
-    #   {{TITULO}}
-    #   {{WHATSAPP_URL}}
-    #   {{VARIABLE_NUEVA}}
-    #
-    # en una página real.
     # =====================================================
 
     variables_pendientes = re.findall(
@@ -961,7 +948,7 @@ def generar_html(template, cliente):
         )
 
     return resultado
-
+    
 # =========================================================
 # RUTA DE SALIDA
 # =========================================================
