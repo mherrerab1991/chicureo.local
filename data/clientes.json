@@ -133,3 +133,168 @@
     "disclaimer": "La disponibilidad, valores, horarios y condiciones del servicio deben confirmarse directamente con la prestadora. ChicureoLocal no realiza los traslados ni interviene en la contratación del servicio; actúa como guía local y canal de contacto."
   }
 }
+
+
+  },
+
+  "smautomotriz": {
+    "activo": true,
+    "business_id": "smautomotriz",
+
+    "tipo": "taller",
+    "categoria": "Taller automotriz",
+    "slug": "smautomotriz",
+    "ruta": "/talleres/smautomotriz/",
+
+    "nombre": "SM Automotriz",
+    "nombre_corto": "SM Automotriz",
+
+    "badge_icono": "🔧",
+    "badge_texto": "Taller recomendado",
+
+    "titulo": "SM Automotriz",
+
+    "descripcion": "Taller automotriz multimarca en Chicureo (Colina), enfocado en reparación de frenos, mantenciones, diagnóstico, mantención por kilometraje y reparaciones. Con más de 30 años de experiencia. Servicio confiable para mantenciones de autos particulares o flotas, con equipo profesional y amplia disponibilidad de repuestos. Para cotizar o agendar, lo más rápido es escribir por WhatsApp.",
+
+    "seo": {
+      "title": "SM Automotriz en Chicureo | Taller multimarca (mantenciones y diagnóstico) | ChicureoLocal",
+      "description": "SM Automotriz en Chicureo (Colina): taller multimarca para mantenciones, diagnóstico y reparaciones. Dirección, horario y contacto directo por WhatsApp.",
+      "canonical": "https://chicureolocal.cl/talleres/smautomotriz/",
+      "og_title": "SM Automotriz en Chicureo | Taller multimarca",
+      "og_description": "Mantenciones, diagnóstico y reparaciones. Contacto directo por WhatsApp."
+    },
+
+    "contacto": {
+      "whatsapp": "56990442727",
+      "whatsapp_visible": "+56 9 9044 2727",
+      "mensaje_whatsapp": "Hola SM Automotriz, los contacto desde ChicureoLocal. Quisiera cotizar y agendar una revisión / mantención. Modelo/año: ____ | Motivo: ____. Gracias.",
+      "web": "https://www.smautomotriz.cl/",
+      "instagram": "https://www.instagram.com/sm.automotrizoficial/",
+      "maps": "https://www.google.com/maps/place/SM+Automotriz/@-33.307824,-70.697939,15z/data=!4m6!3m5!1s0x9662b8bc1e6c06dd:0x9a514c7c8e90d4a7!8m2!3d-33.3078238!4d-70.6979389!16s%2Fg%2F11f3vnlnts?hl=es-419&entry=ttu"
+    },
+
+    "resumen": [
+      "📍 Chicureo / Colina",
+      "🕒 Lunes a viernes · 09:00–19:00",
+      "🛠️ Mantenciones · Diagnóstico · Mecánica general"
+    ],
+
+    "servicios": [
+      {
+        "icono": "🛑",
+        "titulo": "Frenos",
+        "descripcion": "Inspección, mantención y reparación."
+      },
+      {
+        "icono": "🔧",
+        "titulo": "Mecánica general",
+        "descripcion": "Reparaciones mecánicas para todo tipo de vehículos."
+      },
+      {
+        "icono": "💻",
+        "titulo": "Escáner automotriz",
+        "descripcion": "Diagnóstico y revisión de fallas en vehículos multimarca."
+      },
+      {
+        "icono": "🛢️",
+        "titulo": "Mantenciones por kilometraje",
+        "descripcion": "Aceite, filtros y revisión general."
+      },
+      {
+        "icono": "🚗",
+        "titulo": "Suspensión y dirección",
+        "descripcion": "Revisión y trabajos según diagnóstico."
+      },
+      {
+        "icono": "🛣️",
+        "titulo": "Revisión pre-viaje",
+        "descripcion": "Chequeo preventivo antes de viajes y recorridos extensos."
+      }
+    ],
+
+    "caracteristicas": [
+      "Chicureo",
+      "Multimarca",
+      "Mantenciones",
+      "Diagnóstico",
+      "Frenos"
+    ],
+
+    "informacion": [
+      {
+        "icono": "📍",
+        "etiqueta": "Dirección",
+        "valor": "Fermín Vergara Parcela 1 Lote 8-D, Colina"
+      },
+      {
+        "icono": "🕒",
+        "etiqueta": "Horario",
+        "valor": "Lunes a viernes · 09:00–19:00"
+      },
+      {
+        "icono": "💬",
+        "etiqueta": "WhatsApp",
+        "valor": "+56 9 9044 2727"
+      },
+      {
+        "icono": "🌐",
+        "etiqueta": "Web",
+        "valor": "smautomotriz.cl"
+      }
+    ],
+
+    "nota_contacto": "Para cotizar más rápido, recomendamos indicar modelo, año del vehículo y el motivo de la consulta.",
+
+    "galeria": [
+      {
+        "src": "/images/SMAutomotriz3.jpg",
+        "alt": "SM Automotriz – Foto 1"
+      },
+      {
+        "src": "/images/SMAutomotriz4.jpg",
+        "alt": "SM Automotriz – Foto 2"
+      },
+      {
+        "src": "/images/SMAutomotriz5.jpg",
+        "alt": "SM Automotriz – Foto 3"
+      },
+      {
+        "src": "/images/SMAutomotriz6.jpg",
+        "alt": "SM Automotriz – Foto 4"
+      },
+      {
+        "src": "/images/SMAutomotriz7.jpg",
+        "alt": "SM Automotriz – Foto 5"
+      },
+      {
+        "src": "/images/SMAutomotriz8.jpg",
+        "alt": "SM Automotriz – Foto 6"
+      }
+    ],
+
+    "reviews": {
+      "activo": true,
+      "titulo": "Opiniones de clientes",
+      "placeholder": "Cuéntanos tu experiencia con SM Automotriz"
+    },
+
+    "cta_final": {
+      "titulo": "¿Quieres cotizar o agendar?",
+      "texto": "Escríbenos por WhatsApp indicando tu modelo/año y el motivo (mantención, diagnóstico, frenos, ruidos, etc.).",
+      "boton": "💬 Abrir WhatsApp"
+    },
+
+    "schema": {
+      "tipo": "AutoRepair",
+      "service_type": "Taller automotriz multimarca",
+      "area_served": [
+        "Chicureo",
+        "Colina",
+        "Región Metropolitana"
+      ],
+      "provider_type": "Organization"
+    },
+
+    "disclaimer": "La información puede cambiar. Recomendamos confirmar directamente con el taller. ChicureoLocal no presta servicios mecánicos ni garantiza resultados; actúa como guía local y canal de contacto."
+  }
+}
