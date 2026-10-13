@@ -2,6 +2,15 @@ name: Generar fichas ChicureoLocal
 
 on:
   workflow_dispatch:
+    inputs:
+      modo:
+        description: "¿Dónde quieres generar las fichas?"
+        required: true
+        default: "prueba"
+        type: choice
+        options:
+          - prueba
+          - produccion
 
 permissions:
   contents: write
@@ -11,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Descargar repositorio
         uses: actions/checkout@v4
 
@@ -19,10 +29,20 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Mostrar modo seleccionado
+        run: |
+          echo "======================================"
+          echo "ChicureoLocal"
+          echo "Modo seleccionado: ${{ inputs.modo }}"
+          echo "======================================"
+
       - name: Generar fichas
+        env:
+          CHICUREOLOCAL_MODO: ${{ inputs.modo }}
         run: python scripts/generar_fichas.py
 
-      - name: Guardar fichas generadas
+      - name: Guardar fichas de prueba
+        if: ${{ inputs.modo == 'prueba' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -33,5 +53,20 @@ jobs:
             echo "No hay cambios para guardar."
           else
             git commit -m "Generar fichas de prueba"
+            git push
+          fi
+
+      - name: Guardar fichas de producción
+        if: ${{ inputs.modo == 'produccion' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add servicios/ talleres/
+
+          if git diff --cached --quiet; then
+            echo "No hay cambios para guardar."
+          else
+            git commit -m "Generar fichas de producción"
             git push
           fi
