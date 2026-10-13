@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="es-CL">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="index,follow" />
+
+  <title>{{SEO_TITLE}}</title>
+
+  <meta
+    name="description"
+    content="{{SEO_DESCRIPTION}}"
+  />
+
+  <link
+    rel="canonical"
+    href="{{SEO_CANONICAL}}"
+  />
+
+  <!-- OPEN GRAPH -->
+
+  <meta
+    property="og:title"
+    content="{{OG_TITLE}}"
+  />
+
+  <meta
+    property="og:description"
+    content="{{OG_DESCRIPTION}}"
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:url"
+    content="{{SEO_CANONICAL}}"
+  />
+
+  <!-- FAVICON -->
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href='data:image/svg+xml;utf8,
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="%23ff6a3d"/>
+          <stop offset="1" stop-color="%23ffb703"/>
+        </linearGradient>
+      </defs>
+      <rect x="6" y="6" width="52" height="52" rx="14" fill="url(%23g)"/>
+      <path d="M32 18c-7 0-12 5-12 12 0 10 12 22 12 22s12-12 12-22c0-7-5-12-12-12z" fill="%23fff"/>
+    </svg>'
+  />
+
+  <!-- CSS GLOBAL DE FICHAS -->
+
+  <link
+    rel="stylesheet"
+    href="/assets/css/ficha.css"
+  />
+
+  <!-- GOOGLE ANALYTICS 4 -->
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-XT9KYK7JP6"
+  ></script>
+
+  <script>
+
+    window.dataLayer =
+      window.dataLayer || [];
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
+    gtag(
+      "js",
+      new Date()
+    );
+
+    gtag(
+      "config",
+      "G-XT9KYK7JP6",
+      {
+        anonymize_ip:true
+      }
+    );
+
+  </script>
+
+  <!-- SEO ESTRUCTURADO -->
+
+  <script type="application/ld+json">
+  {{SCHEMA_JSON}}
+  </script>
+
+</head>
+
+
+<body>
+
+  <div class="wrap">
+
+
+    <!-- =========================
+         NAVEGACIÓN
+         ========================= -->
+
+    <nav
+      class="nav"
+      aria-label="Navegación principal"
+    >
+
+      <div>
+        <strong>ChicureoLocal</strong>
+      </div>
+
+      <div>
+
+        <a href="/">
+          Inicio
+        </a>
+
+        ·
+
+        <a href="/restaurantes/">
+          Restaurantes
+        </a>
+
+        ·
+
+        <a href="/talleres/">
+          Talleres
+        </a>
+
+        ·
+
+        <a href="/contacto/">
+          Contacto
+        </a>
+
+      </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+         ========================= -->
+
+    <header>
+
+      <div class="badge">
+
+        {{BADGE_ICONO}}
+
+        <strong>
+          {{BADGE_TEXTO}}
+        </strong>
+
+        · ChicureoLocal
+
+      </div>
+
+
+      <h1>
+        {{TITULO}}
+      </h1>
+
+
+      <p class="lead">
+        {{DESCRIPCION}}
+      </p>
+
+
+      <div
+        class="quick"
+        aria-label="Resumen rápido"
+      >
+
+        {{RESUMEN_HTML}}
+
+      </div>
+
+
+      <div
+        class="cta-row"
+        aria-label="Acciones principales"
+      >
+
+        <a
+          class="btn btn-whatsapp"
+          href="{{WHATSAPP_URL}}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          💬 Consultar por WhatsApp
+        </a>
+
+
+        <a
+          class="btn"
+          href="#servicios"
+        >
+          Ver servicios
+        </a>
+
+
+        {{BOTON_REVIEWS_HTML}}
+
+      </div>
+
+    </header>
+
+
+    <!-- =========================
+         INFORMACIÓN PRINCIPAL
+         ========================= -->
+
+    <section
+      class="grid-2"
+      aria-label="Información del servicio"
+    >
+
+
+      <!-- SERVICIOS -->
+
+      <div
+        class="card"
+        id="servicios"
+      >
+
+        <h2>
+          Servicios disponibles
+        </h2>
+
+
+        <div class="destinations">
+
+          {{SERVICIOS_HTML}}
+
+        </div>
+
+
+        <div
+          class="chips"
+          aria-label="Características"
+        >
+
+          {{CARACTERISTICAS_HTML}}
+
+        </div>
+
+      </div>
+
+
+      <!-- INFORMACIÓN PRÁCTICA -->
+
+      <div
+        class="card"
+        id="contacto"
+      >
+
+        <h2>
+          Información práctica
+        </h2>
+
+
+        <div class="meta">
+
+          {{INFORMACION_HTML}}
+
+        </div>
+
+
+        <div class="contact">
+
+          💬
+
+          <a
+            href="{{WHATSAPP_URL}}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Consultar por WhatsApp
+          </a>
+
+        </div>
+
+
+        <div class="note">
+          {{NOTA_CONTACTO}}
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALERÍA
+         ========================= -->
+
+    {{GALERIA_SECTION}}
+
+
+    <!-- =========================
+         RESEÑAS
+         ========================= -->
+
+    {{REVIEWS_SECTION}}
+
+
+    <!-- =========================
+         CTA FINAL
+         ========================= -->
+
+    <section
+      class="card final-cta"
+      style="margin-top:16px;"
+      aria-label="Contacto"
+    >
+
+      <h2>
+        {{CTA_TITULO}}
+      </h2>
+
+
+      <p
+        class="lead"
+        style="max-width:70ch;"
+      >
+        {{CTA_TEXTO}}
+      </p>
+
+
+      <div class="cta-row">
+
+        <a
+          class="btn btn-whatsapp"
+          href="{{WHATSAPP_URL}}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{CTA_BOTON}}
+        </a>
+
+
+        <a
+          class="btn"
+          href="/"
+        >
+          ← Volver a ChicureoLocal
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+      ChicureoLocal · Guía independiente
+      de servicios locales
+
+
+      <div class="back-home">
+
+        ←
+
+        <a
+          href="/"
+          aria-label="Volver al inicio de ChicureoLocal"
+        >
+          Volver al inicio
+        </a>
+
+      </div>
+
+
+      <div class="disclaimer">
+
+        <strong>Disclaimer:</strong>
+
+        {{DISCLAIMER}}
+
+      </div>
+
+    </footer>
+
+  </div>
+
+
+  <!-- =========================
+       STICKY WHATSAPP MÓVIL
+       ========================= -->
+
+  <div
+    class="sticky"
+    aria-label="Acciones rápidas"
+  >
+
+    <a
+      class="btn btn-whatsapp"
+      href="{{WHATSAPP_URL}}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      💬 Contactar por WhatsApp
+    </a>
+
+  </div>
+
+
+  <!-- =========================
+       CONFIGURACIÓN DE LA FICHA
+       ========================= -->
+
+  <script>
+
+    window.CHICUREOLOCAL_FICHA = {
+      businessId: "{{BUSINESS_ID}}"
+    };
+
+  </script>
+
+
+  <!-- JS GLOBAL DE FICHAS -->
+
+  <script
+    src="/assets/js/ficha.js"
+    defer
+  ></script>
+
+</body>
+
+</html>
