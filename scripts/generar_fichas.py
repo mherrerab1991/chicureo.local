@@ -272,20 +272,36 @@ def construir_informacion(cliente):
             )
         )
 
+        url = item.get(
+            "url",
+            ""
+        )
+
+        if url:
+            url_segura = escapar(url)
+
+            valor_html = (
+                f'<a href="{url_segura}" '
+                f'target="_blank" '
+                f'rel="noopener noreferrer">'
+                f'{valor}'
+                f'</a>'
+            )
+        else:
+            valor_html = valor
+
         bloques.append(
             f"""
 <div>
   {icono} {etiqueta}:
   <strong>
-    {valor}
+    {valor_html}
   </strong>
 </div>
             """.strip()
         )
 
     return "\n".join(bloques)
-
-
 # =========================================================
 # GALERÍA
 # =========================================================
