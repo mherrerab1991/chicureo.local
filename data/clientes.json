@@ -315,13 +315,15 @@
     "og_title": "Bandido Pet en Chicureo | Alimentos y accesorios para mascotas",
     "og_description": "Alimentos, snacks, arenas y accesorios para perros y gatos, con atención personalizada y despacho a domicilio en Chicureo."
   },
-  "contacto": {
-    "whatsapp": "56929060176 o al 56965875985",
-    "whatsapp_visible": "+56 9 2906 0176",
-    "mensaje_whatsapp": "Hola Bandido Pet, los contacto desde ChicureoLocal. Quisiera consultar por productos para mi mascota",
-    "web": "https://bandidopet.cl/",
-    "instagram": "https://www.instagram.com/bandidopet.cl/"
-  },
+"contacto": {
+  "whatsapp": "56929060176",
+  "whatsapp_visible": "+56 9 2906 0176",
+  "whatsapp_secundario": "56965875985",
+  "whatsapp_secundario_visible": "+56 9 6587 5985",
+  "mensaje_whatsapp": "Hola Bandido Pet, los contacto desde ChicureoLocal. Quisiera consultar por productos para mi mascota",
+  "web": "https://bandidopet.cl/",
+  "instagram": "https://www.instagram.com/bandidopet.cl/"
+},
   "resumen": [
     "📍 Chicureo",
     "🚚 Despacho a domicilio en Chicureo",
@@ -384,9 +386,16 @@
       "valor": "+56 9 2906 0176"
     },
     {
+      "icono": "💬",
+      "etiqueta": "WhatsApp alternativo",
+      "valor": "+56 9 6587 5985"
+    },
+    {
       "icono": "🌐",
       "etiqueta": "Web",
-      "valor": "www.bandidopet.cl"
+      "valor": "bandidopet.cl",
+      "url": "https://bandidopet.cl/"
+
     }
   ],
   "nota_contacto": "Para una atención más rápida, recomendamos indicar si buscas productos para perro o gato y el producto o necesidad específica.",
