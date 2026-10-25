@@ -95,19 +95,16 @@
       color:var(--text);
 
       background:
-
         radial-gradient(
           1000px 600px at 10% -10%,
           rgba(255,183,3,.18),
           transparent 55%
         ),
-
         radial-gradient(
           900px 500px at 90% 0%,
           rgba(255,106,61,.14),
           transparent 55%
         ),
-
         var(--bg);
 
       line-height:1.65;
@@ -140,15 +137,12 @@
 
     .nav{
       min-height:68px;
-
       margin:12px 0 18px;
-
       padding:0 20px;
 
       display:flex;
       align-items:center;
       justify-content:space-between;
-
       gap:24px;
 
       background:rgba(255,255,255,.94);
@@ -156,8 +150,7 @@
       border:1px solid var(--line);
       border-radius:16px;
 
-      box-shadow:
-        0 2px 14px rgba(15,23,42,.06);
+      box-shadow:0 2px 14px rgba(15,23,42,.06);
 
       backdrop-filter:blur(8px);
     }
@@ -169,7 +162,6 @@
 
       font-size:19px;
       font-weight:850;
-
       letter-spacing:-.5px;
 
       color:var(--brand-text);
@@ -207,25 +199,21 @@
 
     .nav__cta{
       display:inline-flex;
-
       align-items:center;
       justify-content:center;
 
       min-height:40px;
-
       padding:0 17px;
 
       border-radius:999px;
 
       background:var(--brand);
-
       color:#fff;
 
       font-size:13.5px;
       font-weight:800;
 
-      box-shadow:
-        0 5px 14px rgba(31,93,66,.18);
+      box-shadow:0 5px 14px rgba(31,93,66,.18);
 
       transition:
         transform .15s ease,
@@ -239,21 +227,16 @@
 
       transform:translateY(-1px);
 
-      box-shadow:
-        0 7px 18px rgba(31,93,66,.22);
+      box-shadow:0 7px 18px rgba(31,93,66,.22);
     }
-
 
 
     @media(max-width:760px){
 
       .nav{
         min-height:auto;
-
         padding:15px 16px;
-
         align-items:center;
-
         gap:14px;
       }
 
@@ -265,7 +248,6 @@
 
       .nav__links{
         justify-content:flex-end;
-
         gap:8px;
       }
 
@@ -277,9 +259,7 @@
 
       .nav__cta{
         min-height:38px;
-
         padding:0 14px;
-
         font-size:13px;
       }
 
@@ -296,7 +276,6 @@
       background:rgba(255,255,255,.95);
 
       border:1px solid var(--line);
-
       border-radius:var(--radius);
 
       box-shadow:var(--shadow);
@@ -313,16 +292,13 @@
 
     .hero{
       text-align:center;
-
       margin:0;
-
       padding:48px 20px 38px;
     }
 
 
     .hero__eyebrow{
       display:inline-flex;
-
       align-items:center;
 
       margin-bottom:14px;
@@ -331,9 +307,7 @@
 
       font-size:12px;
       font-weight:850;
-
       letter-spacing:.12em;
-
       text-transform:uppercase;
     }
 
@@ -347,9 +321,7 @@
 
       font-size:46px;
       line-height:1.04;
-
       letter-spacing:-1.6px;
-
       font-weight:850;
     }
 
@@ -361,13 +333,11 @@
 
     .lead{
       max-width:650px;
-
       margin:0 auto;
 
       color:var(--muted);
 
       font-size:17px;
-
       line-height:1.65;
     }
 
@@ -376,11 +346,8 @@
       margin:24px auto 0;
 
       display:flex;
-
       justify-content:center;
-
       flex-wrap:wrap;
-
       gap:9px;
     }
 
@@ -388,40 +355,30 @@
     .pill{
       padding:8px 12px;
 
-      border:
-        1px solid rgba(31,93,66,.14);
-
+      border:1px solid rgba(31,93,66,.14);
       border-radius:999px;
 
-      background:
-        rgba(31,93,66,.055);
+      background:rgba(31,93,66,.055);
 
       color:#536158;
 
       font-size:12.5px;
-
       font-weight:650;
     }
 
 
     .hero__business{
       margin:28px auto 0;
-
       padding-top:20px;
 
       max-width:620px;
 
-      border-top:
-        1px solid var(--line);
+      border-top:1px solid var(--line);
 
       display:flex;
-
       justify-content:center;
-
       align-items:center;
-
       flex-wrap:wrap;
-
       gap:7px;
 
       color:var(--muted);
@@ -437,7 +394,6 @@
 
     .hero__business a{
       color:var(--brand);
-
       font-weight:800;
     }
 
@@ -445,7 +401,6 @@
     .hero__business a:hover{
       text-decoration:underline;
     }
-
 
 
     @media(max-width:760px){
@@ -457,14 +412,12 @@
 
       .hero__eyebrow{
         margin-bottom:12px;
-
         font-size:11px;
       }
 
 
       .hero h1{
         font-size:38px;
-
         letter-spacing:-1.2px;
       }
 
@@ -481,7 +434,6 @@
 
       .hero__business{
         margin-top:24px;
-
         padding-top:18px;
       }
 
@@ -490,93 +442,166 @@
 
 
     /* =====================================================
-       CATEGORÍAS
+       EXPLORA CHICUREO
        ===================================================== */
 
 
-    .grid{
+    .explore{
+      margin-top:8px;
+      padding:30px 0 10px;
+      border-top:1px solid var(--line);
+    }
+
+
+    .explore__header{
+      max-width:620px;
+      margin:0 auto 22px;
+      text-align:center;
+    }
+
+
+    .explore__header h2{
+      margin:0 0 6px;
+
+      color:var(--brand-text);
+
+      font-size:25px;
+      line-height:1.2;
+      letter-spacing:-.5px;
+    }
+
+
+    .explore__header p{
+      margin:0;
+
+      color:var(--muted);
+
+      font-size:14.5px;
+    }
+
+
+    .explore__grid{
       display:grid;
-
-      grid-template-columns:1fr;
-
-      gap:18px;
-
-      margin-top:18px;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
     }
 
 
-    @media(min-width:720px){
-
-      .grid{
-        grid-template-columns:1fr 1fr;
-      }
-
-    }
-
-
-    .cat{
-      border:1px solid var(--line);
-
-      border-radius:14px;
-
-      padding:24px 22px;
+    .explore__item{
+      min-height:142px;
+      padding:20px 14px;
 
       display:flex;
-
       flex-direction:column;
+      align-items:center;
+      justify-content:center;
 
-      justify-content:space-between;
+      text-align:center;
+
+      border:1px solid var(--line);
+      border-radius:15px;
 
       background:#fff;
 
       transition:
         transform .15s ease,
+        border-color .15s ease,
         box-shadow .15s ease;
-
-      min-height:190px;
     }
 
 
-    .cat:hover{
+    a.explore__item{
+      cursor:pointer;
+    }
+
+
+    a.explore__item:hover{
       transform:translateY(-2px);
 
-      box-shadow:
-        0 10px 26px rgba(15,23,42,.12);
+      border-color:rgba(31,93,66,.22);
+
+      box-shadow:0 8px 20px rgba(15,23,42,.08);
     }
 
 
-    .cat h2{
-      margin:0 0 8px;
+    .explore__icon{
+      width:46px;
+      height:46px;
 
-      font-size:20px;
+      margin-bottom:11px;
 
-      letter-spacing:-.2px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border-radius:14px;
+
+      background:rgba(31,93,66,.07);
+
+      font-size:23px;
+      line-height:1;
     }
 
 
-    .cat p{
-      margin:0 0 18px;
+    .explore__item h3{
+      margin:0;
+
+      color:var(--brand-text);
+
+      font-size:15px;
+      line-height:1.25;
+      font-weight:800;
+    }
+
+
+    .explore__item p{
+      margin:5px 0 0;
 
       color:var(--muted);
 
-      font-size:15px;
+      font-size:12.5px;
+      line-height:1.4;
     }
 
 
-    .btn{
-      align-self:flex-start;
+    .explore__item--coming{
+      background:rgba(248,250,249,.75);
+    }
 
-      padding:10px 14px;
 
-      border-radius:999px;
+    .explore__item--coming .explore__icon{
+      background:rgba(31,93,66,.045);
+    }
 
-      border:1px solid var(--line);
 
-      font-size:14px;
+    @media(max-width:760px){
 
-      font-weight:650;
+      .explore{
+        padding-top:26px;
+      }
 
-      background:rgba(15,23,42,.04);
+
+      .explore__grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+      }
+
+
+      .explore__item{
+        min-height:132px;
+        padding:17px 10px;
+      }
+
+
+      .explore__header{
+        margin-bottom:18px;
+      }
+
+
+      .explore__header h2{
+        font-size:23px;
+      }
+
     }
 
 
@@ -588,30 +613,25 @@
 
     .sponsored-slider{
       position:relative;
-
       margin:22px 0;
     }
 
 
     .sponsored-slider__viewport{
       overflow:hidden;
-
       border-radius:18px;
     }
 
 
     .sponsored-slider__track{
       display:flex;
-
       transition:transform .38s ease;
-
       will-change:transform;
     }
 
 
     .sponsored-slide{
       min-width:100%;
-
       box-sizing:border-box;
     }
 
@@ -624,7 +644,6 @@
 
     .sponsored-feature{
       border:1px solid var(--line);
-
       border-radius:18px;
 
       background:#fff;
@@ -637,29 +656,22 @@
 
     .sponsored-feature__label{
       display:inline-flex;
-
       align-items:center;
-
       gap:8px;
 
       margin:18px 18px 0;
-
       padding:7px 11px;
 
       border-radius:999px;
 
       font-size:11px;
-
       font-weight:900;
-
       letter-spacing:.08em;
-
       text-transform:uppercase;
 
       color:var(--muted);
 
-      background:
-        rgba(15,23,42,.04);
+      background:rgba(15,23,42,.04);
 
       border:1px solid var(--line);
     }
@@ -667,23 +679,18 @@
 
     .sponsored-feature__inner{
       display:grid;
-
       grid-template-columns:1fr;
-
       gap:0;
 
       padding:16px 18px 18px;
     }
 
 
-
     @media(min-width:760px){
 
       .sponsored-feature__inner{
         grid-template-columns:320px 1fr;
-
         gap:20px;
-
         align-items:stretch;
       }
 
@@ -705,7 +712,6 @@
     }
 
 
-
     @media(min-width:760px){
 
       .sponsored-feature__media{
@@ -717,7 +723,6 @@
 
     .sponsored-feature__media img{
       width:100%;
-
       height:100%;
 
       object-fit:cover;
@@ -728,14 +733,11 @@
 
     .sponsored-feature__content{
       display:flex;
-
       flex-direction:column;
-
       justify-content:center;
 
       padding-top:16px;
     }
-
 
 
     @media(min-width:760px){
@@ -751,11 +753,8 @@
       margin:0 0 6px;
 
       font-size:12px;
-
       font-weight:800;
-
       letter-spacing:.08em;
-
       text-transform:uppercase;
 
       color:var(--muted);
@@ -766,9 +765,7 @@
       margin:0 0 10px;
 
       font-size:32px;
-
       line-height:1.1;
-
       letter-spacing:-.4px;
     }
 
@@ -786,9 +783,7 @@
 
     .sponsored-feature__actions{
       display:flex;
-
       flex-wrap:wrap;
-
       gap:10px;
 
       margin-top:18px;
@@ -797,9 +792,7 @@
 
     .sponsored-feature__btn{
       display:inline-flex;
-
       align-items:center;
-
       justify-content:center;
 
       padding:11px 16px;
@@ -807,7 +800,6 @@
       border-radius:999px;
 
       font-size:14px;
-
       font-weight:800;
 
       transition:
@@ -824,7 +816,6 @@
 
     .sponsored-feature__btn--primary{
       background:var(--text);
-
       color:#fff;
 
       border:1px solid var(--text);
@@ -832,14 +823,12 @@
 
 
     .sponsored-feature__btn--primary:hover{
-      box-shadow:
-        0 10px 20px rgba(15,23,42,.12);
+      box-shadow:0 10px 20px rgba(15,23,42,.12);
     }
 
 
     .sponsored-feature__btn--secondary{
       background:#fff;
-
       color:var(--text);
 
       border:1px solid var(--line);
@@ -861,33 +850,24 @@
       position:absolute;
 
       top:50%;
-
       transform:translateY(-50%);
 
       width:42px;
-
       height:42px;
 
       border-radius:999px;
-
       border:1px solid var(--line);
 
-      background:
-        rgba(255,255,255,.96);
-
+      background:rgba(255,255,255,.96);
       color:var(--text);
 
-      box-shadow:
-        0 8px 22px rgba(15,23,42,.12);
+      box-shadow:0 8px 22px rgba(15,23,42,.12);
 
       display:flex;
-
       align-items:center;
-
       justify-content:center;
 
       cursor:pointer;
-
       z-index:5;
 
       transition:
@@ -899,16 +879,12 @@
 
     .sponsored-slider__arrow:hover{
       background:#fff;
-
-      box-shadow:
-        0 10px 26px rgba(15,23,42,.16);
+      box-shadow:0 10px 26px rgba(15,23,42,.16);
     }
 
 
     .sponsored-slider__arrow:active{
-      transform:
-        translateY(-50%)
-        scale(.98);
+      transform:translateY(-50%) scale(.98);
     }
 
 
@@ -924,17 +900,14 @@
 
     .sponsored-slider__arrow svg{
       width:18px;
-
       height:18px;
     }
-
 
 
     @media(max-width:760px){
 
       .sponsored-slider__arrow{
         width:38px;
-
         height:38px;
       }
 
@@ -959,9 +932,7 @@
 
     .sponsored-slider__dots{
       display:flex;
-
       justify-content:center;
-
       gap:8px;
 
       margin-top:12px;
@@ -970,17 +941,14 @@
 
     .sponsored-slider__dot{
       width:9px;
-
       height:9px;
 
       border-radius:999px;
-
       border:none;
 
       padding:0;
 
-      background:
-        rgba(100,116,139,.35);
+      background:rgba(100,116,139,.35);
 
       cursor:pointer;
 
@@ -993,8 +961,7 @@
     .sponsored-slider__dot:hover{
       transform:scale(1.08);
 
-      background:
-        rgba(100,116,139,.55);
+      background:rgba(100,116,139,.55);
     }
 
 
@@ -1011,14 +978,11 @@
 
     .guides{
       margin:18px 0 10px;
-
       padding:18px 20px;
 
-      border:
-        1px dashed rgba(15,23,42,.18);
+      border:1px dashed rgba(15,23,42,.18);
 
-      background:
-        rgba(15,23,42,.03);
+      background:rgba(15,23,42,.03);
 
       border-radius:14px;
 
@@ -1030,7 +994,6 @@
       margin:0 0 6px;
 
       font-size:18px;
-
       letter-spacing:-.2px;
     }
 
@@ -1050,15 +1013,11 @@
       list-style:none;
 
       padding:0;
-
       margin:0;
 
       display:flex;
-
       gap:14px;
-
       justify-content:center;
-
       flex-wrap:wrap;
     }
 
@@ -1066,8 +1025,7 @@
     .guide-links a{
       font-weight:700;
 
-      border-bottom:
-        1px solid rgba(100,116,139,.35);
+      border-bottom:1px solid rgba(100,116,139,.35);
 
       padding-bottom:2px;
     }
@@ -1076,8 +1034,7 @@
     .guide-links a:hover{
       color:var(--text);
 
-      border-bottom-color:
-        rgba(15,23,42,.35);
+      border-bottom-color:rgba(15,23,42,.35);
     }
 
 
@@ -1089,11 +1046,9 @@
 
     footer{
       margin-top:18px;
-
       padding-top:14px;
 
-      border-top:
-        1px solid rgba(15,23,42,.08);
+      border-top:1px solid rgba(15,23,42,.08);
 
       text-align:center;
 
@@ -1105,11 +1060,8 @@
 
     .footer-links{
       display:flex;
-
       justify-content:center;
-
       gap:12px;
-
       flex-wrap:wrap;
 
       margin-top:10px;
@@ -1117,8 +1069,7 @@
 
 
     .footer-links a{
-      border-bottom:
-        1px solid rgba(100,116,139,.35);
+      border-bottom:1px solid rgba(100,116,139,.35);
 
       padding-bottom:2px;
     }
@@ -1127,25 +1078,21 @@
     .footer-links a:hover{
       color:var(--text);
 
-      border-bottom-color:
-        rgba(15,23,42,.35);
+      border-bottom-color:rgba(15,23,42,.35);
     }
 
 
     .disclaimer{
       margin-top:12px;
+      margin-left:auto;
+      margin-right:auto;
+
+      max-width:92ch;
 
       font-size:12.5px;
 
       color:var(--muted);
-
-      max-width:92ch;
-
-      margin-left:auto;
-
-      margin-right:auto;
     }
-
 
   </style>
 
@@ -1169,10 +1116,7 @@
     }
 
 
-    gtag(
-      'js',
-      new Date()
-    );
+    gtag('js', new Date());
 
 
     gtag(
@@ -1342,87 +1286,152 @@
 
 
       <!-- =================================================
-           CATEGORÍAS
+           EXPLORA CHICUREO
            ================================================= -->
 
 
       <section
-        class="grid"
+        class="explore"
         id="categorias"
-        aria-label="Categorías"
+        aria-labelledby="exploreTitle"
       >
 
 
-        <a
-          class="cat"
-          href="/restaurantes/"
-        >
+        <div class="explore__header">
 
 
-          <div>
+          <h2 id="exploreTitle">
+            Explora Chicureo
+          </h2>
 
 
-            <h2>
-              🍽 Restaurantes
-            </h2>
+          <p>
+            Encuentra negocios y servicios locales por categoría.
+          </p>
+
+
+        </div>
+
+
+
+        <div class="explore__grid">
+
+
+
+          <!-- RESTAURANTES -->
+
+
+          <a
+            class="explore__item"
+            href="/restaurantes/"
+            aria-label="Explorar restaurantes en Chicureo"
+          >
+
+
+            <div class="explore__icon" aria-hidden="true">
+              🍽️
+            </div>
+
+
+            <h3>
+              Restaurantes
+            </h3>
 
 
             <p>
+              Dónde comer
+            </p>
 
-              Dónde comer en Chicureo:
-              restaurantes recomendados,
-              tipo de cocina,
-              precios promedio por persona
-              y contacto directo.
 
+          </a>
+
+
+
+          <!-- AUTOMOTRIZ -->
+
+
+          <a
+            class="explore__item"
+            href="/talleres/"
+            aria-label="Explorar talleres y servicios automotrices en Chicureo"
+          >
+
+
+            <div class="explore__icon" aria-hidden="true">
+              🚗
+            </div>
+
+
+            <h3>
+              Automotriz
+            </h3>
+
+
+            <p>
+              Talleres y servicios
+            </p>
+
+
+          </a>
+
+
+
+          <!-- MASCOTAS -->
+
+
+          <div
+            class="explore__item explore__item--coming"
+            aria-label="Categoría Mascotas"
+          >
+
+
+            <div class="explore__icon" aria-hidden="true">
+              🐾
+            </div>
+
+
+            <h3>
+              Mascotas
+            </h3>
+
+
+            <p>
+              Tiendas y servicios
             </p>
 
 
           </div>
 
 
-          <span class="btn">
-            Ver restaurantes
-          </span>
+
+          <!-- SERVICIOS -->
 
 
-        </a>
+          <div
+            class="explore__item explore__item--coming"
+            aria-label="Categoría Servicios"
+          >
 
 
-
-        <a
-          class="cat"
-          href="/talleres/"
-        >
+            <div class="explore__icon" aria-hidden="true">
+              🚐
+            </div>
 
 
-          <div>
-
-
-            <h2>
-              🚗 Talleres automotrices
-            </h2>
+            <h3>
+              Servicios
+            </h3>
 
 
             <p>
-
-              Talleres mecánicos y servicios
-              automotrices en Chicureo y Colina.
-              Información práctica para elegir
-              con confianza.
-
+              Soluciones locales
             </p>
 
 
           </div>
 
 
-          <span class="btn">
-            Ver talleres
-          </span>
-
-
-        </a>
+        </div>
 
 
       </section>
@@ -1438,7 +1447,6 @@
         class="sponsored-slider"
         aria-label="Espacios patrocinados"
       >
-
 
 
         <!-- FLECHA ANTERIOR -->
@@ -1536,13 +1544,9 @@
 
                     <p>
 
-                      Alimentos premium,
-                      snacks,
-                      arenas y accesorios
-                      para perros y gatos,
-                      con atención personalizada
-                      y despacho a domicilio
-                      en Chicureo.
+                      Alimentos premium, snacks, arenas y accesorios
+                      para perros y gatos, con atención personalizada
+                      y despacho a domicilio en Chicureo.
 
                     </p>
 
@@ -1641,11 +1645,10 @@
 
                     <p>
 
-                      Viajes dentro y fuera de Colina,
-                      con traslados al Aeropuerto
-                      y Metro Los Libertadores.
-                      Viaja de forma cómoda y segura
-                      en una camioneta amplia.
+                      Viajes dentro y fuera de Colina, con traslados
+                      al Aeropuerto y Metro Los Libertadores.
+                      Viaja de forma cómoda y segura en una
+                      camioneta amplia.
 
                     </p>
 
@@ -1688,7 +1691,6 @@
 
 
             </div>
-
 
 
           </div>
@@ -1782,19 +1784,10 @@
         <p>
 
           Si estás buscando
-
-          <strong>
-            dónde comer en Chicureo
-          </strong>
-
+          <strong>dónde comer en Chicureo</strong>
           o necesitas un
-
-          <strong>
-            taller mecánico confiable
-          </strong>,
-
-          revisa nuestras guías locales
-          con información clara
+          <strong>taller mecánico confiable</strong>,
+          revisa nuestras guías locales con información clara
           y recomendaciones actualizadas.
 
         </p>
@@ -1839,9 +1832,8 @@
 
         <div>
 
-          Guía independiente y local
-          creada para ayudar a elegir mejor
-          en Chicureo.
+          Guía independiente y local creada para ayudar
+          a elegir mejor en Chicureo.
 
         </div>
 
@@ -1877,17 +1869,11 @@
         <div class="disclaimer">
 
 
-          <strong>
-            Disclaimer:
-          </strong>
+          <strong>Disclaimer:</strong>
 
 
-          Los precios publicados son referenciales
-          y pueden variar según fecha,
-          carta,
-          promociones,
-          diagnóstico,
-          repuestos
+          Los precios publicados son referenciales y pueden variar
+          según fecha, carta, promociones, diagnóstico, repuestos
           y/o tipo de vehículo.
 
 
@@ -1916,21 +1902,15 @@
 
 
       const track =
-        document.getElementById(
-          'sponsoredSliderTrack'
-        );
+        document.getElementById('sponsoredSliderTrack');
 
 
       const prevBtn =
-        document.getElementById(
-          'sliderPrev'
-        );
+        document.getElementById('sliderPrev');
 
 
       const nextBtn =
-        document.getElementById(
-          'sliderNext'
-        );
+        document.getElementById('sliderNext');
 
 
       const dots =
@@ -1942,9 +1922,7 @@
 
 
       const totalSlides =
-        track
-          ? track.children.length
-          : 0;
+        track ? track.children.length : 0;
 
 
       let currentSlide = 0;
@@ -1963,18 +1941,16 @@
           '%)';
 
 
-        dots.forEach(
-          (dot,index) => {
+        dots.forEach((dot,index) => {
 
 
-            dot.classList.toggle(
-              'is-active',
-              index === currentSlide
-            );
+          dot.classList.toggle(
+            'is-active',
+            index === currentSlide
+          );
 
 
-          }
-        );
+        });
 
 
       }
@@ -2049,24 +2025,22 @@
 
 
 
-      dots.forEach(
-        (dot,index) => {
+      dots.forEach((dot,index) => {
 
 
-          dot.addEventListener(
-            'click',
-            function () {
+        dot.addEventListener(
+          'click',
+          function () {
 
 
-              goToSlide(index);
+            goToSlide(index);
 
 
-            }
-          );
+          }
+        );
 
 
-        }
-      );
+      });
 
 
 
