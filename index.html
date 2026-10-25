@@ -1,24 +1,35 @@
 <!doctype html>
 <html lang="es-CL">
- 
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>ChicureoLocal | Guías locales para elegir mejor en Chicureo</title>
-  <meta name="description" content="Guías locales de restaurantes y talleres automotrices en Chicureo. Información clara, precios referenciales y links directos para decidir rápido." />
+  <meta
+    name="description"
+    content="Guías locales de restaurantes, talleres, mascotas y servicios en Chicureo. Información clara y contacto directo para elegir mejor."
+  />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://chicureolocal.cl/" />
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="ChicureoLocal | Guías locales para elegir mejor en Chicureo" />
-  <meta property="og:description" content="Restaurantes y talleres recomendados en Chicureo: info clara, precios referenciales y links directos." />
+  <meta
+    property="og:title"
+    content="ChicureoLocal | Guías locales para elegir mejor en Chicureo"
+  />
+  <meta
+    property="og:description"
+    content="Negocios y servicios de Chicureo: información clara y contacto directo."
+  />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://chicureolocal.cl/" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml"
+  <link
+    rel="icon"
+    type="image/svg+xml"
     href='data:image/svg+xml;utf8,
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
       <defs>
@@ -29,7 +40,8 @@
       </defs>
       <rect x="6" y="6" width="52" height="52" rx="14" fill="url(%23g)"/>
       <path d="M32 18c-7 0-12 5-12 12 0 10 12 22 12 22s12-12 12-22c0-7-5-12-12-12z" fill="%23fff"/>
-    </svg>' />
+    </svg>'
+  />
 
   <style>
     :root{
@@ -41,52 +53,171 @@
       --shadow:0 6px 22px rgba(15,23,42,.08);
       --radius:16px;
       --max:980px;
+
+      /* Nueva identidad ChicureoLocal */
+      --brand:#1f5d42;
+      --brand-dark:#174a34;
+      --brand-text:#17211b;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(1000px 600px at 10% -10%, rgba(255,183,3,.18), transparent 55%),
-        radial-gradient(900px 500px at 90% 0%, rgba(255,106,61,.14), transparent 55%),
+        radial-gradient(
+          1000px 600px at 10% -10%,
+          rgba(255,183,3,.18),
+          transparent 55%
+        ),
+        radial-gradient(
+          900px 500px at 90% 0%,
+          rgba(255,106,61,.14),
+          transparent 55%
+        ),
         var(--bg);
       line-height:1.65;
     }
-    a{color:inherit; text-decoration:none}
-    button{font:inherit}
 
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
 
-    /* NAV */
+    button{
+      font:inherit;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:22px 18px 70px;
+    }
+
+
+    /* =====================================================
+       HEADER / NAV 2.0
+       ===================================================== */
+
     .nav{
-      background:rgba(255,255,255,0.92);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:0 2px 12px rgba(15,23,42,0.06);
-      padding:12px 14px;
-      margin:12px 0 14px;
-      backdrop-filter: blur(6px);
+      min-height:68px;
+      margin:12px 0 18px;
+      padding:0 20px;
+
       display:flex;
+      align-items:center;
       justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-      font-size:13px;
-      color:var(--muted);
+      gap:24px;
+
+      background:rgba(255,255,255,.94);
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:0 2px 14px rgba(15,23,42,.06);
+      backdrop-filter:blur(8px);
     }
-    .nav strong{color:var(--text)}
-    .nav a{
-      border-bottom:1px solid rgba(100,116,139,.35);
-      padding-bottom:2px;
+
+    .nav__brand{
+      display:inline-flex;
+      align-items:center;
+
+      font-size:19px;
+      font-weight:850;
+      letter-spacing:-.5px;
+      color:var(--brand-text);
+      white-space:nowrap;
     }
-    .nav a:hover{color:var(--text)}
-    .nav a[aria-current="page"]{
-      color:var(--text);
+
+    .nav__brand-local{
+      color:var(--brand);
+    }
+
+    .nav__links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+    }
+
+    .nav__link{
+      color:#56625b;
+      font-size:14px;
+      font-weight:650;
+      transition:color .15s ease;
+    }
+
+    .nav__link:hover{
+      color:var(--brand);
+    }
+
+    .nav__cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+
+      min-height:40px;
+      padding:0 17px;
+
+      border-radius:999px;
+      background:var(--brand);
+      color:#fff;
+
+      font-size:13.5px;
       font-weight:800;
-      border-bottom-color:rgba(15,23,42,.35);
+
+      box-shadow:0 5px 14px rgba(31,93,66,.18);
+
+      transition:
+        transform .15s ease,
+        background .15s ease,
+        box-shadow .15s ease;
     }
+
+    .nav__cta:hover{
+      background:var(--brand-dark);
+      transform:translateY(-1px);
+      box-shadow:0 7px 18px rgba(31,93,66,.22);
+    }
+
+    @media(max-width:760px){
+
+      .nav{
+        min-height:auto;
+        padding:15px 16px;
+        align-items:center;
+        gap:14px;
+      }
+
+      .nav__brand{
+        font-size:18px;
+      }
+
+      .nav__links{
+        justify-content:flex-end;
+        gap:8px;
+      }
+
+      .nav__link{
+        display:none;
+      }
+
+      .nav__cta{
+        min-height:38px;
+        padding:0 14px;
+        font-size:13px;
+      }
+    }
+
+
+    /* =====================================================
+       CONTENIDO GENERAL
+       ===================================================== */
 
     .card{
       background:rgba(255,255,255,.95);
@@ -101,8 +232,20 @@
       margin:6px 0 22px;
       padding:6px 6px 0;
     }
-    h1{margin:10px 0 12px; font-size:36px; line-height:1.15; letter-spacing:-.4px;}
-    .lead{color:var(--muted); max-width:70ch; margin:0 auto; font-size:16px;}
+
+    h1{
+      margin:10px 0 12px;
+      font-size:36px;
+      line-height:1.15;
+      letter-spacing:-.4px;
+    }
+
+    .lead{
+      color:var(--muted);
+      max-width:70ch;
+      margin:0 auto;
+      font-size:16px;
+    }
 
     .trust{
       margin:16px auto 0;
@@ -114,6 +257,7 @@
       justify-content:center;
       flex-wrap:wrap;
     }
+
     .pill{
       border:1px solid var(--line);
       background:rgba(15,23,42,.03);
@@ -121,33 +265,58 @@
       padding:7px 10px;
     }
 
+
+    /* =====================================================
+       CATEGORÍAS
+       ===================================================== */
+
     .grid{
       display:grid;
       grid-template-columns:1fr;
       gap:18px;
       margin-top:18px;
     }
+
     @media(min-width:720px){
-      .grid{grid-template-columns:1fr 1fr;}
+      .grid{
+        grid-template-columns:1fr 1fr;
+      }
     }
 
     .cat{
       border:1px solid var(--line);
       border-radius:14px;
       padding:24px 22px;
+
       display:flex;
       flex-direction:column;
       justify-content:space-between;
+
       background:#fff;
-      transition:transform .15s ease, box-shadow .15s ease;
+
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+
       min-height:190px;
     }
+
     .cat:hover{
       transform:translateY(-2px);
       box-shadow:0 10px 26px rgba(15,23,42,.12);
     }
-    .cat h2{margin:0 0 8px; font-size:20px; letter-spacing:-.2px;}
-    .cat p{margin:0 0 18px; color:var(--muted); font-size:15px;}
+
+    .cat h2{
+      margin:0 0 8px;
+      font-size:20px;
+      letter-spacing:-.2px;
+    }
+
+    .cat p{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:15px;
+    }
 
     .btn{
       align-self:flex-start;
@@ -159,7 +328,11 @@
       background:rgba(15,23,42,.04);
     }
 
-    /* SLIDER PATROCINADOS */
+
+    /* =====================================================
+       SLIDER PATROCINADOS
+       ===================================================== */
+
     .sponsored-slider{
       position:relative;
       margin:22px 0;
@@ -181,7 +354,11 @@
       box-sizing:border-box;
     }
 
-    /* FICHA DESTACADA */
+
+    /* =====================================================
+       FICHA DESTACADA
+       ===================================================== */
+
     .sponsored-feature{
       border:1px solid var(--line);
       border-radius:18px;
@@ -294,7 +471,11 @@
       border-radius:999px;
       font-size:14px;
       font-weight:800;
-      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease,
+        background .15s ease;
     }
 
     .sponsored-feature__btn:hover{
@@ -321,24 +502,38 @@
       background:rgba(15,23,42,.03);
     }
 
-    /* FLECHAS */
+
+    /* =====================================================
+       FLECHAS DEL CARRUSEL
+       ===================================================== */
+
     .sponsored-slider__arrow{
       position:absolute;
       top:50%;
       transform:translateY(-50%);
+
       width:42px;
       height:42px;
+
       border-radius:999px;
       border:1px solid var(--line);
+
       background:rgba(255,255,255,.96);
       color:var(--text);
+
       box-shadow:0 8px 22px rgba(15,23,42,.12);
+
       display:flex;
       align-items:center;
       justify-content:center;
+
       cursor:pointer;
       z-index:5;
-      transition:transform .15s ease, background .15s ease, box-shadow .15s ease;
+
+      transition:
+        transform .15s ease,
+        background .15s ease,
+        box-shadow .15s ease;
     }
 
     .sponsored-slider__arrow:hover{
@@ -364,19 +559,26 @@
     }
 
     @media(max-width:760px){
+
       .sponsored-slider__arrow{
         width:38px;
         height:38px;
       }
+
       .sponsored-slider__arrow--prev{
         left:-6px;
       }
+
       .sponsored-slider__arrow--next{
         right:-6px;
       }
     }
 
-    /* INDICADORES */
+
+    /* =====================================================
+       INDICADORES DEL CARRUSEL
+       ===================================================== */
+
     .sponsored-slider__dots{
       display:flex;
       justify-content:center;
@@ -392,7 +594,10 @@
       padding:0;
       background:rgba(100,116,139,.35);
       cursor:pointer;
-      transition:transform .15s ease, background .15s ease;
+
+      transition:
+        transform .15s ease,
+        background .15s ease;
     }
 
     .sponsored-slider__dot:hover{
@@ -404,7 +609,11 @@
       background:var(--text);
     }
 
-    /* BLOQUE GUÍAS SEO */
+
+    /* =====================================================
+       GUÍAS SEO
+       ===================================================== */
+
     .guides{
       margin:18px 0 10px;
       padding:18px 20px;
@@ -413,35 +622,46 @@
       border-radius:14px;
       text-align:center;
     }
+
     .guides h2{
       margin:0 0 6px;
       font-size:18px;
       letter-spacing:-.2px;
     }
+
     .guides p{
       margin:0 auto 10px;
       max-width:70ch;
       color:var(--muted);
       font-size:14.5px;
     }
+
     .guide-links{
       list-style:none;
       padding:0;
       margin:0;
+
       display:flex;
       gap:14px;
       justify-content:center;
       flex-wrap:wrap;
     }
+
     .guide-links a{
       font-weight:700;
       border-bottom:1px solid rgba(100,116,139,.35);
       padding-bottom:2px;
     }
+
     .guide-links a:hover{
       color:var(--text);
       border-bottom-color:rgba(15,23,42,.35);
     }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
 
     footer{
       margin-top:18px;
@@ -451,6 +671,7 @@
       color:var(--muted);
       font-size:13px;
     }
+
     .footer-links{
       display:flex;
       justify-content:center;
@@ -458,14 +679,17 @@
       flex-wrap:wrap;
       margin-top:10px;
     }
+
     .footer-links a{
       border-bottom:1px solid rgba(100,116,139,.35);
       padding-bottom:2px;
     }
+
     .footer-links a:hover{
       color:var(--text);
       border-bottom-color:rgba(15,23,42,.35);
     }
+
     .disclaimer{
       margin-top:12px;
       font-size:12.5px;
@@ -474,270 +698,668 @@
       margin-left:auto;
       margin-right:auto;
     }
+
   </style>
 
+
   <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XT9KYK7JP6"></script>
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-XT9KYK7JP6">
+  </script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'G-XT9KYK7JP6', {
       anonymize_ip: true
     });
   </script>
+
 </head>
 
+
 <body>
+
   <div class="wrap">
 
+
+    <!-- ===================================================
+         HEADER 2.0
+         =================================================== -->
+
     <nav class="nav" aria-label="Navegación principal">
-      <div><strong>ChicureoLocal</strong></div>
-      <div>
-        <a href="/" aria-current="page">Inicio</a> ·
-        <a href="/restaurantes/">Restaurantes</a> ·
-        <a href="/talleres/">Talleres</a> ·
-        <a href="/privacidad/">Privacidad</a> ·
-        <a href="/terminos/">Términos</a> ·
-        <a href="/contacto/">Contacto</a>
+
+      <a
+        class="nav__brand"
+        href="/"
+        aria-label="ChicureoLocal - Inicio"
+      >
+        Chicureo<span class="nav__brand-local">Local</span>
+      </a>
+
+
+      <div class="nav__links">
+
+        <a
+          class="nav__link"
+          href="#categorias"
+        >
+          Explorar
+        </a>
+
+        <a
+          class="nav__link"
+          href="#guias"
+        >
+          Guías
+        </a>
+
+        <a
+          class="nav__link"
+          href="/contacto/"
+        >
+          Para negocios
+        </a>
+
+        <a
+          class="nav__cta"
+          href="https://wa.me/56974957631?text=Hola%2C%20tengo%20un%20negocio%20en%20Chicureo%20y%20me%20gustaría%20publicarlo%20en%20ChicureoLocal."
+          target="_blank"
+          rel="noopener"
+          onclick="gtag('event','click_publicar_negocio',{'ubicacion':'header'});"
+        >
+          Publica tu negocio
+        </a>
+
       </div>
+
     </nav>
 
+
     <main class="card">
+
+
+      <!-- =================================================
+           HERO ACTUAL
+           ================================================= -->
+
       <header>
-        <h1>Guías locales para elegir mejor en Chicureo</h1>
+
+        <h1>
+          Guías locales para elegir mejor en Chicureo
+        </h1>
+
         <p class="lead">
           Encuentra restaurantes y talleres automotrices recomendados en Chicureo.
           Información clara, precios referenciales y links directos para decidir rápido.
         </p>
 
         <div class="trust">
-          <span class="pill">Guía independiente</span>
-          <span class="pill">Contacto directo</span>
-          <span class="pill">Actualización periódica</span>
+
+          <span class="pill">
+            Guía independiente
+          </span>
+
+          <span class="pill">
+            Contacto directo
+          </span>
+
+          <span class="pill">
+            Actualización periódica
+          </span>
+
         </div>
+
       </header>
 
-      <section class="grid" aria-label="Categorías">
-        <a class="cat" href="/restaurantes/">
+
+      <!-- =================================================
+           CATEGORÍAS
+           ================================================= -->
+
+      <section
+        class="grid"
+        id="categorias"
+        aria-label="Categorías"
+      >
+
+        <a
+          class="cat"
+          href="/restaurantes/"
+        >
+
           <div>
-            <h2>🍽 Restaurantes</h2>
+
+            <h2>
+              🍽 Restaurantes
+            </h2>
+
             <p>
-              Dónde comer en Chicureo: restaurantes recomendados, tipo de cocina,
-              precios promedio por persona y contacto directo.
+              Dónde comer en Chicureo: restaurantes recomendados,
+              tipo de cocina, precios promedio por persona y
+              contacto directo.
             </p>
+
           </div>
-          <span class="btn">Ver restaurantes</span>
+
+          <span class="btn">
+            Ver restaurantes
+          </span>
+
         </a>
 
-        <a class="cat" href="/talleres/">
+
+        <a
+          class="cat"
+          href="/talleres/"
+        >
+
           <div>
-            <h2>🚗 Talleres automotrices</h2>
+
+            <h2>
+              🚗 Talleres automotrices
+            </h2>
+
             <p>
-              Talleres mecánicos y servicios automotrices en Chicureo y Colina.
-              Información práctica para elegir con confianza.
+              Talleres mecánicos y servicios automotrices en
+              Chicureo y Colina. Información práctica para elegir
+              con confianza.
             </p>
+
           </div>
-          <span class="btn">Ver talleres</span>
+
+          <span class="btn">
+            Ver talleres
+          </span>
+
         </a>
+
       </section>
 
-      <!-- SLIDER DE ESPACIOS PATROCINADOS -->
-      <section class="sponsored-slider" aria-label="Espacios patrocinados">
-        <button class="sponsored-slider__arrow sponsored-slider__arrow--prev" type="button" aria-label="Ver banner anterior" id="sliderPrev">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- =================================================
+           SLIDER DE ESPACIOS PATROCINADOS
+           ================================================= -->
+
+      <section
+        class="sponsored-slider"
+        aria-label="Espacios patrocinados"
+      >
+
+
+        <!-- FLECHA ANTERIOR -->
+
+        <button
+          class="sponsored-slider__arrow sponsored-slider__arrow--prev"
+          type="button"
+          aria-label="Ver banner anterior"
+          id="sliderPrev"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M15 6l-6 6 6 6"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
+
         </button>
+
 
         <div class="sponsored-slider__viewport">
-          <div class="sponsored-slider__track" id="sponsoredSliderTrack">
-<!-- SLIDE 1 -->
-<div class="sponsored-slide">
-  <section class="sponsored-feature" aria-label="Espacio patrocinado Bandido Pet">
-    <div class="sponsored-feature__label">Espacio patrocinado</div>
 
-    <div class="sponsored-feature__inner">
-      <div class="sponsored-feature__media">
-        <img
-          src="/images/bandido-pet.jpeg"
-          alt="Bandido Pet en Chicureo"
-          loading="lazy"
-        />
-      </div>
-
-      <div class="sponsored-feature__content">
-        <div class="sponsored-feature__kicker">Mascotas · Tienda local</div>
-
-        <h2>Bandido Pet</h2>
-
-        <p>
-          Alimentos premium, snacks, arenas y accesorios para perros y gatos,
-          con atención personalizada y despacho a domicilio en Chicureo.
-        </p>
-
-        <div class="sponsored-feature__actions">
-          <a
-            class="sponsored-feature__btn sponsored-feature__btn--primary"
-            href="/mascotas/bandido-pet/"
-            onclick="gtag('event','click_banner_home',{'cliente':'Bandido Pet','ubicacion':'home_principal','slide':1,'tipo':'ficha_destacada'});"
+          <div
+            class="sponsored-slider__track"
+            id="sponsoredSliderTrack"
           >
-            Ver ficha destacada
-          </a>
 
-          <a
-            class="sponsored-feature__btn sponsored-feature__btn--secondary"
-            href="https://wa.me/56929060176?text=Hola%20Bandido%20Pet%2C%20los%20vi%20en%20ChicureoLocal%20y%20quisiera%20hacer%20una%20consulta."
-            target="_blank"
-            rel="noopener nofollow"
-            onclick="gtag('event','click_whatsapp_banner_home',{'cliente':'Bandido Pet','ubicacion':'home_principal','slide':1,'tipo':'contacto_directo'});"
-          >
-            Contactar por WhatsApp
-          </a>
+
+            <!-- ============================================
+                 SLIDE 1 — BANDIDO PET
+                 ============================================ -->
+
+            <div class="sponsored-slide">
+
+              <section
+                class="sponsored-feature"
+                aria-label="Espacio patrocinado Bandido Pet"
+              >
+
+                <div class="sponsored-feature__label">
+                  Espacio patrocinado
+                </div>
+
+
+                <div class="sponsored-feature__inner">
+
+
+                  <div class="sponsored-feature__media">
+
+                    <img
+                      src="/images/bandido-pet.jpeg"
+                      alt="Bandido Pet en Chicureo"
+                      loading="lazy"
+                    />
+
+                  </div>
+
+
+                  <div class="sponsored-feature__content">
+
+                    <div class="sponsored-feature__kicker">
+                      Mascotas · Tienda local
+                    </div>
+
+                    <h2>
+                      Bandido Pet
+                    </h2>
+
+                    <p>
+                      Alimentos premium, snacks, arenas y accesorios
+                      para perros y gatos, con atención personalizada
+                      y despacho a domicilio en Chicureo.
+                    </p>
+
+
+                    <div class="sponsored-feature__actions">
+
+                      <a
+                        class="sponsored-feature__btn sponsored-feature__btn--primary"
+                        href="/mascotas/bandido-pet/"
+                        onclick="gtag('event','click_banner_home',{'cliente':'Bandido Pet','ubicacion':'home_principal','slide':1,'tipo':'ficha_destacada'});"
+                      >
+                        Ver ficha destacada
+                      </a>
+
+
+                      <a
+                        class="sponsored-feature__btn sponsored-feature__btn--secondary"
+                        href="https://wa.me/56929060176?text=Hola%20Bandido%20Pet%2C%20los%20vi%20en%20ChicureoLocal%20y%20quisiera%20hacer%20una%20consulta."
+                        target="_blank"
+                        rel="noopener nofollow"
+                        onclick="gtag('event','click_whatsapp_banner_home',{'cliente':'Bandido Pet','ubicacion':'home_principal','slide':1,'tipo':'contacto_directo'});"
+                      >
+                        Contactar por WhatsApp
+                      </a>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </section>
+
+            </div>
+
+
+            <!-- ============================================
+                 SLIDE 2 — TRASLADOS AYRES
+                 ============================================ -->
+
+            <div class="sponsored-slide">
+
+              <section
+                class="sponsored-feature"
+                aria-label="Espacio patrocinado Traslados Ayres"
+              >
+
+                <div class="sponsored-feature__label">
+                  Espacio patrocinado
+                </div>
+
+
+                <div class="sponsored-feature__inner">
+
+
+                  <div class="sponsored-feature__media">
+
+                    <img
+                      src="/images/sylvanaburgos.jpg"
+                      alt="Servicio de traslados desde Ayres de Chicureo"
+                      loading="lazy"
+                    />
+
+                  </div>
+
+
+                  <div class="sponsored-feature__content">
+
+                    <div class="sponsored-feature__kicker">
+                      Servicio de traslados destacado
+                    </div>
+
+                    <h2>
+                      Traslados desde Ayres de Chicureo
+                    </h2>
+
+                    <p>
+                      Viajes dentro y fuera de Colina, con traslados
+                      al Aeropuerto y Metro Los Libertadores.
+                      Viaja de forma cómoda y segura en una
+                      camioneta amplia.
+                    </p>
+
+
+                    <div class="sponsored-feature__actions">
+
+                      <a
+                        class="sponsored-feature__btn sponsored-feature__btn--primary"
+                        href="/servicios/traslados-ayres/"
+                        onclick="gtag('event','click_banner_home',{'cliente':'Traslados Ayres','ubicacion':'home_principal','slide':2,'tipo':'ficha_destacada'});"
+                      >
+                        Ver ficha destacada
+                      </a>
+
+
+                      <a
+                        class="sponsored-feature__btn sponsored-feature__btn--secondary"
+                        href="https://wa.me/56998848728?text=Hola%2C%20te%20contacto%20desde%20ChicureoLocal.%20Quisiera%20consultar%20por%20un%20traslado."
+                        target="_blank"
+                        rel="noopener nofollow"
+                        onclick="gtag('event','click_whatsapp_banner_home',{'cliente':'Traslados Ayres','ubicacion':'home_principal','slide':2,'tipo':'contacto_directo'});"
+                      >
+                        Consultar por WhatsApp
+                      </a>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </section>
+
+            </div>
+
+
+          </div>
+
         </div>
-      </div>
-    </div>
-  </section>
-</div>
 
 
-<!-- SLIDE 2 -->
-<div class="sponsored-slide">
-  <section class="sponsored-feature" aria-label="Espacio patrocinado Traslados Ayres">
-    <div class="sponsored-feature__label">Espacio patrocinado</div>
+        <!-- FLECHA SIGUIENTE -->
 
-    <div class="sponsored-feature__inner">
-      <div class="sponsored-feature__media">
-        <img
-          src="/images/sylvanaburgos.jpg"
-          alt="Servicio de traslados desde Ayres de Chicureo"
-          loading="lazy"
-        />
-      </div>
+        <button
+          class="sponsored-slider__arrow sponsored-slider__arrow--next"
+          type="button"
+          aria-label="Ver siguiente banner"
+          id="sliderNext"
+        >
 
-      <div class="sponsored-feature__content">
-        <div class="sponsored-feature__kicker">Servicio de traslados destacado</div>
-
-        <h2>Traslados desde Ayres de Chicureo</h2>
-
-        <p>
-          Viajes dentro y fuera de Colina, con traslados al Aeropuerto
-          y Metro Los Libertadores. Viaja de forma cómoda y segura
-          en una camioneta amplia.
-        </p>
-
-        <div class="sponsored-feature__actions">
-          <a
-            class="sponsored-feature__btn sponsored-feature__btn--primary"
-            href="/servicios/traslados-ayres/"
-            onclick="gtag('event','click_banner_home',{'cliente':'Traslados Ayres','ubicacion':'home_principal','slide':2,'tipo':'ficha_destacada'});"
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
           >
-            Ver ficha destacada
-          </a>
-
-          <a
-            class="sponsored-feature__btn sponsored-feature__btn--secondary"
-            href="https://wa.me/56998848728?text=Hola%2C%20te%20contacto%20desde%20ChicureoLocal.%20Quisiera%20consultar%20por%20un%20traslado."
-            target="_blank"
-            rel="noopener nofollow"
-            onclick="gtag('event','click_whatsapp_banner_home',{'cliente':'Traslados Ayres','ubicacion':'home_principal','slide':2,'tipo':'contacto_directo'});"
-          >
-            Consultar por WhatsApp
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-        <button class="sponsored-slider__arrow sponsored-slider__arrow--next" type="button" aria-label="Ver siguiente banner" id="sliderNext">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M9 6l6 6-6 6"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
+
         </button>
 
-        <div class="sponsored-slider__dots" aria-label="Indicadores de banners">
-          <button class="sponsored-slider__dot is-active" type="button" aria-label="Ver banner 1" data-slide="0"></button>
-          <button class="sponsored-slider__dot" type="button" aria-label="Ver banner 2" data-slide="1"></button>
+
+        <!-- INDICADORES -->
+
+        <div
+          class="sponsored-slider__dots"
+          aria-label="Indicadores de banners"
+        >
+
+          <button
+            class="sponsored-slider__dot is-active"
+            type="button"
+            aria-label="Ver banner 1"
+            data-slide="0"
+          ></button>
+
+          <button
+            class="sponsored-slider__dot"
+            type="button"
+            aria-label="Ver banner 2"
+            data-slide="1"
+          ></button>
+
         </div>
+
       </section>
 
-      <!-- BLOQUE GUÍAS SEO -->
-      <section class="guides" aria-label="Guías locales destacadas">
-        <h2>Guías locales destacadas</h2>
+
+      <!-- =================================================
+           GUÍAS
+           ================================================= -->
+
+      <section
+        class="guides"
+        id="guias"
+        aria-label="Guías locales destacadas"
+      >
+
+        <h2>
+          Guías locales destacadas
+        </h2>
+
         <p>
-          Si estás buscando <strong>dónde comer en Chicureo</strong> o necesitas un
-          <strong>taller mecánico confiable</strong>, revisa nuestras guías locales con
-          información clara y recomendaciones actualizadas.
+          Si estás buscando
+          <strong>dónde comer en Chicureo</strong>
+          o necesitas un
+          <strong>taller mecánico confiable</strong>,
+          revisa nuestras guías locales con información clara
+          y recomendaciones actualizadas.
         </p>
+
+
         <ul class="guide-links">
-          <li><a href="/donde-comer-en-chicureo/">👉 Dónde comer en Chicureo</a></li>
-          <li><a href="/talleres-mecanicos-en-chicureo/">👉 Talleres mecánicos en Chicureo</a></li>
+
+          <li>
+            <a href="/donde-comer-en-chicureo/">
+              👉 Dónde comer en Chicureo
+            </a>
+          </li>
+
+          <li>
+            <a href="/talleres-mecanicos-en-chicureo/">
+              👉 Talleres mecánicos en Chicureo
+            </a>
+          </li>
+
         </ul>
+
       </section>
+
+
+      <!-- =================================================
+           FOOTER
+           ================================================= -->
 
       <footer>
-        <div>Guía independiente y local creada para ayudar a elegir mejor en Chicureo.</div>
+
+        <div>
+          Guía independiente y local creada para ayudar
+          a elegir mejor en Chicureo.
+        </div>
+
 
         <div class="footer-links">
-          <a href="/acerca/">Acerca</a>
-          <a href="/contacto/">Contacto</a>
-          <a href="/privacidad/">Privacidad</a>
-          <a href="/terminos/">Términos</a>
+
+          <a href="/acerca/">
+            Acerca
+          </a>
+
+          <a href="/contacto/">
+            Contacto
+          </a>
+
+          <a href="/privacidad/">
+            Privacidad
+          </a>
+
+          <a href="/terminos/">
+            Términos
+          </a>
+
         </div>
 
+
         <div class="disclaimer">
-          <strong>Disclaimer:</strong> Los precios publicados son referenciales y pueden variar según fecha, carta, promociones,
-          diagnóstico, repuestos y/o tipo de vehículo.
+
+          <strong>Disclaimer:</strong>
+
+          Los precios publicados son referenciales y pueden variar
+          según fecha, carta, promociones, diagnóstico, repuestos
+          y/o tipo de vehículo.
+
         </div>
+
       </footer>
+
+
     </main>
 
   </div>
 
+
+  <!-- =====================================================
+       CARRUSEL
+       ===================================================== -->
+
   <script>
+
     (function () {
-      const track = document.getElementById('sponsoredSliderTrack');
-      const prevBtn = document.getElementById('sliderPrev');
-      const nextBtn = document.getElementById('sliderNext');
-      const dots = Array.from(document.querySelectorAll('.sponsored-slider__dot'));
-      const totalSlides = track ? track.children.length : 0;
+
+      const track =
+        document.getElementById('sponsoredSliderTrack');
+
+      const prevBtn =
+        document.getElementById('sliderPrev');
+
+      const nextBtn =
+        document.getElementById('sliderNext');
+
+      const dots =
+        Array.from(
+          document.querySelectorAll(
+            '.sponsored-slider__dot'
+          )
+        );
+
+      const totalSlides =
+        track ? track.children.length : 0;
+
       let currentSlide = 0;
 
+
       function updateSlider() {
+
         if (!track) return;
-        track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+
+        track.style.transform =
+          'translateX(-' +
+          (currentSlide * 100) +
+          '%)';
 
         dots.forEach((dot, index) => {
-          dot.classList.toggle('is-active', index === currentSlide);
+
+          dot.classList.toggle(
+            'is-active',
+            index === currentSlide
+          );
+
         });
+
       }
+
 
       function goToSlide(index) {
+
         if (totalSlides === 0) return;
-        currentSlide = (index + totalSlides) % totalSlides;
+
+        currentSlide =
+          (index + totalSlides) %
+          totalSlides;
+
         updateSlider();
+
       }
+
 
       function nextSlide() {
-        goToSlide(currentSlide + 1);
+
+        goToSlide(
+          currentSlide + 1
+        );
+
       }
+
 
       function prevSlide() {
-        goToSlide(currentSlide - 1);
+
+        goToSlide(
+          currentSlide - 1
+        );
+
       }
 
-      if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-      if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+      if (prevBtn) {
+
+        prevBtn.addEventListener(
+          'click',
+          prevSlide
+        );
+
+      }
+
+
+      if (nextBtn) {
+
+        nextBtn.addEventListener(
+          'click',
+          nextSlide
+        );
+
+      }
+
 
       dots.forEach((dot, index) => {
-        dot.addEventListener('click', function () {
-          goToSlide(index);
-        });
+
+        dot.addEventListener(
+          'click',
+          function () {
+
+            goToSlide(index);
+
+          }
+        );
+
       });
 
+
       updateSlider();
+
     })();
+
   </script>
+
 </body>
+
 </html>
