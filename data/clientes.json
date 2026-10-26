@@ -1,140 +1,515 @@
-"optica-chicureo": {
-  "activo": true,
-  "business_id": "optica-chicureo",
-
-  "tipo": "tienda",
-  "categoria": "Óptica",
-  "slug": "optica-chicureo",
-  "ruta": "/tiendas/optica-chicureo/",
-
-  "nombre": "Óptica Chicureo",
-  "nombre_corto": "Óptica Chicureo",
-
-  "badge_icono": "👓",
-  "badge_texto": "Óptica local",
-
-  "titulo": "Óptica Chicureo",
-
-  "descripcion": "Óptica Chicureo es una óptica ubicada en Paseo Las Piedras, Chicureo, que ofrece anteojos ópticos y de sol, armazones de reconocidas marcas y cristales de alta tecnología. Además, cuenta con consulta visual con tecnólogo médico con mención en Oftalmología, permitiendo realizar o actualizar la receta directamente en Chicureo.",
-
-  "seo": {
-    "title": "Óptica Chicureo | Anteojos, cristales y consulta visual | ChicureoLocal",
-    "description": "Óptica Chicureo en Paseo Las Piedras: anteojos ópticos y de sol, armazones, cristales y consulta visual. Dirección, horarios y contacto por WhatsApp.",
-    "canonical": "https://chicureolocal.cl/tiendas/optica-chicureo/",
-    "og_title": "Óptica Chicureo | Anteojos y consulta visual",
-    "og_description": "Anteojos ópticos y de sol, armazones, cristales y consulta visual en Paseo Las Piedras, Chicureo."
-  },
-
-  "contacto": {
-    "whatsapp": "56990922998",
-    "whatsapp_visible": "+56 9 9092 2998",
-    "mensaje_whatsapp": "Hola Óptica Chicureo, los contacto desde ChicureoLocal. Quisiera realizar una consulta.",
-    "instagram": "https://www.instagram.com/opticachicureo/"
-  },
-
-  "resumen": [
-    "📍 Paseo Las Piedras · Chicureo",
-    "👓 Anteojos ópticos y de sol",
-    "👁️ Consulta visual",
-    "🕒 Lunes a viernes · 10:30–19:00"
-  ],
-
-  "servicios": [
-    {
-      "icono": "👓",
-      "titulo": "Anteojos ópticos",
-      "descripcion": "Alternativas de anteojos ópticos, armazones y cristales para distintas necesidades."
-    },
-    {
-      "icono": "🕶️",
-      "titulo": "Anteojos de sol",
-      "descripcion": "Anteojos de sol y armazones de reconocidas marcas."
-    },
-    {
-      "icono": "🔬",
-      "titulo": "Cristales ópticos",
-      "descripcion": "Cristales de alta tecnología según las necesidades de cada receta."
-    },
-    {
-      "icono": "👁️",
-      "titulo": "Consulta visual",
-      "descripcion": "Consulta visual con tecnólogo médico con mención en Oftalmología."
-    },
-    {
-      "icono": "📋",
-      "titulo": "Actualización de receta",
-      "descripcion": "Posibilidad de realizar o actualizar la receta directamente en Chicureo."
-    }
-  ],
-
-  "caracteristicas": [
-    "Chicureo",
-    "Anteojos ópticos",
-    "Anteojos de sol",
-    "Cristales ópticos",
-    "Consulta visual"
-  ],
-
-  "informacion": [
-    {
-      "icono": "📍",
-      "etiqueta": "Dirección",
-      "valor": "Av. Chicureo 2900, Local 5, Paseo Las Piedras, Chicureo, Colina"
-    },
-    {
-      "icono": "🕒",
-      "etiqueta": "Lunes a viernes",
-      "valor": "10:30–19:00"
-    },
-    {
-      "icono": "🕒",
-      "etiqueta": "Sábado",
-      "valor": "10:00–14:00"
-    },
-    {
-      "icono": "💬",
-      "etiqueta": "WhatsApp",
-      "valor": "+56 9 9092 2998"
-    },
-    {
-      "icono": "📷",
-      "etiqueta": "Instagram",
-      "valor": "@opticachicureo",
-      "url": "https://www.instagram.com/opticachicureo/"
-    }
-  ],
-
-  "nota_contacto": "Para una atención más rápida, recomendamos indicar si buscas anteojos, cristales, armazones o deseas consultar por atención visual.",
-
-  "galeria": [
-    {
-      "src": "/images/opticachicureo.jpg",
-      "alt": "Óptica Chicureo - anteojos y servicios ópticos en Chicureo"
-    }
-  ],
-
-  "reviews": {
+{
+  "traslados-ayres": {
     "activo": true,
-    "titulo": "Opiniones de clientes",
-    "placeholder": "Cuéntanos tu experiencia con Óptica Chicureo"
-  },
-
-  "cta_final": {
-    "titulo": "¿Necesitas anteojos o atención visual?",
-    "texto": "Consulta directamente con Óptica Chicureo por WhatsApp sobre anteojos, cristales, armazones, disponibilidad o consulta visual.",
-    "boton": "💬 Consultar por WhatsApp"
-  },
-
-  "schema": {
-    "tipo": "Optician",
-    "service_type": "Óptica y atención visual",
-    "area_served": [
+    "business_id": "traslados-ayres",
+    "tipo": "servicio",
+    "categoria": "Traslados",
+    "slug": "traslados-ayres",
+    "ruta": "/servicios/traslados-ayres/",
+    "nombre": "Traslados desde Ayres de Chicureo",
+    "nombre_corto": "Traslados Ayres",
+    "badge_icono": "🚙",
+    "badge_texto": "Servicio local destacado",
+    "titulo": "Traslados desde Ayres de Chicureo",
+    "descripcion": "Servicio de traslados dentro y fuera de Colina, con salidas desde el sector de Ayres de Chicureo. Especialmente orientado a viajes hacia Metro Los Libertadores, Aeropuerto de Santiago y otros destinos según disponibilidad. Traslados en una camioneta amplia, cómoda y segura, realizados por una vecina del sector.",
+    "seo": {
+      "title": "Traslados desde Chicureo y Colina | Aeropuerto y Metro Los Libertadores | ChicureoLocal",
+      "description": "Servicio local de traslados desde Ayres de Chicureo hacia Colina, Metro Los Libertadores, Aeropuerto y otros destinos. Camioneta amplia, cómoda y segura. Consulta disponibilidad por WhatsApp.",
+      "canonical": "https://chicureolocal.cl/servicios/traslados-ayres/",
+      "og_title": "Traslados desde Chicureo y Colina | ChicureoLocal",
+      "og_description": "Traslados desde Ayres de Chicureo hacia Metro Los Libertadores, Aeropuerto y otros destinos. Consulta disponibilidad y valores por WhatsApp."
+    },
+    "contacto": {
+      "whatsapp": "56998848728",
+      "whatsapp_visible": "+56 9 9884 8728",
+      "mensaje_whatsapp": "Hola, te contacto desde ChicureoLocal. Quisiera consultar por un traslado."
+    },
+    "resumen": [
+      "📍 Salidas desde Ayres de Chicureo",
+      "✈️ Traslados al Aeropuerto",
+      "🚇 Metro Los Libertadores",
+      "🚙 Camioneta amplia y cómoda"
+    ],
+    "servicios": [
+      {
+        "icono": "✈️",
+        "titulo": "Aeropuerto de Santiago",
+        "descripcion": "Traslados desde Chicureo y Colina hacia el aeropuerto, según disponibilidad."
+      },
+      {
+        "icono": "🚇",
+        "titulo": "Metro Los Libertadores",
+        "descripcion": "Traslados desde Ayres de Chicureo y sectores cercanos."
+      },
+      {
+        "icono": "📍",
+        "titulo": "Viajes dentro de Colina",
+        "descripcion": "Consulta disponibilidad para traslados dentro de la comuna."
+      },
+      {
+        "icono": "🛣️",
+        "titulo": "Otros destinos",
+        "descripcion": "También se realizan viajes fuera de Colina. Consulta destino, horario y valor directamente."
+      }
+    ],
+    "caracteristicas": [
       "Chicureo",
       "Colina",
-      "Región Metropolitana"
+      "Aeropuerto",
+      "Metro Los Libertadores",
+      "Traslados particulares"
     ],
-    "provider_type": "Organization"
+    "informacion": [
+      {
+        "icono": "📍",
+        "etiqueta": "Salida habitual",
+        "valor": "Ayres de Chicureo"
+      },
+      {
+        "icono": "🚙",
+        "etiqueta": "Vehículo",
+        "valor": "Camioneta amplia y cómoda"
+      },
+      {
+        "icono": "🗓️",
+        "etiqueta": "Disponibilidad",
+        "valor": "Consultar previamente"
+      },
+      {
+        "icono": "💰",
+        "etiqueta": "Valores",
+        "valor": "Según trayecto"
+      },
+      {
+        "icono": "💬",
+        "etiqueta": "WhatsApp",
+        "valor": "+56 9 9884 8728"
+      }
+    ],
+    "nota_contacto": "Para obtener un valor más rápido, recomendamos indicar origen, destino, fecha y hora al realizar la consulta.",
+    "galeria": [
+      {
+        "src": "/images/sylvanaburgos.jpg",
+        "alt": "Servicio de traslados desde Ayres de Chicureo"
+      }
+    ],
+    "reviews": {
+      "activo": true,
+      "titulo": "Opiniones de pasajeros",
+      "placeholder": "¿Cómo fue tu experiencia con el traslado?"
+    },
+    "cta_final": {
+      "titulo": "¿Necesitas un traslado?",
+      "texto": "Consulta directamente por WhatsApp indicando tu origen, destino, fecha y hora del viaje.",
+      "boton": "💬 Consultar disponibilidad y valor"
+    },
+    "schema": {
+      "tipo": "Service",
+      "service_type": "Traslados de pasajeros",
+      "area_served": [
+        "Chicureo",
+        "Colina",
+        "Santiago"
+      ],
+      "provider_type": "Person"
+    },
+    "disclaimer": "La disponibilidad, valores, horarios y condiciones del servicio deben confirmarse directamente con la prestadora. ChicureoLocal no realiza los traslados ni interviene en la contratación del servicio; actúa como guía local y canal de contacto."
   },
-
-  "disclaimer": "La disponibilidad de productos, marcas, precios, horarios y prestaciones debe confirmarse directamente con Óptica Chicureo. ChicureoLocal no vende los productos ni presta servicios ópticos; actúa como guía local y canal de contacto."
+  "smautomotriz": {
+    "activo": true,
+    "business_id": "smautomotriz",
+    "tipo": "taller",
+    "categoria": "Taller automotriz",
+    "slug": "smautomotriz",
+    "ruta": "/talleres/smautomotriz/",
+    "nombre": "SM Automotriz",
+    "nombre_corto": "SM Automotriz",
+    "badge_icono": "🔧",
+    "badge_texto": "Taller recomendado",
+    "titulo": "SM Automotriz",
+    "descripcion": "Taller automotriz multimarca en Chicureo (Colina), enfocado en reparación de frenos, mantenciones, diagnóstico, mantención por kilometraje y reparaciones. Con más de 30 años de experiencia. Servicio confiable para mantenciones de autos particulares o flotas, con equipo profesional y amplia disponibilidad de repuestos. Para cotizar o agendar, lo más rápido es escribir por WhatsApp.",
+    "seo": {
+      "title": "SM Automotriz en Chicureo | Taller multimarca (mantenciones y diagnóstico) | ChicureoLocal",
+      "description": "SM Automotriz en Chicureo (Colina): taller multimarca para mantenciones, diagnóstico y reparaciones. Dirección, horario y contacto directo por WhatsApp.",
+      "canonical": "https://chicureolocal.cl/talleres/smautomotriz/",
+      "og_title": "SM Automotriz en Chicureo | Taller multimarca",
+      "og_description": "Mantenciones, diagnóstico y reparaciones. Contacto directo por WhatsApp."
+    },
+    "contacto": {
+      "whatsapp": "56990442727",
+      "whatsapp_visible": "+56 9 9044 2727",
+      "mensaje_whatsapp": "Hola SM Automotriz, los contacto desde ChicureoLocal. Quisiera cotizar y agendar una revisión / mantención. Modelo/año: ____ | Motivo: ____. Gracias.",
+      "web": "https://www.smautomotriz.cl/",
+      "instagram": "https://www.instagram.com/sm.automotrizoficial/",
+      "maps": "https://www.google.com/maps/place/SM+Automotriz/@-33.307824,-70.697939,15z/data=!4m6!3m5!1s0x9662b8bc1e6c06dd:0x9a514c7c8e90d4a7!8m2!3d-33.3078238!4d-70.6979389!16s%2Fg%2F11f3vnlnts?hl=es-419&entry=ttu"
+    },
+    "resumen": [
+      "📍 Chicureo / Colina",
+      "🕒 Lunes a viernes · 09:00–19:00",
+      "🛠️ Mantenciones · Diagnóstico · Mecánica general"
+    ],
+    "servicios": [
+      {
+        "icono": "🛑",
+        "titulo": "Frenos",
+        "descripcion": "Inspección, mantención y reparación."
+      },
+      {
+        "icono": "🔧",
+        "titulo": "Mecánica general",
+        "descripcion": "Reparaciones mecánicas para todo tipo de vehículos."
+      },
+      {
+        "icono": "💻",
+        "titulo": "Escáner automotriz",
+        "descripcion": "Diagnóstico y revisión de fallas en vehículos multimarca."
+      },
+      {
+        "icono": "🛢️",
+        "titulo": "Mantenciones por kilometraje",
+        "descripcion": "Aceite, filtros y revisión general."
+      },
+      {
+        "icono": "🚗",
+        "titulo": "Suspensión y dirección",
+        "descripcion": "Revisión y trabajos según diagnóstico."
+      },
+      {
+        "icono": "🛣️",
+        "titulo": "Revisión pre-viaje",
+        "descripcion": "Chequeo preventivo antes de viajes y recorridos extensos."
+      }
+    ],
+    "caracteristicas": [
+      "Chicureo",
+      "Multimarca",
+      "Mantenciones",
+      "Diagnóstico",
+      "Frenos"
+    ],
+    "informacion": [
+      {
+        "icono": "📍",
+        "etiqueta": "Dirección",
+        "valor": "Fermín Vergara Parcela 1 Lote 8-D, Colina"
+      },
+      {
+        "icono": "🕒",
+        "etiqueta": "Horario",
+        "valor": "Lunes a viernes · 09:00–19:00"
+      },
+      {
+        "icono": "💬",
+        "etiqueta": "WhatsApp",
+        "valor": "+56 9 9044 2727"
+      },
+      {
+        "icono": "🌐",
+        "etiqueta": "Web",
+        "valor": "smautomotriz.cl"
+      }
+    ],
+    "nota_contacto": "Para cotizar más rápido, recomendamos indicar modelo, año del vehículo y el motivo de la consulta.",
+    "galeria": [
+      {
+        "src": "/images/SMAutomotriz3.jpg",
+        "alt": "SM Automotriz – Foto 1"
+      },
+      {
+        "src": "/images/SMAutomotriz4.jpg",
+        "alt": "SM Automotriz – Foto 2"
+      },
+      {
+        "src": "/images/SMAutomotriz5.jpg",
+        "alt": "SM Automotriz – Foto 3"
+      },
+      {
+        "src": "/images/SMAutomotriz6.jpg",
+        "alt": "SM Automotriz – Foto 4"
+      },
+      {
+        "src": "/images/SMAutomotriz7.jpg",
+        "alt": "SM Automotriz – Foto 5"
+      },
+      {
+        "src": "/images/SMAutomotriz8.jpg",
+        "alt": "SM Automotriz – Foto 6"
+      }
+    ],
+    "reviews": {
+      "activo": true,
+      "titulo": "Opiniones de clientes",
+      "placeholder": "Cuéntanos tu experiencia con SM Automotriz"
+    },
+    "cta_final": {
+      "titulo": "¿Quieres cotizar o agendar?",
+      "texto": "Escríbenos por WhatsApp indicando tu modelo/año y el motivo (mantención, diagnóstico, frenos, ruidos, etc.).",
+      "boton": "💬 Abrir WhatsApp"
+    },
+    "schema": {
+      "tipo": "AutoRepair",
+      "service_type": "Taller automotriz multimarca",
+      "area_served": [
+        "Chicureo",
+        "Colina",
+        "Región Metropolitana"
+      ],
+      "provider_type": "Organization"
+    },
+    "disclaimer": "La información puede cambiar. Recomendamos confirmar directamente con el taller. ChicureoLocal no presta servicios mecánicos ni garantiza resultados; actúa como guía local y canal de contacto."
+  },
+  "bandido-pet": {
+    "activo": true,
+    "business_id": "bandido-pet",
+    "tipo": "mascotas",
+    "categoria": "Mascotas",
+    "slug": "bandido-pet",
+    "ruta": "/mascotas/bandido-pet/",
+    "nombre": "Bandido Pet",
+    "nombre_corto": "Bandido Pet",
+    "badge_icono": "🐾",
+    "badge_texto": "Tienda local de mascotas",
+    "titulo": "Bandido Pet",
+    "descripcion": "Bandido Pet es un emprendimiento familiar de Chicureo dedicado a la alimentación y bienestar de perros y gatos. Ofrece una selección de alimentos premium, super premium y ultra premium, snacks, arenas y accesorios, con atención personalizada para ayudar a cada familia a elegir productos adecuados para su mascota. Además, apoya a organizaciones y rescatistas de Colina y sus alrededores.",
+    "seo": {
+      "title": "Bandido Pet en Chicureo | Alimentos y accesorios para mascotas | ChicureoLocal",
+      "description": "Bandido Pet en Chicureo: alimentos para perros y gatos, snacks, arenas, accesorios y productos para mascotas, con despacho a domicilio en Chicureo.",
+      "canonical": "https://chicureolocal.cl/mascotas/bandido-pet/",
+      "og_title": "Bandido Pet en Chicureo | Alimentos y accesorios para mascotas",
+      "og_description": "Alimentos, snacks, arenas y accesorios para perros y gatos, con atención personalizada y despacho a domicilio en Chicureo."
+    },
+    "contacto": {
+      "whatsapp": "56929060176",
+      "whatsapp_visible": "+56 9 2906 0176",
+      "whatsapp_secundario": "56965875985",
+      "whatsapp_secundario_visible": "+56 9 6587 5985",
+      "mensaje_whatsapp": "Hola Bandido Pet, los contacto desde ChicureoLocal. Quisiera consultar por productos para mi mascota",
+      "web": "https://bandidopet.cl/",
+      "instagram": "https://www.instagram.com/bandidopet.cl/"
+    },
+    "resumen": [
+      "📍 Chicureo",
+      "🚚 Despacho a domicilio en Chicureo",
+      "🐶 Productos para perros",
+      "🐱 Productos para gatos"
+    ],
+    "servicios": [
+      {
+        "icono": "🐶",
+        "titulo": "Alimentos para perros",
+        "descripcion": "Selección de alimentos para perros, incluyendo alternativas premium, super premium y ultra premium."
+      },
+      {
+        "icono": "🐱",
+        "titulo": "Alimentos para gatos",
+        "descripcion": "Alimentos y productos orientados a la alimentación y bienestar de gatos."
+      },
+      {
+        "icono": "🦴",
+        "titulo": "Snacks y premios",
+        "descripcion": "Snacks y premios para complementar el cuidado y alimentación de las mascotas."
+      },
+      {
+        "icono": "🐾",
+        "titulo": "Accesorios y cuidado",
+        "descripcion": "Accesorios, arenas y otros productos para el cuidado cotidiano de perros y gatos."
+      },
+      {
+        "icono": "🚚",
+        "titulo": "Despacho a domicilio",
+        "descripcion": "Despacho de productos a domicilio dentro de Chicureo."
+      }
+    ],
+    "caracteristicas": [
+      "Chicureo",
+      "Perros",
+      "Gatos",
+      "Alimentos premium",
+      "Despacho a domicilio"
+    ],
+    "informacion": [
+      {
+        "icono": "📍",
+        "etiqueta": "Sector",
+        "valor": "Chicureo"
+      },
+      {
+        "icono": "🚚",
+        "etiqueta": "Despachos",
+        "valor": "A domicilio en Chicureo"
+      },
+      {
+        "icono": "🗓️",
+        "etiqueta": "Atención",
+        "valor": "Lunes a viernes"
+      },
+      {
+        "icono": "💬",
+        "etiqueta": "WhatsApp",
+        "valor": "+56 9 2906 0176"
+      },
+      {
+        "icono": "💬",
+        "etiqueta": "WhatsApp alternativo",
+        "valor": "+56 9 6587 5985"
+      },
+      {
+        "icono": "🌐",
+        "etiqueta": "Web",
+        "valor": "bandidopet.cl",
+        "url": "https://bandidopet.cl/"
+      }
+    ],
+    "nota_contacto": "Para una atención más rápida, recomendamos indicar si buscas productos para perro o gato y el producto o necesidad específica.",
+    "galeria": [
+      {
+        "src": "/images/bandido-pet.jpeg",
+        "alt": "Bandido Pet - alimentos y accesorios para mascotas en Chicureo"
+      }
+    ],
+    "reviews": {
+      "activo": true,
+      "titulo": "Opiniones de clientes",
+      "placeholder": "Cuéntanos tu experiencia con Bandido Pet"
+    },
+    "cta_final": {
+      "titulo": "¿Buscas productos para tu mascota?",
+      "texto": "Consulta directamente con Bandido Pet por WhatsApp sobre alimentos, snacks, accesorios, disponibilidad y despacho en Chicureo.",
+      "boton": "💬 Consultar por WhatsApp"
+    },
+    "schema": {
+      "tipo": "PetStore",
+      "service_type": "Tienda de alimentos y accesorios para mascotas",
+      "area_served": [
+        "Chicureo",
+        "Colina",
+        "Región Metropolitana"
+      ],
+      "provider_type": "Organization"
+    },
+    "disclaimer": "La disponibilidad de productos, precios, horarios y condiciones de despacho deben confirmarse directamente con Bandido Pet. ChicureoLocal no vende los productos ni interviene en las compras; actúa como guía local y canal de contacto."
+  },
+  "optica-chicureo": {
+    "activo": true,
+    "business_id": "optica-chicureo",
+    "tipo": "tienda",
+    "categoria": "Óptica",
+    "slug": "optica-chicureo",
+    "ruta": "/tiendas/optica-chicureo/",
+    "nombre": "Óptica Chicureo",
+    "nombre_corto": "Óptica Chicureo",
+    "badge_icono": "👓",
+    "badge_texto": "Óptica local",
+    "titulo": "Óptica Chicureo",
+    "descripcion": "Óptica Chicureo es una óptica ubicada en Paseo Las Piedras, Chicureo, que ofrece anteojos ópticos y de sol, armazones de reconocidas marcas y cristales de alta tecnología. Además, cuenta con consulta visual con tecnólogo médico con mención en Oftalmología, permitiendo realizar o actualizar la receta directamente en Chicureo.",
+    "seo": {
+      "title": "Óptica Chicureo | Anteojos, cristales y consulta visual | ChicureoLocal",
+      "description": "Óptica Chicureo en Paseo Las Piedras: anteojos ópticos y de sol, armazones, cristales y consulta visual. Dirección, horarios y contacto por WhatsApp.",
+      "canonical": "https://chicureolocal.cl/tiendas/optica-chicureo/",
+      "og_title": "Óptica Chicureo | Anteojos y consulta visual",
+      "og_description": "Anteojos ópticos y de sol, armazones, cristales y consulta visual en Paseo Las Piedras, Chicureo."
+    },
+    "contacto": {
+      "whatsapp": "56990922998",
+      "whatsapp_visible": "+56 9 9092 2998",
+      "mensaje_whatsapp": "Hola Óptica Chicureo, los contacto desde ChicureoLocal. Quisiera realizar una consulta.",
+      "instagram": "https://www.instagram.com/opticachicureo/"
+    },
+    "resumen": [
+      "📍 Paseo Las Piedras · Chicureo",
+      "👓 Anteojos ópticos y de sol",
+      "👁️ Consulta visual",
+      "🕒 Lunes a viernes · 10:30–19:00"
+    ],
+    "servicios": [
+      {
+        "icono": "👓",
+        "titulo": "Anteojos ópticos",
+        "descripcion": "Alternativas de anteojos ópticos, armazones y cristales para distintas necesidades."
+      },
+      {
+        "icono": "🕶️",
+        "titulo": "Anteojos de sol",
+        "descripcion": "Anteojos de sol y armazones de reconocidas marcas."
+      },
+      {
+        "icono": "🔬",
+        "titulo": "Cristales ópticos",
+        "descripcion": "Cristales de alta tecnología según las necesidades de cada receta."
+      },
+      {
+        "icono": "👁️",
+        "titulo": "Consulta visual",
+        "descripcion": "Consulta visual con tecnólogo médico con mención en Oftalmología."
+      },
+      {
+        "icono": "📋",
+        "titulo": "Actualización de receta",
+        "descripcion": "Posibilidad de realizar o actualizar la receta directamente en Chicureo."
+      }
+    ],
+    "caracteristicas": [
+      "Chicureo",
+      "Anteojos ópticos",
+      "Anteojos de sol",
+      "Cristales ópticos",
+      "Consulta visual"
+    ],
+    "informacion": [
+      {
+        "icono": "📍",
+        "etiqueta": "Dirección",
+        "valor": "Av. Chicureo 2900, Local 5, Paseo Las Piedras, Chicureo, Colina"
+      },
+      {
+        "icono": "🕒",
+        "etiqueta": "Lunes a viernes",
+        "valor": "10:30–19:00"
+      },
+      {
+        "icono": "🕒",
+        "etiqueta": "Sábado",
+        "valor": "10:00–14:00"
+      },
+      {
+        "icono": "💬",
+        "etiqueta": "WhatsApp",
+        "valor": "+56 9 9092 2998"
+      },
+      {
+        "icono": "📷",
+        "etiqueta": "Instagram",
+        "valor": "@opticachicureo",
+        "url": "https://www.instagram.com/opticachicureo/"
+      }
+    ],
+    "nota_contacto": "Para una atención más rápida, recomendamos indicar si buscas anteojos, cristales, armazones o deseas consultar por atención visual.",
+    "galeria": [
+      {
+        "src": "/images/opticachicureo.jpg",
+        "alt": "Óptica Chicureo - anteojos y servicios ópticos en Chicureo"
+      }
+    ],
+    "reviews": {
+      "activo": true,
+      "titulo": "Opiniones de clientes",
+      "placeholder": "Cuéntanos tu experiencia con Óptica Chicureo"
+    },
+    "cta_final": {
+      "titulo": "¿Necesitas anteojos o atención visual?",
+      "texto": "Consulta directamente con Óptica Chicureo por WhatsApp sobre anteojos, cristales, armazones, disponibilidad o consulta visual.",
+      "boton": "💬 Consultar por WhatsApp"
+    },
+    "schema": {
+      "tipo": "Optician",
+      "service_type": "Óptica y atención visual",
+      "area_served": [
+        "Chicureo",
+        "Colina",
+        "Región Metropolitana"
+      ],
+      "provider_type": "Organization"
+    },
+    "disclaimer": "La disponibilidad de productos, marcas, precios, horarios y prestaciones debe confirmarse directamente con Óptica Chicureo. ChicureoLocal no vende los productos ni presta servicios ópticos; actúa como guía local y canal de contacto."
+  }
 }
